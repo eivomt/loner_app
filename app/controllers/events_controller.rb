@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
 
   def index
-    puts "Hello +u loser"
+    @events = Event.all
   end
 end
