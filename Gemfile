@@ -9,6 +9,7 @@ gem 'puma'
 gem 'rails', '6.0.2.1'
 gem 'redis'
 
+gem 'geocoder'
 gem 'cloudinary', '~> 1.12.0'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'autoprefixer-rails'
