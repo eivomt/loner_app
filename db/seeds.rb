@@ -6,7 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+# the next 5 lines are required for cloudinary to work, please merge them in! thanks!! =)
 require "open-uri"
+
+file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
+article = Article.new(title: 'NES', body: "A great console")
+article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
 require 'faker'
 puts 'Cleaning database...'
 # Event.destroy_all
@@ -66,3 +73,4 @@ puts 'Creating EventUsers...'
   EventUser.create!(events_users_attributes)
 end
 puts 'Finished!'
+
