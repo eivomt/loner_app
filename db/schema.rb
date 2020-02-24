@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_24_125616) do
+ActiveRecord::Schema.define(version: 2020_02_24_154114) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "event_users", force: :cascade do |t|
+    t.bigint "event_id"
+    t.bigint "user_id"
+    t.index ["event_id"], name: "index_event_users_on_event_id"
+    t.index ["user_id"], name: "index_event_users_on_user_id"
+  end
 
   create_table "events", force: :cascade do |t|
     t.string "name"
@@ -27,19 +34,8 @@ ActiveRecord::Schema.define(version: 2020_02_24_125616) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "categories", default: [], array: true
     t.string "img_url", default: [], array: true
-    t.integer "creator_id"
-  end
-
-  create_table "events_users", id: false, force: :cascade do |t|
-    t.bigint "event_id", null: false
-    t.bigint "user_id", null: false
-    t.index ["event_id"], name: "index_events_users_on_event_id"
-    t.index ["user_id"], name: "index_events_users_on_user_id"
-  end
-
-  create_table "user_events", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "creator_id"
+    t.index ["creator_id"], name: "index_events_on_creator_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -58,4 +54,7 @@ ActiveRecord::Schema.define(version: 2020_02_24_125616) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "event_users", "events"
+  add_foreign_key "event_users", "users"
+  add_foreign_key "events", "users", column: "creator_id"
 end
