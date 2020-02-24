@@ -1,11 +1,11 @@
 class Event < ApplicationRecord
-  belongs_to :creator, class_name: "User", foreign_key: :user_id
-  has_many :userevents, dependent: :destroy
-  has_many :users, through: :userevents
+  belongs_to :creator, class_name: "User", foreign_key: :creator_id
+  has_many :events_users, dependent: :destroy
+  has_many :users, through: :events_users
   has_many_attached :img_url
   validates :name, presence: true
   validates :age_range, presence: true
-  validates :datetime, presence: true
+  validates :time, presence: true
   validates :people_needed, :people_going, presence: true
   validates :address, :description, presence: true
   has_one_attached :photo
