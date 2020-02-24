@@ -1,5 +1,40 @@
+<div class="contain">
+  <div class="row">
+    <div class="row__inner">
 
-<!-- next line displays an image from cloudinary!!! -->
+      <div class="tile">
+        <div class="tile__media">
+          <h3 class="tile__tag">Happening Now</h3>
+          <img class="tile__img" src="../assets/beer" alt=""  />
+          <h1>Beer Pong Ding Dong</h1>
+        </div>
+      </div>
+
+      <div class="tile">
+        <div class="tile__media">
+          <h3 class="tile__tag">Happening Now</h3>
+          <img class="tile__img" src="../assets/beer" alt=""  />
+          <h1>Beer Pong Ding Dong</h1>
+        </div>
+      </div>
+
+      <div class="tile">
+        <div class="tile__media">
+          <h3 class="tile__tag">Happening Now</h3>
+          <img class="tile__img" src="../assets/beer" alt=""  />
+          <h1>Beer Pong Ding Dong</h1>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+
+</div>
+
+
 <% @events.each do |event| %>
   <%= cl_image_tag event.photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
+
