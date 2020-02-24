@@ -1,10 +1,10 @@
 
 <!-- next line displays an image from cloudinary!!! -->
-
+<div>
     <% @events.each do |event| %>
     <%= cl_image_tag event.photo.key, height: 300, width: 400, crop: :fill %>
     <% end %>
-
+</div>
 
 <!-- the map below cant be seen because its behind the carrousel.
   Copy paste from line 10 to 15 and you have a map!! -->
