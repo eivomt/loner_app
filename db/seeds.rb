@@ -9,19 +9,23 @@
 
 # the next 5 lines are required for cloudinary to work, please merge them in! thanks!! =)
 require "open-uri"
-
-file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
-article = Article.new(title: 'NES', body: "A great console")
-article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-
 require 'faker'
+
 puts 'Cleaning database...'
 # Event.destroy_all
 # User.destroy_all
 
 puts 'Creating users...'
 
-30.times do
+user_attributes = {
+  username: "saioa",
+  email: "saio@gmail.com",
+  password: "password",
+  age: rand(17..47)
+}
+User.create!(user_attributes)
+
+5.times do
   user_attributes =
     {
       username: Faker::Name.name,
@@ -33,9 +37,16 @@ puts 'Creating users...'
 end
 
 puts 'Creating events...'
-p User.all
 
-30.times do
+event_pics = [
+  "http://wtop.com/wp-content/uploads/2017/05/ThinkstockPhotos-526833490.jpg",
+  "https://assets3.thrillist.com/v1/image/2787251/size/gn-gift_guide_variable_c.jpg",
+  "https://leieting.s3.amazonaws.com/images/listing_images/images/268898/original/skiww.jpg?1476386788",
+  "https://boardgamereviewed.com/wp-content/uploads/2016/02/risk-us-edition.jpeg",
+  "https://www.wikihow.com/images/c/c0/Play-Pig-(Card-Game)-Step-17-Version-2.jpg"
+]
+
+5.times do
   today = Date.today + rand(0..50)
   streets = [" Schweigaards gate, Sandnes","South Circular Road, Dublin", "North Circular Road, Dublin", " Gran Via, Bilbao", " Lapurdi, Galdakao", " Sognsveien, Oslo", " Karl johans Gate, Gothenburg", " Skjelderups gate, Oslo", " Akersgate, Oslo"]
   event_name = Faker::Games::Pokemon.unique.move
@@ -54,6 +65,10 @@ p User.all
     description: "aiwhdouiahoduaw",
     time: Faker::Time.forward(days: 10,  period: :evening, format: :long) #=> "October 21, 2018 20:47"
   })
+
+  file = URI.open(event_pics.pop)
+  event.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
   # file = URI.open(URI.escape(address))
   # if file.class == Tempfile
   #   dog.photos.attach(io: file, filename: "#{dogname}.jpg", content_type: 'image/jpg')
@@ -63,7 +78,7 @@ end
 
 puts 'Creating EventUsers...'
 
-30.times do |i|
+5.times do |i|
   puts "creating EventUser # #{i}..."
   events_users_attributes =
     {
