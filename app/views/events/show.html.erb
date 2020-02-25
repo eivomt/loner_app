@@ -1,91 +1,19 @@
-<div class="show-container">
+ <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin: 0; padding: 0; height: 100%">
+  <div class="modal-dialog modal-dialog-scrollable" role="document" style="margin: 0; padding: 0; max-height: 100vh;">
+    <div class="modal-content" style="padding: 0; background-color: rgba(0,0,0,0); border: none; border-top: 1px solid $egrayone; margin-top: 0; max-height: 100vh;">
+      <div class="modal-body" style="padding: 0; background-color: rgba(0,0,0,0); border: none; border-top: 1px solid $egrayone; margin-top: 0; max-height: 100vh;">
 
 
-<!-- PEOPLE GOING NEEDED +U -->
-  <div class="buttons">
-    <div class="btn-square going">
-      <h5>24</h5>
-    </div> <!-- going -->
-    <div class="btn-square needed">
-      <h5>6</h5>
-    </div> <!-- needed -->
-    <div class="btn-square plus-u">
-      <h5>+U</h5>
-    </div> <!-- plus me -->
-  </div> <!-- buttons -->
-
-
-<!-- IMAGES + SCROLL INDICATOR -->
-  <div class="img-carousel">
-    <img src="" alt="">
-    <img src="" alt="">
-    <img src="" alt="">
-  </div> <!-- img-carousel -->
-  <div class="img-scroll-indicator">
-    <div class="circle"></div>
-    <div class="circle inactive-circle"></div>
-    <div class="circle inactive-circle"></div>
-  </div> <!-- img-scroll-indicator -->
-  <div class="line"></div>
-  <div class="title">
-    <h2>Beer Pong</h2>
-  </div> <!-- title -->
-  <div class="line"></div>
-
-
-<!-- FIRST INFO BATCH -->
-  <div class="info">
-    <div class="info-container">
-      <i class="far fa-clock"></i>
-      <div class="info-text">
-        <p>Monday, 20th February</p>
-        <p class="italic">at 4:10 AM</p>
-      </div> <!-- info-text -->
-    </div> <!-- info-container -->
-    <div class="info-container">
-      <i class="fas fa-map-marker-alt"></i>
-      <div class="info-text">
-        <p>Oslo Mekaniske Verksted</p>
-        <p class="italic">Tøyenbekken 34, 0188 Oslo</p>
-      </div> <!-- info-text -->
-    </div> <!-- info-container -->
-    <div class="info-container">
-      <i class="fas fa-info-circle"></i>
-      <div class="info-text">
-        <p>Lorem ipsum dolor sit...</p>
-        <p class="italic">read more</p>
-      </div> <!-- info-text -->
-    </div> <!-- info-container -->
-  </div> <!-- info -->
-
-
-<!-- SECOND INFO BATCH -->
-  <div class="line"></div>
-  <div class="info">
-    <div class="info-container">
-      <i class="fas fa-user-circle"></i>
-      <div class="info-text">
-        <p>Event Manager</p>
-        <p class="italic">Maria Lopez Gonzales</p>
-      </div> <!-- info-text -->
-    </div> <!-- info-container -->
-    <div class="info-container">
-      <i class="fas fa-user-friends"></i>
-      <div class="info-text">
-        <p>Members</p>
-        <p class="italic">read more</p>
-      </div> <!-- info-text -->
-    </div> <!-- info-container -->
-  </div> <!-- info -->
-  <div class="line"></div>
-
-
-
-  <div class="chat">
-    <div class="messages"></div>
-    <div class="new-message">
-      <p>Add your message...</p>
+        <%= render 'modal' %>
+      </div>
     </div>
 
-  </div> <!-- chat -->
-</div> <!-- show-container -->
+  </div>
+
+</div>
+
