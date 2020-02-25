@@ -15,6 +15,10 @@ puts 'Cleaning database...'
 # Event.destroy_all
 # User.destroy_all
 
+# create
+
+return if Rails.env.production?
+
 puts 'Creating users...'
 
 user_attributes = {
