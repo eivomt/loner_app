@@ -15,6 +15,10 @@ puts 'Cleaning database...'
 # Event.destroy_all
 # User.destroy_all
 
+# create
+
+return if Rails.env.production?
+
 puts 'Creating users...'
 
 user_attributes = {
@@ -46,10 +50,14 @@ event_pics = [
   "https://www.wikihow.com/images/c/c0/Play-Pig-(Card-Game)-Step-17-Version-2.jpg"
 ]
 
+
+
 5.times do
   today = Date.today + rand(0..50)
   streets = [" Schweigaards gate, Sandnes","South Circular Road, Dublin", "North Circular Road, Dublin", " Gran Via, Bilbao", " Lapurdi, Galdakao", " Sognsveien, Oslo", " Karl johans Gate, Gothenburg", " Skjelderups gate, Oslo", " Akersgate, Oslo"]
   event_name = Faker::Games::Pokemon.unique.move
+  categories_array = ["sport", "nature", "board games", "social"]
+
   puts "Creating event #{event_name}"
   # address = JSON.load(URI.open("https://dog.ceo/api/breeds/image/random"))["message"]
   # breed = address.split("/")[-2]
@@ -60,10 +68,11 @@ event_pics = [
     age_range: rand(0..10),
     people_going: going,
     people_needed: needed,
+    categories: [categories_array.sample],
     creator: User.all.sample,
     address: rand(1..30).to_s + streets.sample,
     description: "aiwhdouiahoduaw",
-    time: Faker::Time.forward(days: 10,  period: :evening, format: :long) #=> "October 21, 2018 20:47"
+    time: Faker::Time.forward(days: 0,  period: :morning, format: :long) #=> "October 21, 2018 20:47"
   })
 
   file = URI.open(event_pics.pop)
