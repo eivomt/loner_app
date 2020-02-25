@@ -89,3 +89,10 @@
 
   </div> <!-- chat -->
 </div> <!-- show-container -->
+
+
+<% simple_form_for [@event, @event_user] do |f| %><!-- the next button is an attemp to submit a join button :/ -->
+<div class="button_container">
+    <%= f.button :submit, 'SEND' %>
+  </div>
+  <% end %>

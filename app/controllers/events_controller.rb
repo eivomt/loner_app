@@ -22,12 +22,13 @@ class EventsController < ApplicationController
   end
 
   def show
-
+    @event = Event.find(params[:id])
+    @event_user = EventUser.new()
   end
 
   private
 
-  def article_params
+  def event_params
     params.require(:article).permit(:title, :body, :photo)
   end
 end
