@@ -1,0 +1,134 @@
+body {
+  background-color: $egrayone;
+}
+
+.line {
+  height: 0;
+  border: .1px solid #FFF;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+
+.show-container {
+  width: 100vw;
+/*  height: 500vh;*/
+  background-color: $egraythree;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 12px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 10px;
+}
+
+.btn-square h5 {
+  margin: 0;
+}
+
+.btn-square {
+  height: 3rem;
+  width: 3rem;
+  margin: 0;
+  background-color: $egreen;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+}
+
+.needed {
+  background-color: $egraytwo;
+}
+
+.plus-u {
+  background-color: rgba(0,0,0,0);
+  border: 1px $egreen solid
+}
+
+.img-carousel {
+  background-color: $egraytwo;
+  height: 12rem;
+  margin-top: 20px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.img-scroll-indicator {
+  height: 1rem;
+  width: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.circle {
+  height: .6rem;
+  width: .6rem;
+  border-radius: 50%;
+  background-color: #FFF;
+}
+
+.inactive-circle {
+  background-color: rgba(0,0,0,0);
+  border: 1px solid $egraytwo;
+}
+
+.title h2 {
+  margin: 0;
+  margin-top: 10px;
+  font-size: 30px;
+}
+
+.info-container {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: top;
+}
+
+.info-container i {
+  margin-top: 4px;
+  color: $egraytwo;
+}
+
+.info-text {
+  margin-left: 20px;
+  font-size: 16px;
+}
+
+.italic {
+  font-style: italic;
+  color: $egraytwo;
+  margin-top: -5px;
+}
+
+.messages {
+  margin-top: 20px;
+  height: 24rem;
+  border-radius: 1rem;
+  border: 1px solid #FFF;
+}
+
+.new-message {
+  margin-top: 10px;
+  height: 2rem;
+  border-radius: 1rem;
+  border: 1px solid #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.new-message p {
+  font-size: 14px;
+  color: $egraytwo;
+  margin: 0;
+  margin-left: 20px;
+}
