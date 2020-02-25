@@ -17,10 +17,6 @@ puts 'Cleaning database...'
 
 # create
 
-return if Rails.env.production?
-
-puts 'Creating users...'
-
 user_attributes = {
   username: "saioa",
   email: "saio@gmail.com",
@@ -28,6 +24,10 @@ user_attributes = {
   age: rand(17..47)
 }
 User.create!(user_attributes)
+
+return if Rails.env.production?
+
+puts 'Creating users...'
 
 5.times do
   user_attributes =

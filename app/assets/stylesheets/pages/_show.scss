@@ -1,21 +1,19 @@
-body {
+.page-container {
   background-color: $egrayone;
+  padding: 20px;
 }
 
 .line {
-  height: 0;
-  border: .1px solid #FFF;
-  margin-top: 1px;
-  margin-bottom: 1px;
+  border-top: 1px solid $egraytwo;
+  margin: 0;
+  margin-top: 6px;
 }
 
 .show-container {
-  width: 100vw;
-/*  height: 500vh;*/
   background-color: $egraythree;
   padding: 20px;
-  margin: 20px;
   border-radius: 12px;
+  margin: 20px;
 }
 
 .buttons {
@@ -49,6 +47,10 @@ body {
 .plus-u {
   background-color: rgba(0,0,0,0);
   border: 1px $egreen solid
+}
+
+.plus-u:hover {
+  background-color: $egreen;
 }
 
 .img-carousel {
@@ -103,6 +105,10 @@ body {
   font-size: 16px;
 }
 
+.regular {
+  color: #FFF;
+}
+
 .italic {
   font-style: italic;
   color: $egraytwo;
@@ -112,14 +118,14 @@ body {
 .messages {
   margin-top: 20px;
   height: 24rem;
-  border-radius: 1rem;
+  border-radius: 12px;
   border: 1px solid #FFF;
 }
 
 .new-message {
   margin-top: 10px;
   height: 2rem;
-  border-radius: 1rem;
+  border-radius: 12px;
   border: 1px solid #FFF;
   display: flex;
   justify-content: center;

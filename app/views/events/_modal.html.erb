@@ -1,0 +1,92 @@
+<!-- <div class="page-container">
+ -->
+  <div class="show-container">
+
+
+  <!-- PEOPLE GOING NEEDED +U -->
+    <div class="buttons">
+      <div class="btn-square going">
+        <h5><%= @event.people_going %></h5>
+      </div> <!-- going -->
+      <div class="btn-square needed">
+        <h5><%= @event.people_needed %></h5>
+      </div> <!-- needed -->
+      <div class="btn-square plus-u">
+        <h5>+U</h5>
+      </div> <!-- plus me -->
+    </div> <!-- buttons -->
+
+
+  <!-- IMAGES + SCROLL INDICATOR -->
+    <div class="img-carousel">
+      <img src="" alt="">
+      <img src="" alt="">
+      <img src="" alt="">
+    </div> <!-- img-carousel -->
+    <div class="img-scroll-indicator">
+      <div class="circle"></div>
+      <div class="circle inactive-circle"></div>
+      <div class="circle inactive-circle"></div>
+    </div> <!-- img-scroll-indicator -->
+    <hr class="line">
+    <div class="title">
+      <h2><%= @event.name %></h2>
+    </div> <!-- title -->
+    <hr class="line">
+
+  <!-- FIRST INFO BATCH -->
+    <div class="info">
+      <div class="info-container">
+        <i class="far fa-clock"></i>
+        <div class="info-text">
+          <p class="regular">Monday, 20th February</p>
+          <p class="italic">at 4:10 AM</p>
+        </div> <!-- info-text -->
+      </div> <!-- info-container -->
+      <div class="info-container">
+        <i class="fas fa-map-marker-alt"></i>
+        <div class="info-text">
+          <p class="regular">Oslo Mekaniske Verksted</p>
+          <p class="italic"><%= @event.address %></p>
+        </div> <!-- info-text -->
+      </div> <!-- info-container -->
+      <div class="info-container">
+        <i class="fas fa-info-circle"></i>
+        <div class="info-text">
+          <p class="regular">Lorem ipsum dolor sit...</p> <!-- @event.description.@event.description.truncate(20, separator: /\s/) -->
+          <p class="italic">read more</p>
+        </div> <!-- info-text -->
+      </div> <!-- info-container -->
+    </div> <!-- info -->
+    <hr class="line">
+
+
+  <!-- SECOND INFO BATCH -->
+    <div class="info">
+      <div class="info-container">
+        <i class="fas fa-user-circle"></i>
+        <div class="info-text">
+          <p class="regular">Event Manager</p>
+          <p class="italic"><%= @creator.username %></p>
+        </div> <!-- info-text -->
+      </div> <!-- info-container -->
+      <div class="info-container">
+        <i class="fas fa-user-friends"></i>
+        <div class="info-text">
+          <p class="regular">Members</p>
+          <p class="italic">read more</p>
+        </div> <!-- info-text -->
+      </div> <!-- info-container -->
+    </div> <!-- info -->
+    <hr class="line">
+
+
+    <div class="chat">
+      <div class="messages"></div>
+      <div class="new-message">
+        <p>Add your message...</p>
+      </div>
+
+    </div> <!-- chat -->
+  </div> <!-- show-container -->
+<!-- </div> --> <!-- page-container -->
