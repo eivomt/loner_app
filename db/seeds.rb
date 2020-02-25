@@ -52,9 +52,9 @@ event_pics = [
 
 
 
-5.times do
+10.times do
   today = Date.today + rand(0..50)
-  streets = [" Schweigaards gate, Sandnes","South Circular Road, Dublin", "North Circular Road, Dublin", " Gran Via, Bilbao", " Lapurdi, Galdakao", " Sognsveien, Oslo", " Karl johans Gate, Gothenburg", " Skjelderups gate, Oslo", " Akersgate, Oslo"]
+  streets = [" Schweigaards gate, Sandnes"," South Circular Road, Dublin", " North Circular Road, Dublin", " Gran Via, Bilbao", " Lapurdi, Galdakao", " Sognsveien, Oslo", " Karl johans Gate, Gothenburg", " Skjelderups gate, Oslo", " Akersgate, Oslo"]
   event_name = Faker::Games::Pokemon.unique.move
   categories_array = ["sport", "nature", "board games", "social"]
 
@@ -75,14 +75,8 @@ event_pics = [
     time: Faker::Time.forward(days: 0,  period: :morning, format: :long) #=> "October 21, 2018 20:47"
   })
 
-  file = URI.open(event_pics.pop)
+  file = URI.open(event_pics.sample)
   event.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-
-  # file = URI.open(URI.escape(address))
-  # if file.class == Tempfile
-  #   dog.photos.attach(io: file, filename: "#{dogname}.jpg", content_type: 'image/jpg')
-  #   dog.save!
-  # end
 end
 
 puts 'Creating EventUsers...'

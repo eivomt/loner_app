@@ -1,4 +1,12 @@
-<%= @user.username %>
 
-<%= cl_image_tag("https://res.cloudinary.com/dmpmj8zoq/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1582559029/sample.jpg",
-      width: 400, height: 300, crop: :fill) %>
+
+
+
+
+<div class="users_show">
+  <% @array_of_friends.each do |friend| %>
+    <%= friend.username %>
+  <% end %>
+</div>
+
+
