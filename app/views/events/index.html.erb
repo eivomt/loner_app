@@ -5,6 +5,7 @@ that can be used to iterate in each one of the carrousels =) -->
 <% nature_events = Event.where(categories = "nature") %>
 <% board_games_events = Event.where(categories = "board games") %>
 <% social_events = Event.where(categories = "social") %>
+<% happening_now = Event.where(time: (DateTime.now-2.hour..DateTime.now+2.hour)) %>
 
 
 <div class="contain">
