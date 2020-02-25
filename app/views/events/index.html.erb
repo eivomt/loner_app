@@ -1,3 +1,5 @@
+<!-- HAPPENING NOW -->
+
 <div class="contain">
   <div class="row">
     <div class="row__inner">
@@ -5,49 +7,128 @@
       <div class="tile">
         <div class="tile__media">
           <h2 class="tile__tag">Happening Now</h2>
-          <img class="tile__img" src="../assets/beer" alt=""  />
+          <div class="tile_img_contain">
+            <div class="absolute">
+                <h2 class="tile__going">42</h2>
+                <h2 class="tile__going red">42</h2>
+            </div>
+            <img class="tile__img" src="../assets/beer" alt=""  />
+          </div>
+          <p>5 minutes</p>
           <h3>Beer Pong Ding Dong</h3>
         </div>
       </div>
 
       <div class="tile">
         <div class="tile__media">
-          <h3 class="tile__tag">Happening Now</h3>
           <img class="tile__img" src="../assets/beer" alt=""  />
-          <h1>Beer Pong Ding Dong</h1>
+          <p>5 minutes</p>
+          <h3>Beer Pong Ding Dong</h3>
         </div>
       </div>
 
       <div class="tile">
         <div class="tile__media">
-          <h3 class="tile__tag">Happening Now</h3>
           <img class="tile__img" src="../assets/beer" alt=""  />
-          <h1>Beer Pong Ding Dong</h1>
+          <p>5 minutes</p>
+          <h3>Beer Pong Ding Dong</h3>
         </div>
       </div>
 
+    </div>
+  </div>
+</div>
 
+<!-- FEELING ADVENTUROUS? -->
+
+<div class="contain">
+  <div class="row">
+    <div class="row__inner">
+
+      <div class="tile__small">
+        <div class="tile__media">
+          <h2 class="tile__tag">Friends I have met</h2>
+          <img class="tile__img__small" src="../assets/beer" alt=""  />
+          <h3>First name</h3>
+        </div>
+      </div>
+
+      <div class="tile__small">
+        <div class="tile__media">
+          <img class="tile__img__small" src="../assets/beer" alt=""  />
+          <h3>First name</h3>
+        </div>
+      </div>
+
+      <div class="tile__small">
+        <div class="tile__media">
+          <img class="tile__img__small" src="../assets/beer" alt=""  />
+          <h3>First name</h3>
+        </div>
+      </div>
 
     </div>
   </div>
-
 </div>
 
 
+<!-- FEELING ADVENTUROUS? -->
+
+<div class="contain">
+  <div class="row">
+    <div class="row__inner">
+
+      <div class="tile">
+        <div class="tile__media">
+          <h2 class="tile__tag">Feeling adventurous?</h2>
+          <div class="tile_img_contain">
+            <div class="absolute">
+              <h2 class="tile__going">42</h2>
+              <h2 class="tile__going red">42</h2>
+            </div>
+            <img class="tile__img__medium" src="../assets/beer" alt=""  />
+          </div>
+          <p>5 minutes</p>
+          <h3>Beer Pong Ding Dong</h3>
+        </div>
+      </div>
+
+      <div class="tile">
+        <div class="tile__media">
+          <img class="tile__img__medium" src="../assets/beer" alt=""  />
+          <p>5 minutes</p>
+          <h3>Beer Pong Ding Dong</h3>
+        </div>
+      </div>
+
+      <div class="tile">
+        <div class="tile__media">
+          <img class="tile__img__medium" src="../assets/beer" alt=""  />
+          <p>5 minutes</p>
+          <h3>Beer Pong Ding Dong</h3>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- MAP -->
+  <div
+    id="map"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV["MAPBOX_API_KEY"] %>"
+  >
+
+  </div>
 
 <!-- next line displays an image from cloudinary!!! -->
 
-    <% @events.each do |event| %>
+   <!--  <% @events.each do |event| %>
     <%= cl_image_tag event.photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
+    <% end %> -->
 
 <!-- the map below cant be seen because its behind the carrousel.
   Copy paste from line 10 to 15 and you have a map!! -->
-  <div
-    id="map"
-    style="width: 100%;
-    height: 200px;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV["MAPBOX_API_KEY"] %>"
-  ></div>
+
 
