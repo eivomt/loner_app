@@ -23,7 +23,8 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    @event_user = EventUser.new
+    # @exists = EventUser.exists?(user_id: current_user.id, event_id: params[:id])
+    @event_user = current_user.event_users.find_by(event: @event)
     @creator = User.find(@event.creator_id)
   end
 
