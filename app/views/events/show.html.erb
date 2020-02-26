@@ -12,10 +12,17 @@
   </div>
 
   <!--- ADD JOIN LOGIC HERE --->
-  <div class="butn join-red" style="margin-bottom: 4px;">
-    <h2 class="white-text"></h2>
+  <div class="butn join-red" style="margin-bottom: 4px;" >
+<!--     <h2 class="white-text">  </h2>
+ -->
+    <% if @event_user.present? %>
+      <%= link_to "Cancel", event_user_path(@event_user), method: :delete %>
+      <% else %>
+        <%= link_to "Join", event_event_users_path(@event), method: :post %>
+      <% end %>
   </div>
 </div>
+
 
 <!--- IMAGE --->
 
@@ -100,3 +107,7 @@
   </div>
 </div>
 
+
+<%# simple_form_for [@event, @event_user] do |f| %>
+    <%#= f.button :submit, 'SEND' %>
+<%# end %>
