@@ -117,8 +117,13 @@ p {
 .row {
   overflow: scroll;
   width: 100%;
-  margin-left: 20px;
+  margin-left: 0px;
   margin-right: 0px;
+  padding: 0 0 0 40px;
+}
+
+.row::-webkit-scrollbar {
+    display: none;
 }
 
 .row__inner {
@@ -133,7 +138,7 @@ p {
 .tile {
   position: relative;
   display: inline-block;
-  width: calc(100vw - 40px);
+  width: calc(100vw - 80px);
   margin-right: 10px;
   font-size: 20px;
   -webkit-transition: 450ms all;
@@ -146,7 +151,7 @@ p {
   margin-top: .5rem;
   margin-bottom: 1.2rem;
   width: 100%;
-  height: 350px;
+  height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 6px;
@@ -175,7 +180,7 @@ p {
 .tile__small {
   position: relative;
   display: inline-block;
-  width: calc(100vw/2 - 25px);
+  width: calc(100vw/2 - 45px);
   margin-right: 10px;
   font-size: 20px;
   -webkit-transition: 450ms all;
