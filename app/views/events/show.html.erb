@@ -1,19 +1,141 @@
- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+<!--- BUTTONS ON TOP --->
+
+<div class="button-container" style="margin-top: 100px;">
+  <div class="butn green-border">
+    <p class="x-small green-text" style="margin-bottom: 4px;">Going</p>
+    <h2 class="green-text">44</h2>
+  </div>
+
+  <div class="butn red-border">
+    <p class="x-small red-text" style="margin-bottom: 4px;">Missing</p>
+    <h2 class="red-text">44</h2>
+  </div>
+
+  <div class="butn join-red" style="margin-bottom: 4px;">
+    <h2 class="white-text"></h2>
+  </div>
+</div>
+
+<!--- IMAGE --->
+
+<div class="mt-40">
+  <img class="image" src="../assets/beer" alt=""  />
+</div>
+
+<!--- CONTENT --->
+
+<div class="event-info">
+  <h2 class="mb-20">Beer Pong Ding Dong</h2>
+
+  <div class="flex">
+    <%=  image_tag "clock.png", class: "clock" %>
+    <div class="grow">
+      <p class="bold">Monday, February 17</p>
+      <p class="small">at 2:10 PM</p>
+    </div>
+    <!-- <div>
+      <p class="x-small red-text" style="padding-top: 15px;">Check Calandar</p>
+    </div> -->
+  </div>
+
+    <div class="flex justify-between mb-40">
+      <%=  image_tag "map.png", class: "map" %>
+    <div class="grow">
+      <p class="bold">Oslo Mekaniske Verksted</p>
+      <p class="small">Tøyenbekken 34, 0188 Oslo</p>
+    </div>
+<!--     <div>
+      <p class="x-small red-text" style="padding-top: 15px;">Get Directon</p>
+    </div> -->
+  </div>
+
+  <!--- UPDATE AND DELETE --->
+
+  <div class="flex mb-35">
+    <p class="button-black small">UPDATE</p>
+    <p class="button-black small">DELETE</p>
+  </div>
+
+  <!--- GOING --->
+
+  <div class="event-border">
+    <div>
+      <p class="bold">Going</p>
+    </div>
+    <div class="flex">
+      <img class="avatar marginr-4" src="../assets/beer" alt=""  />
+      <img class="avatar marginr-4" src="../assets/beer" alt=""  />
+    </div>
+  </div>
+
+  <!--- DESCRIPTION --->
+
+  <div class="flex justify-between event-border">
+    <div>
+      <p class="bold">Event Manager</p>
+      <p class="small">Maria Lopez Gonzales</p>
+    </div>
+    <img class="avatar" src="../assets/beer" alt=""  />
+  </div>
+
+  <div>
+    <p>Lorem ipsum dolor sit sroa rai amet, cons ecsa aatatetur adipiscing elit, sed do eiusm sateatod tempor sagtat incididunt ut labore et dolosatre mana aliqua. Ut enim ad minim veniam, quis </p>
+  </div>
+
+  <!--- CANCEL --->
+
+  <div class="mt-40">
+    <p class="button-cancel">Cancel</p>
+  </div>
+
+  <!--- FACEBOOK WALL --->
+
+  <div class="flex justify-between mt-35">
+    <p class="bold">Questions</p>
+  </div>
+
+  <div class="mb-40">
+    <p>FACEBOOK CHAT HERE IF WE HAVE TIME</p>
+  </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   Launch demo modal
 </button>
 
-<!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin: 0; padding: 0; height: 100%">
   <div class="modal-dialog modal-dialog-scrollable" role="document" style="margin: 0; padding: 0; max-height: 100vh;">
     <div class="modal-content" style="padding: 0; background-color: rgba(0,0,0,0); border: none; border-top: 1px solid $egrayone; margin-top: 0; max-height: 100vh;">
       <div class="modal-body" style="padding: 0; background-color: rgba(0,0,0,0); border: none; border-top: 1px solid $egrayone; margin-top: 0; max-height: 100vh;">
 
 
-        <%= render 'modal' %>
+
       </div>
     </div>
 
   </div>
 
-</div>
+</div> -->
 
