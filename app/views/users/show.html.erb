@@ -1,39 +1,62 @@
-
-<div class="profil"  style="margin-top: 100px;">
+<div class="user-profil"  style="margin-top: 100px;">
   <img class="profil-picture" src="../assets/beer" alt=""  />
   <div class="profil-info">
-    <h2>Username</h2>
+    <h2 style="margin-bottom: 6px;">Username</h2>
     <p>Oslo, Norway</p>
 
-    <div class="profil-text">
-      <p class="profil-tag">Phone</p>
-      <p class="profil-fact">90 90 90 90</p>
-    </div>
+    <!--- BUTTONS --->
+<!---
+  <div class="flex justify-center mb-35">
+    <p class="button-gray small">SPORTS</p>
+    <p class="button-gray small">SPORTS</p>
+    <p class="button-gray small">SPORTS</p>
+  </div>
+--->
 
-    <div class="profil-text">
-      <p class="profil-tag">Email</p>
-      <p class="profil-fact">my_mail@gmail.com</p>
-    </div>
 
-    <div class="profil-text">
-      <p class="profil-tag">Birthday</p>
-      <p class="profil-fact">July 12, 1983</p>
-    </div>
+<div class="flex justify-center mb-40">
 
-    <div class="profil-text">
-      <p class="profil-tag">Gender</p>
-      <p class="profil-fact">Male</p>
-    </div>
+  <div class="mt-40 button-size">
+    <p class="button-big-black">Mail</p>
+  </div>
 
-    <div class="profil-interest">
-      <p class="profil-tag">Interest</p>
-      <p class="category">Sports</p>
-      <p class="category">Sports</p>
-      <p class="category">Sports</p>
-    </div>
-    <p class="button">Edit</p>
+  <div class="mt-40 button-size">
+    <p class="button-big-black">Chat</p>
+  </div>
+
+  <div class="mt-40 button-size">
+    <p class="button-big-black">Edit</p>
+  </div>
+
+</div>
+
+<div class="flex">
+  <div class="profil-text marginr-10">
+    <p class="bold">Email</p>
+    <p class="small">my_mail@gmail.com</p>
+  </div>
+
+  <div class="profil-text marginl-10">
+    <p class="bold">Email</p>
+    <p class="small">my_mail@gmail.com</p>
   </div>
 </div>
+
+<div class="flex mb-40">
+  <div class="profil-text marginr-10">
+    <p class="bold">Email</p>
+    <p class="small">my_mail@gmail.com</p>
+  </div>
+
+  <div class="profil-text marginl-10">
+    <p class="bold">Email</p>
+    <p class="small">my_mail@gmail.com</p>
+  </div>
+</div>
+
+
+
+
 
 
 <!-- MY EVENTS -->
@@ -45,6 +68,39 @@
       <div class="tile__small">
         <div class="tile__media">
           <h2>My events</h2>
+          <img class="tile__img__small" src="../assets/beer" alt=""  />
+          <h3>First name</h3>
+        </div>
+      </div>
+
+      <div class="tile__small">
+        <div class="tile__media">
+          <img class="tile__img__small" src="../assets/beer" alt=""  />
+          <h3>First name</h3>
+        </div>
+      </div>
+
+      <div class="tile__small">
+        <div class="tile__media">
+          <img class="tile__img__small" src="../assets/beer" alt=""  />
+          <h3>First name</h3>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- EVENTS ATTENDING -->
+
+<div class="contain">
+  <div class="row">
+    <div class="row__inner">
+
+      <div class="tile__small">
+        <div class="tile__media">
+          <h2>Events attending</h2>
           <img class="tile__img__small" src="../assets/beer" alt=""  />
           <h3>First name</h3>
         </div>
@@ -104,11 +160,10 @@
 
 <!--- OBS! THE TEXT IS WHITE--->
 <!--- the next lines come from the show and its a list of friends ive met in previous events--->
-
+<!---
 <div class="users_show">
-  <% @array_of_friends.each do |friend| %>
-    <%= friend.username %>
-  <% end %>
+   @array_of_friends.each do |friend|
+     friend.username
+   end
 </div>
-
-
+--->
