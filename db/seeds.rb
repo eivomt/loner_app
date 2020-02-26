@@ -68,7 +68,7 @@ event_pics = [
     age_range: rand(0..10),
     people_going: going,
     people_needed: needed,
-    categories: [categories_array.sample],
+    categories: categories_array.sample,
     creator: User.all.sample,
     address: rand(1..30).to_s + streets.sample,
     description: "aiwhdouiahoduaw",
