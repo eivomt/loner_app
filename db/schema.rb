@@ -54,8 +54,7 @@ ActiveRecord::Schema.define(version: 2020_02_25_164414) do
     t.datetime "time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "categories", default: [], array: true
-    t.string "img_url", default: [], array: true
+    t.string "categories"
     t.bigint "creator_id"
     t.float "latitude"
     t.float "longitude"

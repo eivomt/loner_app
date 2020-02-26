@@ -17,10 +17,6 @@ puts 'Cleaning database...'
 
 # create
 
-return if Rails.env.production?
-
-puts 'Creating users...'
-
 user_attributes = {
   username: "saioa",
   email: "saio@gmail.com",
@@ -28,6 +24,10 @@ user_attributes = {
   age: rand(17..47)
 }
 User.create!(user_attributes)
+
+return if Rails.env.production?
+
+puts 'Creating users...'
 
 5.times do
   user_attributes =
@@ -52,9 +52,9 @@ event_pics = [
 
 
 
-5.times do
+10.times do
   today = Date.today + rand(0..50)
-  streets = [" Schweigaards gate, Sandnes","South Circular Road, Dublin", "North Circular Road, Dublin", " Gran Via, Bilbao", " Lapurdi, Galdakao", " Sognsveien, Oslo", " Karl johans Gate, Gothenburg", " Skjelderups gate, Oslo", " Akersgate, Oslo"]
+  streets = [" Schweigaards gate, Sandnes"," South Circular Road, Dublin", " North Circular Road, Dublin", " Gran Via, Bilbao", " Lapurdi, Galdakao", " Sognsveien, Oslo", " Karl johans Gate, Gothenburg", " Skjelderups gate, Oslo", " Akersgate, Oslo"]
   event_name = Faker::Games::Pokemon.unique.move
   categories_array = ["sport", "nature", "board games", "social"]
 
@@ -68,21 +68,15 @@ event_pics = [
     age_range: rand(0..10),
     people_going: going,
     people_needed: needed,
-    categories: [categories_array.sample],
+    categories: categories_array.sample,
     creator: User.all.sample,
     address: rand(1..30).to_s + streets.sample,
     description: "aiwhdouiahoduaw",
     time: Faker::Time.forward(days: 0,  period: :morning, format: :long) #=> "October 21, 2018 20:47"
   })
 
-  file = URI.open(event_pics.pop)
+  file = URI.open(event_pics.sample)
   event.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-
-  # file = URI.open(URI.escape(address))
-  # if file.class == Tempfile
-  #   dog.photos.attach(io: file, filename: "#{dogname}.jpg", content_type: 'image/jpg')
-  #   dog.save!
-  # end
 end
 
 puts 'Creating EventUsers...'

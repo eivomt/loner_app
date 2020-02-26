@@ -1,4 +1,114 @@
-<%= @user.username %>
 
-<%= cl_image_tag("https://res.cloudinary.com/dmpmj8zoq/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1582559029/sample.jpg",
-      width: 400, height: 300, crop: :fill) %>
+<div class="profil"  style="margin-top: 100px;">
+  <img class="profil-picture" src="../assets/beer" alt=""  />
+  <div class="profil-info">
+    <h2>Username</h2>
+    <p>Oslo, Norway</p>
+
+    <div class="profil-text">
+      <p class="profil-tag">Phone</p>
+      <p class="profil-fact">90 90 90 90</p>
+    </div>
+
+    <div class="profil-text">
+      <p class="profil-tag">Email</p>
+      <p class="profil-fact">my_mail@gmail.com</p>
+    </div>
+
+    <div class="profil-text">
+      <p class="profil-tag">Birthday</p>
+      <p class="profil-fact">July 12, 1983</p>
+    </div>
+
+    <div class="profil-text">
+      <p class="profil-tag">Gender</p>
+      <p class="profil-fact">Male</p>
+    </div>
+
+    <div class="profil-interest">
+      <p class="profil-tag">Interest</p>
+      <p class="category">Sports</p>
+      <p class="category">Sports</p>
+      <p class="category">Sports</p>
+    </div>
+    <p class="button">Edit</p>
+  </div>
+</div>
+
+
+<!-- MY EVENTS -->
+
+<div class="contain">
+  <div class="row">
+    <div class="row__inner">
+
+      <div class="tile__small">
+        <div class="tile__media">
+          <h2>My events</h2>
+          <img class="tile__img__small" src="../assets/beer" alt=""  />
+          <h3>First name</h3>
+        </div>
+      </div>
+
+      <div class="tile__small">
+        <div class="tile__media">
+          <img class="tile__img__small" src="../assets/beer" alt=""  />
+          <h3>First name</h3>
+        </div>
+      </div>
+
+      <div class="tile__small">
+        <div class="tile__media">
+          <img class="tile__img__small" src="../assets/beer" alt=""  />
+          <h3>First name</h3>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- FRIENDS I HAVE MET -->
+
+<div class="contain">
+  <div class="row">
+    <div class="row__inner">
+
+      <div class="tile__small">
+        <div class="tile__media">
+          <h2>Friends I have met</h2>
+          <img class="tile__img__small" src="../assets/beer" alt=""  />
+          <h3>First name</h3>
+        </div>
+      </div>
+
+      <div class="tile__small">
+        <div class="tile__media">
+          <img class="tile__img__small" src="../assets/beer" alt=""  />
+          <h3>First name</h3>
+        </div>
+      </div>
+
+      <div class="tile__small">
+        <div class="tile__media">
+          <img class="tile__img__small" src="../assets/beer" alt=""  />
+          <h3>First name</h3>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!--- OBS! THE TEXT IS WHITE--->
+<!--- the next lines come from the show and its a list of friends ive met in previous events--->
+
+<div class="users_show">
+  <% @array_of_friends.each do |friend| %>
+    <%= friend.username %>
+  <% end %>
+</div>
+
+

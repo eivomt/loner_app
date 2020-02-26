@@ -1,57 +1,29 @@
-<!-- HAPPENING NOW -->
-
-<!-- the next 5 lines create event arrays by category
-that can be used to iterate in each one of the carrousels =) -->
-
-<!--
-<% sports_events = Event.where(categories = "sport") %>
-<% nature_events = Event.where(categories = "nature") %>
-<% board_games_events = Event.where(categories = "board games") %>
-<% social_events = Event.where(categories = "social") %>
-<% happening_now = Event.where(time: (DateTime.now-2.hour..DateTime.now+2.hour)) %>
--->
-
-
-<div class="contain">
+<div class="contain" style="margin-top: 100px;">
   <div class="row">
     <div class="row__inner">
+    <%= render 'carrousel', events: Event.where(time: (DateTime.now-2.hour..DateTime.now+2.hour)), title: 'Happening now!' %>
+    </div>
 
-      <div class="tile">
-        <div class="tile__media">
-          <h2 class="tile__tag">Happening Now</h2>
-          <div class="tile_img_contain">
-            <div class="absolute">
-                <h2 class="tile__going">42</h2>
-                <h2 class="tile__going red">42</h2>
-            </div>
-            <img class="tile__img" src="../assets/beer" alt=""  />
-          </div>
-          <p>5 minutes</p>
-          <h3>Beer Pong Ding Dong</h3>
-        </div>
-      </div>
 
-      <div class="tile">
-        <div class="tile__media">
-          <img class="tile__img" src="../assets/beer" alt=""  />
-          <p>5 minutes</p>
-          <h3>Beer Pong Ding Dong</h3>
-        </div>
-      </div>
+    <div class="row__inner">
+    <%= render 'carrousel', events: Event.where(categories: 'sport'), title: 'Sports!' %>
+    </div>
 
-      <div class="tile">
-        <div class="tile__media">
-          <img class="tile__img" src="../assets/beer" alt=""  />
-          <p>5 minutes</p>
-          <h3>Beer Pong Ding Dong</h3>
-        </div>
-      </div>
+    <div class="row__inner">
+    <%= render 'carrousel', events: Event.where(categories: 'nature'), title: 'Nature!' %>
+    </div>
 
+    <div class="row__inner">
+      <%= render 'carrousel', events: Event.where(categories: 'board games'), title: 'Board Games!' %>
+    </div>
+
+    <div class="row__inner">
+      <%= render 'carrousel', events: Event.where(categories: 'social'), title: 'Mingle!' %>
     </div>
   </div>
 </div>
 
-<!-- FEELING ADVENTUROUS? -->
+<!-- FRIENDS I HAVE MET -->
 
 <div class="contain">
   <div class="row">
@@ -59,7 +31,7 @@ that can be used to iterate in each one of the carrousels =) -->
 
       <div class="tile__small">
         <div class="tile__media">
-          <h2 class="tile__tag">Friends I have met</h2>
+          <h2>Friends I have met</h2>
           <img class="tile__img__small" src="../assets/beer" alt=""  />
           <h3>First name</h3>
         </div>
@@ -76,48 +48,6 @@ that can be used to iterate in each one of the carrousels =) -->
         <div class="tile__media">
           <img class="tile__img__small" src="../assets/beer" alt=""  />
           <h3>First name</h3>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-
-<!-- FEELING ADVENTUROUS? -->
-
-<div class="contain">
-  <div class="row">
-    <div class="row__inner">
-
-      <div class="tile">
-        <div class="tile__media">
-          <h2 class="tile__tag">Feeling adventurous?</h2>
-          <div class="tile_img_contain">
-            <div class="absolute">
-              <h2 class="tile__going">42</h2>
-              <h2 class="tile__going red">42</h2>
-            </div>
-            <img class="tile__img__medium" src="../assets/beer" alt=""  />
-          </div>
-          <p>5 minutes</p>
-          <h3>Beer Pong Ding Dong</h3>
-        </div>
-      </div>
-
-      <div class="tile">
-        <div class="tile__media">
-          <img class="tile__img__medium" src="../assets/beer" alt=""  />
-          <p>5 minutes</p>
-          <h3>Beer Pong Ding Dong</h3>
-        </div>
-      </div>
-
-      <div class="tile">
-        <div class="tile__media">
-          <img class="tile__img__medium" src="../assets/beer" alt=""  />
-          <p>5 minutes</p>
-          <h3>Beer Pong Ding Dong</h3>
         </div>
       </div>
 
@@ -133,14 +63,3 @@ that can be used to iterate in each one of the carrousels =) -->
   >
 
   </div>
-
-<!-- next line displays an image from cloudinary!!! -->
-
-   <!--  <% @events.each do |event| %>
-    <%= cl_image_tag event.photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %> -->
-
-<!-- the map below cant be seen because its behind the carrousel.
-  Copy paste from line 10 to 15 and you have a map!! -->
-
-

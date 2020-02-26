@@ -1,0 +1,59 @@
+.profil-picture {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.profil {
+  text-align: center;
+  margin-top: 100px;
+  padding: 0 20px;
+}
+
+.profil-info {
+  margin-top: 20px;
+}
+
+.profil-text {
+  width: 100%;
+  border-bottom: .5px $gray solid;
+  padding: 1rem 0;
+  text-align: left;
+}
+
+.profil-fact {
+  font-weight: 100;
+  font-size: 1.17rem;
+}
+
+.profil-tag {
+  width: 100px;
+  text-align: left;
+  font-size: .83rem;
+  font-weight: 400;
+  color: $red;
+}
+
+.profil-interest {
+  text-align: left;
+}
+
+.button {
+  padding: 10px;
+  background: $red;
+  width: 150px;
+  height: 50px;
+  margin: 0 auto;
+  color: white;
+  border-radius: 30px;
+}
+
+.category {
+  padding: 0px;
+  background: white;
+  height: 25px;
+  color: $black;
+  border-radius: 15px;
+  display: inline-block;
+  padding: 0 1rem .4rem 1rem;
+}
