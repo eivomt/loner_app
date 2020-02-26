@@ -1,0 +1,19 @@
+.new-form {
+  padding: 100px 40px 0 40px;
+  margin-top: 1rem;
+  margin-bottom: 40px;
+}
+
+.form-group {
+  margin-bottom: 2.5rem;
+}
+
+#event_name, #event_address, #event_people_going, #event_people_needed, #event_age_range {
+  border: none;
+  border-bottom: 1px $gray solid;
+  padding: 3rem 0 0 0;
+}
+
+#event_description {
+  height: 100px;
+}
