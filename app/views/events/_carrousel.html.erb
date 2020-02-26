@@ -1,0 +1,19 @@
+<h2 class="tile__tag"><%= title %></h2>
+
+<% events.each do |event| %>
+  <div class="tile">
+    <div class="tile__media">
+      <div class="tile_img_contain">
+        <div class="absolute">
+            <h2 class="tile__going"><%= event.people_going %></h2>
+            <h2 class="tile__going red"><%= event.people_needed %></h2>
+        </div>
+        <%= link_to cl_image_tag(event.photo.key, class: "tile__img"), event_path(event) %>
+      </div>
+      <h3><%= event.name %></h3>
+      <p><%= event.description %></p>
+      <!-- the strftime makes the display of the date and time prettyyyyy -->
+      <p> <%= t = event.time.strftime("%b, %-d, %Y, %H:%M") %></p>
+    </div>
+  </div>
+<% end %>

@@ -13,120 +13,24 @@ that can be used to iterate in each one of the carrousels =) -->
 <div class="contain" style="margin-top: 100px;">
   <div class="row">
     <div class="row__inner">
-      <% happening_now = Event.where(time: (DateTime.now-2.hour..DateTime.now+2.hour)) %>
-      <% happening_now.each do |event| %>
-        <div class="tile">
-          <div class="tile__media">
-            <h2 class="tile__tag">Happening Now!</h2>
-            <div class="tile_img_contain">
-              <div class="absolute">
-                  <h2 class="tile__going"><%= event.people_going %></h2>
-                  <h2 class="tile__going red"><%= event.people_needed %></h2>
-              </div>
-              <img class="tile__img" src="../assets/beer" alt=""  />
-            </div>
-
-            <h3><%= event.name %></h3>
-            <p><%= event.description %></p>
-            <!-- the strftime makes the display of the date and time prettyyyyy -->
-            <p> <%= t = event.time.strftime("%b, %-d, %Y, %H:%M") %></p>
-          </div>
-        </div>
-      <% end %>
+    <%= render 'carrousel', events: Event.where(time: (DateTime.now-2.hour..DateTime.now+2.hour)), title: 'Happening now!' %>
     </div>
 
     <div class="row__inner">
-      <% sports_events = Event.where("categories = 'sport'") %>
-      <% sports_events.each do |event| %>
-        <div class="tile">
-          <div class="tile__media">
-            <h2 class="tile__tag">Sports!</h2>
-            <div class="tile_img_contain">
-              <div class="absolute">
-                  <h2 class="tile__going"><%= event.people_going %></h2>
-                  <h2 class="tile__going red"><%= event.people_needed %></h2>
-              </div>
-              <img class="tile__img" src="../assets/beer" alt=""  />
-            </div>
-
-            <h3><%= event.name %></h3>
-            <p><%= event.description %></p>
-            <!-- the strftime makes the display of the date and time prettyyyyy -->
-            <p> <%= t = event.time.strftime("%b, %-d, %Y, %H:%M") %></p>
-          </div>
-        </div>
-      <% end %>
+    <%= render 'carrousel', events: Event.where(categories: 'sport'), title: 'Sports!' %>
     </div>
 
     <div class="row__inner">
-      <% nature_events = Event.where("categories = 'nature'") %>
-      <% nature_events.each do |event| %>
-        <div class="tile">
-          <div class="tile__media">
-            <h2 class="tile__tag">Nature!</h2>
-            <div class="tile_img_contain">
-              <div class="absolute">
-                  <h2 class="tile__going"><%= event.people_going %></h2>
-                  <h2 class="tile__going red"><%= event.people_needed %></h2>
-              </div>
-              <img class="tile__img" src="../assets/beer" alt=""  />
-            </div>
-
-            <h3><%= event.name %></h3>
-            <p><%= event.description %></p>
-            <!-- the strftime makes the display of the date and time prettyyyyy -->
-            <p> <%= t = event.time.strftime("%b, %-d, %Y, %H:%M") %></p>
-          </div>
-        </div>
-      <% end %>
+    <%= render 'carrousel', events: Event.where(categories: 'nature'), title: 'Nature!' %>
     </div>
 
     <div class="row__inner">
-      <% board_games_events = Event.where("categories = 'board games'") %>
-      <% board_games_events.each do |event| %>
-        <div class="tile">
-          <div class="tile__media">
-            <h2 class="tile__tag">Board Games!</h2>
-            <div class="tile_img_contain">
-              <div class="absolute">
-                  <h2 class="tile__going"><%= event.people_going %></h2>
-                  <h2 class="tile__going red"><%= event.people_needed %></h2>
-              </div>
-              <img class="tile__img" src="../assets/beer" alt=""  />
-            </div>
-
-            <h3><%= event.name %></h3>
-            <p><%= event.description %></p>
-            <!-- the strftime makes the display of the date and time prettyyyyy -->
-            <p> <%= t = event.time.strftime("%b, %-d, %Y, %H:%M") %></p>
-          </div>
-        </div>
-      <% end %>
+      <%= render 'carrousel', events: Event.where(categories: 'board games'), title: 'Board Games!' %>
     </div>
 
     <div class="row__inner">
-      <% social_events = Event.where("categories = 'social'") %>
-      <% social_events.each do |event| %>
-        <div class="tile">
-          <div class="tile__media">
-            <h2 class="tile__tag">Mingle!</h2>
-            <div class="tile_img_contain">
-              <div class="absolute">
-                  <h2 class="tile__going"><%= event.people_going %></h2>
-                  <h2 class="tile__going red"><%= event.people_needed %></h2>
-              </div>
-              <img class="tile__img" src="../assets/beer" alt=""  />
-            </div>
-
-            <h3><%= event.name %></h3>
-            <p><%= event.description %></p>
-            <!-- the strftime makes the display of the date and time prettyyyyy -->
-            <p> <%= t = event.time.strftime("%b, %-d, %Y, %H:%M") %></p>
-          </div>
-        </div>
-      <% end %>
+      <%= render 'carrousel', events: Event.where(categories: 'social'), title: 'Mingle!' %>
     </div>
-
   </div>
 </div>
 
