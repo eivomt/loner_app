@@ -8,7 +8,7 @@ const buildMap = () => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v10'
+    style: 'mapbox://styles/torweiss/ck74irso01sfp1in0ygnn1ds8'
   });
 };
 
