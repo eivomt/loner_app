@@ -12,7 +12,7 @@
   <nav class="menu">
     <ul>
       <li><a href="#">Add Event</a></li>
-      <li><a href="#">Profile</a></li>
+      <li><a href="#"><%= link_to "Profile", user_path(current_user.id) %></a></li>
       <li><a href="#">Messages</a></li>
       <li><a href="#">Search</a></li>
       <li><a href="#">Sign Out</a></li>
