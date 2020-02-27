@@ -1,7 +1,22 @@
-<div class="comment">
-  <p>
-    <%= comment.body %>
-  </p>
-  <small><%= comment.user.username %></small>
-</div>
 
+
+  <div class="comment">
+
+    <div class="img-container">
+      <div class="avatar"><%= cl_image_tag(comment.user.photo.key, width: 60) %></div>
+    </div>
+    <div class="content-container">
+      <div class="header-container">
+        <div class="username">
+          <p><%= comment.user.username %></p>
+        </div>
+        <div class="time-ago">
+          <p style=" font-weight: lighter;"><%= (Time.now - comment.created_at).fdiv(60).floor %> min ago</p>
+        </div>
+      </div>
+      <div class="content">
+        <p><%= comment.body %></p>
+      </div>
+      <div class="reply"><p><i class="fas fa-reply red-text" style="margin-right: 10px;"></p></i><p style="font-weight: lighter;">Reply</p></div>
+    </div>
+  </div>
