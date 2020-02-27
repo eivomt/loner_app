@@ -60,7 +60,7 @@
   <!--- UPDATE AND DELETE --->
   <% if current_user == @event.creator %>
   <div class="flex mb-35">
-    <p class="button-black small"> <%= link_to "UPDATE", event_path(params[:id]), method: :patch %> </p>
+    <p class="button-black small"> <%= link_to "UPDATE", edit_event_path(params[:id]) %> </p>
     <p class="button-black small"><%= link_to "CANCEL", event_path, method: :delete %></p>
   </div>
   <% end %>
