@@ -10,7 +10,7 @@ class EventsController < ApplicationController
         lat: event.latitude,
         lng: event.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { event: event }),
-        image_url: helpers.asset_url('plus.jpg')
+        image_url: helpers.asset_url('marker-stroked-15.svg')
       }
     end
   end
@@ -26,7 +26,7 @@ class EventsController < ApplicationController
         lat: event.latitude,
         lng: event.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { event: event }),
-        image_url: helpers.asset_url('event-icon.png')
+        image_url: helpers.asset_url('marker-stroked-15.svg')
       }
     end
     @event = Event.new(event_params)
