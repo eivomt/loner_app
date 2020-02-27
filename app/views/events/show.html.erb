@@ -33,14 +33,14 @@
 <!--- CONTENT --->
 
 <div class="event-info">
-  <h2 class="mb-20">Beer Pong Ding Dong</h2>
+  <h2 class="mb-20"><%= @event.name %> </h2>
 
   <div class="flex">
-    <%=  image_tag "clock.png", class: "clock" %>
+    <%=  cl_image_tag (@event.photo.key) %>
     <div class="grow">
-      <p class="bold">Monday, February 17</p>
-      <p class="small">at 2:10 PM</p>
-    </div>
+      <p class="bold"><%= @event.time.strftime("%b, %-d, %Y, %H:%M") %> </p>
+<!--       <p class="small">at 2:10 PM</p>
+ -->    </div>
     <!-- <div>
       <p class="x-small red-text" style="padding-top: 15px;">Check Calandar</p>
     </div> -->
@@ -49,8 +49,7 @@
     <div class="flex justify-between mb-40">
       <%=  image_tag "map.png", class: "map" %>
     <div class="grow">
-      <p class="bold">Oslo Mekaniske Verksted</p>
-      <p class="small">Tøyenbekken 34, 0188 Oslo</p>
+      <p class="bold"><%= @event.address %> </p>
     </div>
 <!--     <div>
       <p class="x-small red-text" style="padding-top: 15px;">Get Directon</p>
@@ -72,8 +71,14 @@
       <p class="bold">Going</p>
     </div>
     <div class="flex">
-      <img class="avatar marginr-4" src="../assets/beer" alt=""  />
-      <img class="avatar marginr-4" src="../assets/beer" alt=""  />
+      <% @event_attendees.each do |user_id| %>
+        <% user =User.find(user_id) %>
+        <%= link_to cl_image_tag(user.photo.key, class: "tile__img"), user_path(user) %>
+      <% end %>
+
+      <!-- the next lines are the avaatars of the ppl going -->
+     <!--  <img class="avatar marginr-4" src="../assets/beer" alt=""  />
+      <img class="avatar marginr-4" src="../assets/beer" alt=""  />  -->
     </div>
   </div>
 
@@ -82,13 +87,13 @@
   <div class="flex justify-between event-border">
     <div>
       <p class="bold">Event Manager</p>
-      <p class="small">Maria Lopez Gonzales</p>
+      <p class="small"><%= @user.username %> </p>
     </div>
-    <img class="avatar" src="../assets/beer" alt=""  />
-  </div>
+<!--     <img class="avatar" src="../assets/beer" alt=""  />
+ -->  </div>
 
   <div>
-    <p>Lorem ipsum dolor sit sroa rai amet, cons ecsa aatatetur adipiscing elit, sed do eiusm sateatod tempor sagtat incididunt ut labore et dolosatre mana aliqua. Ut enim ad minim veniam, quis </p>
+    <p><%= @event.description %> </p>
   </div>
 
   <!--- CANCEL --->

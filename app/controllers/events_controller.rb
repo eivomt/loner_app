@@ -92,6 +92,13 @@ class EventsController < ApplicationController
     @going_count = @event.people_going + @event.event_users.count
     @missing_count = @event.people_needed - @event.event_users.count
     @comments = Comment.where(event_id: [@event.id])
+    @event_attendees = []
+    @event.event_users.each do |event_user|
+       id = event_user.user_id
+       @event_attendees << id
+    end
+    @event_attendees
+    @user = User.find(@event.creator_id)
   end
 
 
