@@ -4,7 +4,6 @@ class Event < ApplicationRecord
   has_many :users, through: :event_users
   has_one_attached :photo
   validates :name, presence: true
-  validates :age_range, presence: true
   validates :time, presence: true
   validates :people_needed, :people_going, presence: true
   validates :address, :description, presence: true

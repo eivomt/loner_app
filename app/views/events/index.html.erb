@@ -1,7 +1,7 @@
 <div class="contain" style="margin-top: 100px;">
   <div class="row">
     <div class="row__inner">
-    <%= render 'carrousel', events: Event.where(time: (DateTime.now-2.hour..DateTime.now+2.hour)), title: 'Happening now' %>
+    <%= render 'carrousel', events: Event.where(time: (DateTime.now-9.hour..DateTime.now+4.hour)), title: 'Happening now' %>
     </div>
   </div>
 </div>
@@ -9,7 +9,7 @@
 <div class="contain">
   <div class="row">
     <div class="row__inner">
-    <%= render 'carrousel', events: Event.where(categories: 'sport'), title: 'Sports' %>
+    <%= render 'carrousel', events: Event.where(categories: 'feeling adventurous'), title: 'Feeling adventurous' %>
     </div>
   </div>
 </div>
@@ -17,7 +17,7 @@
 <div class="contain">
   <div class="row">
     <div class="row__inner">
-      <%= render 'carrousel-medium', events: Event.where(categories: 'board games'), title: 'Board Games' %>
+      <%= render 'carrousel-medium', events: Event.where(categories: 'game on'), title: 'Game on' %>
     </div>
   </div>
 </div>
@@ -25,12 +25,18 @@
 <div class="contain">
   <div class="row">
     <div class="row__inner">
-      <%= render 'carrousel', events: Event.where(categories: 'social'), title: 'Mingle' %>
+      <%= render 'carrousel', events: Event.where(categories: 'let\'s move around'), title: 'Let\'s move around' %>
     </div>
   </div>
 </div>
 
-
+<div class="contain">
+  <div class="row">
+    <div class="row__inner">
+      <%= render 'carrousel', events: Event.where(categories: 'mingle'), title: 'Let´s mingle!' %>
+    </div>
+  </div>
+</div>
 
 <!-- FRIENDS I HAVE MET -->
 
