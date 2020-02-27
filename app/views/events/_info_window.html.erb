@@ -1,4 +1,11 @@
+<%= link_to event_path(event) do %>
 <div>
+  <div class="mb-20">
+  <h3 class="mb-12"><%= event.name %></h3>
+  <p class="bold map-small"><%= event.address %></p>
+  <p class="small"> <%= t = event.time.strftime("%b, %-d, %Y, %H:%M") %></p>
+  </div>
+</div>
 
 <div class="flex">
  <div class="marginr-6 green-border w-100">
@@ -11,18 +18,4 @@
   <h3 class="number red-text"><%= event.people_needed %></h3>
 </div>
 </div>
-
-
-  <%= image_tag event.photo, class: 'img-popup' %>
-
-
-
-  <p class="small"> <%= t = event.time.strftime("%b, %-d, %Y, %H:%M") %></p>
-  <h3><%= event.name %></h3>
-</div>
-
-
-
-
-<p><%= event.address %></p>
-
+<% end %>
