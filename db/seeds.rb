@@ -16,6 +16,7 @@ puts 'Cleaning database...'
 # User.destroy_all
 
 # create
+puts 'Creating users...'
 
 user_attributes = {
   username: "saioa",
@@ -27,18 +28,25 @@ User.create!(user_attributes)
 
 return if Rails.env.production?
 
-puts 'Creating users...'
 
-5.times do
-  user_attributes =
-    {
-      username: Faker::Name.name,
-      email: Faker::Internet.email,
-      password: "password",
-      age: rand(17..47)
-    }
-  User.create!(user_attributes)
-end
+user_attributes =
+  {
+    username: "Torfinn",
+    email: "torfinn@gmail.com",
+    password: "password",
+    age: rand(17..47)
+  }
+User.create!(user_attributes)
+
+user_attributes =
+  {
+    username: "Eivind",
+    email: "eivind@gmail.com",
+    password: "password",
+    age: rand(17..47)
+  }
+User.create!(user_attributes)
+
 
 puts 'Creating events...'
 
@@ -69,7 +77,7 @@ event_pics = [
     people_going: going,
     people_needed: needed,
     categories: categories_array.sample,
-    creator: User.all.sample,
+    creator: User.find(rand(1..3)),
     address: rand(1..30).to_s + streets.sample,
     description: "aiwhdouiahoduaw",
     time: Faker::Time.forward(days: 0,  period: :morning, format: :long) #=> "October 21, 2018 20:47"
