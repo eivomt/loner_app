@@ -8,7 +8,9 @@ class UsersController < ApplicationController
     @array_of_friends = []
 
     @user.event_users.each do |event|
-      @events_id << event.event_id
+      event  = Event.find(event.event_id)
+      if event.time < DateTime.now
+      @events_id << event.id
         @events_id.each do |id|
           e = Event.find(id)
           @array_of_events_instances << e
@@ -26,8 +28,7 @@ class UsersController < ApplicationController
             end
           end
         end
-        # p "hello there user friend id #{@user_friends_id}"
-        # p "hello there array of instance #{@array_of_users_instances}"
+      end
     end
     @array_of_friends
   end
