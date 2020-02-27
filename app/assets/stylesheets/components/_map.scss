@@ -2,6 +2,14 @@
   max-width: 200px;
 }
 
+.map-small {
+  font-size: .83rem;
+}
+
+.mb-12 {
+  margin-bottom: 12px;
+}
+
 .mapboxgl-popup-content {
   width: 200px;
 }
@@ -9,11 +17,13 @@
 .marginr-6 {
   margin-right: 6px;
   height: 74px;
+  padding-top: 11px;
 }
 
 .marginl-6 {
   margin-left: 6px;
   height: 74px;
+  padding-top: 11px;
 }
 
 .number-border-right {
