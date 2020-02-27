@@ -205,7 +205,7 @@ event_pics = [
     creator: User.find(rand(1..3)),
     address: rand(1..30).to_s + streets.sample,
     description: "aiwhdouiahoduaw",
-    time: Faker::Time.forward(days: 0,  period: :morning, format: :long) #=> "October 21, 2018 20:47"
+    time: Faker::Time.forward(days: rand(-10..10),  period: :morning, format: :long) #=> "October 21, 2018 20:47"
   })
 
   file = URI.open(event_pics.sample)
