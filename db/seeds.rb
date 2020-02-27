@@ -662,3 +662,27 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
 
 puts 'Finished!'
 
+puts "Creating event users"
+
+
+EventUser.create!(user_id: 1, event_id: 1)
+EventUser.create!(user_id: 3, event_id: 1)
+EventUser.create!(user_id: 2, event_id: 2)
+EventUser.create!(user_id: 4, event_id: 4)
+EventUser.create!(user_id: 6, event_id: 6)
+EventUser.create!(user_id: 3, event_id: 13)
+EventUser.create!(user_id: 8, event_id: 1)
+EventUser.create!(user_id: 7, event_id: 4)
+EventUser.create!(user_id: 9, event_id: 6)
+EventUser.create!(user_id: 10, event_id: 1)
+EventUser.create!(user_id: 11, event_id: 14)
+EventUser.create!(user_id: 12, event_id: 13)
+EventUser.create!(user_id: 13, event_id: 6)
+EventUser.create!(user_id: 14, event_id: 7)
+EventUser.create!(user_id: 1, event_id: 8)
+EventUser.create!(user_id: 7, event_id: 9)
+EventUser.create!(user_id: 15, event_id: 10)
+EventUser.create!(user_id: 13, event_id: 11)
+EventUser.create!(user_id: 5, event_id: 10)
+EventUser.create!(user_id: 9, event_id: 2)
+
