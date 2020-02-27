@@ -165,6 +165,70 @@
 
 
 
+
+
+
+
+
+.input_comment {
+  background-color: rgba(0,0,0,0);
+}
+
+::placeholder {
+  color: $light-gray;
+}
+
+#comment_body {
+  border-radius: 1rem;
+  border-color: $light-gray;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+  border-image: 0;
+  margin-top: 20px;
+}
+
+.comment {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+
+.avatar {
+  border-radius: 50%;
+  margin: 10px;
+  margin-left: 0;
+  margin-top: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2.5px;
+}
+
+.time-ago {
+  font-weight: lighter;
+  margin-left: 10px;
+}
+
+.reply {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2.5px;
+}
+
+.fas .fa-reply {
+  margin-right: 10px;
+}
+
+
 // .page-container {
 //   background-color: $egrayone;
 //   padding: 20px;

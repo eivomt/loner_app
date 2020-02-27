@@ -100,25 +100,37 @@
   <!--- FACEBOOK WALL --->
 
   <div class="flex justify-between mt-35">
-    <p class="bold">Questions</p>
+    <p class="bold red-text mb-20" style="font-weight: lighter;">Questions</p>
   </div>
 
   <div class="mb-40">
    <div>
     <div id="comments">
-      <h2>Comments</h2>
       <%= render @comments %>
     </div>
     <%= form_with model: [@event, Comment.new] do |form| %>
-      <div class="form-group">
-        <%= form.label :body %>
-        <%= form.text_field :body %>
-        <%= form.submit %>
+      <div class="form-group" style="display: flex; flex-direction: row;">
+   <!--      <%= form.label :body %> -->
+        <%= form.text_field :body, :placeholder => "Add your comment" %>
+ <!--        <%= form.submit :class => "input_comment" %> -->
       </div>
     <% end %>
   </div>
   </div>
+
+
+
+
+
+
+
 </div>
+
+
+
+
+
+
 
 
 
