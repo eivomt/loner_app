@@ -1,0 +1,9 @@
+<% @array_of_friends.each do |friend| %>
+<div class="tile__small">
+  <div class="tile__media">
+    <% raise %>
+    <%= link_to cl_image_tag(friend.photo.key, class: "tile__img"), user_path(friend) %>    <h3>First name</h3>
+    <h3>First name</h3>
+  </div>
+</div>
+<% end %>
