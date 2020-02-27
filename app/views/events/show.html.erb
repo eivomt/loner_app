@@ -106,7 +106,13 @@
   <div class="mb-40">
    <div>
     <div id="comments">
-      <%= render @comments %>
+      <% if @comments.count > 0 %>
+        <%= render @comments %>
+      <% else %>
+
+        <%= 'Add the first comment' %>
+
+      <% end %>
     </div>
     <%= form_with model: [@event, Comment.new] do |form| %>
       <div class="form-group" style="display: flex; flex-direction: row;">
