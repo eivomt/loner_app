@@ -58,11 +58,12 @@
   </div>
 
   <!--- UPDATE AND DELETE --->
-
+  <% if current_user == @event.creator %>
   <div class="flex mb-35">
-    <p class="button-black small">UPDATE</p>
-    <p class="button-black small">DELETE</p>
+    <p class="button-black small"> <%= link_to "UPDATE", edit_event_path(params[:id]) %> </p>
+    <p class="button-black small"><%= link_to "CANCEL", event_path, method: :delete %></p>
   </div>
+  <% end %>
 
   <!--- GOING --->
 
@@ -103,10 +104,52 @@
   </div>
 
   <div class="mb-40">
-    <p>FACEBOOK CHAT HERE IF WE HAVE TIME</p>
+   <div>
+    <div id="comments">
+      <h2>Comments</h2>
+      <%= render @comments %>
+    </div>
+    <%= form_with model: [@event, Comment.new] do |form| %>
+      <div class="form-group">
+        <%= form.label :body %>
+        <%= form.text_field :body %>
+        <%= form.submit %>
+      </div>
+    <% end %>
+  </div>
   </div>
 </div>
 
+
+
+
+
+
+<% content_for :after_js do %>
+<script>
+  function scrollLastMessageIntoView() {
+    const messages = document.querySelectorAll('.comment');
+    const lastMessage = messages[messages.length - 1];
+
+    if (lastMessage !== undefined) {
+      lastMessage.scrollIntoView();
+    }
+  }
+
+  App["event_show_<%= @event.id %>"] = App.cable.subscriptions.create(
+    { channel: 'CommentChannel', event_id: <%= @event.id %> },
+    {
+      received: (data) => {
+        const messagesContainer = document.querySelector('#comments');
+        messagesContainer.insertAdjacentHTML('beforeend', data.message_partial);
+
+        if (data.current_user_id == <%= current_user.id %>) {
+          scrollLastMessageIntoView();
+        }
+      }
+    });
+</script>
+<% end %>
 
 <%# simple_form_for [@event, @event_user] do |f| %>
     <%#= f.button :submit, 'SEND' %>

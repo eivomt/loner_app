@@ -13,6 +13,36 @@ class EventsController < ApplicationController
         image_url: helpers.asset_url('marker-stroked-15.svg')
       }
     end
+
+    @user_friends_id = []
+    @array_of_events_instances = []
+    @events_id = []
+    @array_of_friends = []
+
+    current_user.event_users.each do |event|
+      event  = Event.find(event.event_id)
+      if event.time < DateTime.now
+        @events_id << event.id
+        @events_id.each do |id|
+          e = Event.find(id)
+          @array_of_events_instances << e
+
+          @array_of_events_instances.each do |event_instances|
+            u = event_instances.user_ids
+            u.each do |user_id|
+              user = User.find(user_id)
+              if current_user == user
+
+              elsif @array_of_friends.include?(user)
+              else
+                @array_of_friends << user
+              end
+            end
+          end
+        end
+      end
+    end
+    @array_of_friends
   end
 
   def new
@@ -61,6 +91,7 @@ class EventsController < ApplicationController
     @creator = User.find(@event.creator_id)
     @going_count = @event.people_going + @event.event_users.count
     @missing_count = @event.people_needed - @event.event_users.count
+    @comments = Comment.where(event_id: [@event.id])
   end
 
 
