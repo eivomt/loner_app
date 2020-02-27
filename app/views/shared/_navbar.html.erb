@@ -17,6 +17,8 @@
         <li><a href="#">Search</a></li>
         <li><a href="#">Sign Out</a></li>
       </ul>
+  <% else %>
+    <a href="#"><%= link_to "Log in", new_user_session_url %></a>
   <% end %>
   </nav>
 </div>
