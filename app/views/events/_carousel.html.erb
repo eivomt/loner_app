@@ -3,6 +3,7 @@
         <div class="tile__media">
           <h2>Friends I have met</h2>
           <%= link_to cl_image_tag(user.photo.key, class: "tile__img"), user_path(user) %>
-          <h3><%= friend.username %> </h3>
+          <h3><%= user.username %> </h3>
         </div>
 </div>
+<% end %>
