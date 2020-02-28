@@ -11,7 +11,7 @@ const initJoinButton = () => {
   let joined = button.dataset.joined == 'true';
   let updating = false;
 
-  button.addEventListener('click', () => {
+  const handleClick = () => {
     if (updating) {
       return;
     }
@@ -75,13 +75,13 @@ const initJoinButton = () => {
 
     timeline.add({
       targets : "#plus-joined",
-      translateX: joined ? "-26.5px" : "0px",
+      translateX: joined ? "-23.7px" : "0px",
       rotate: joined ? "-90" : "0",
     });
 
     timeline.add({
       targets : "#plus-join",
-      translateX: joined ? "-0px" : "27px",
+      translateX: joined ? "-0px" : "24.2px",
       rotate: joined ? "0" : "90",
     }, '-=250');
 
@@ -96,7 +96,10 @@ const initJoinButton = () => {
     } else {
       joinRequest();
     }
-  });
+  };
+
+  button.addEventListener('click', handleClick, false);
+  button.addEventListener('touchend', handleClick, false);
 }
 
 export { initJoinButton };
