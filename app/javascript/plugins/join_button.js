@@ -8,58 +8,94 @@ const initJoinButton = () => {
     return;
   }
 
-  let toggle = button.dataset.joined == 'true';
+  let joined = button.dataset.joined == 'true';
+  let updating = false;
 
   button.addEventListener('click', () => {
+    if (updating) {
+      return;
+    }
+
+    updating = true;
+
     const goingDiv = document.getElementById('going-count');
     const missingDiv = document.getElementById('missing-count');
     const going = parseInt(document.getElementById('going-count').innerText);
     const missing = parseInt(document.getElementById('missing-count').innerText);
 
-    if (missing == 0) {
+    if (missing == 0 && !joined) {
       alert('NO MORE ROOM!');
       return;
     }
 
-    const updateCounters = () => {
-      goingDiv.innerText = going + 1;
-      missingDiv.innerText = missing - 1;
+    const updateState = () => {
+      joined = !joined;
+      updating = false;
+    }
+
+    const updateCounters = (num) => {
+      goingDiv.innerText = going + num;
+      missingDiv.innerText = missing - num;
     }
 
     const joinRequest = () => {
+      updateCounters(1);
+
       Rails.ajax({
         url: button.dataset.join_url,
         type: 'POST',
         data: '',
         success: function(data) {
-          updateCounters();
+          button.dataset.cancel_url = data;
+          updateState();
+        },
+        error: function(data) {}
+      });
+    }
+
+    const cancelRequest = () => {
+      updateCounters(-1);
+
+      Rails.ajax({
+        url: button.dataset.cancel_url,
+        type: 'DELETE',
+        data: '',
+        success: function(data) {
+          updateState();
         },
         error: function(data) {}
       });
     }
 
     const timeline = anime.timeline({
-      duration : 750,
+      duration : 450,
       easing : 'easeInOutExpo',
-      complete: () => joinRequest()
+      complete: () => {}
     });
 
     timeline.add({
-      targets : "#plus",
-      translateX: toggle ? "0px" : "27px",
-      rotate: toggle ? "0" : "90",
-    })
+      targets : "#plus-joined",
+      translateX: joined ? "-26.5px" : "0px",
+      rotate: joined ? "-90" : "0",
+    });
+
+    timeline.add({
+      targets : "#plus-join",
+      translateX: joined ? "-0px" : "27px",
+      rotate: joined ? "0" : "90",
+    }, '-=250');
 
     timeline.add({
       targets : "#join-button",
-      backgroundColor: toggle ? "#FF4B4E" : "#00bd67",
-      borderColor: toggle ? "#FF4B4E" : "#00bd67",
-    },
-    '-=630'
-    );
+      backgroundColor: joined ? "#FF4B4E" : "#00bd67",
+      borderColor: joined ? "#FF4B4E" : "#00bd67",
+    }, '-=630');
 
-    // Toggle changes from true to false or false to true
-    toggle = !toggle;
+    if (joined) {
+      cancelRequest();
+    } else {
+      joinRequest();
+    }
   });
 }
 
