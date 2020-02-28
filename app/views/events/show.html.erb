@@ -15,6 +15,7 @@
   <div class="butn join-red" style="margin-bottom: 4px;" >
 <!--     <h2 class="white-text">  </h2>
  -->
+
     <% if @event_user.present? %>
       <%= link_to "Cancel", event_user_path(@event_user), method: :delete %>
       <% else %>
@@ -128,13 +129,58 @@
 
 
 
-
 </div>
 
 
 
 
+<section>
 
+
+<!-- UUUUUUUUU -->
+  <div class="logo-comtainer" style="position: sticky; top: 0; left: 0; display: flex; justify-content: center; align-items: center; width: 100vw; height: 100vh;">
+
+    <div class="u-container" style="position: absolute; top: 30vh;">
+      <svg
+        id="u"
+        width="171px"
+        height="300px"
+        viewBox="0 0 180 309"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          class = "u"
+          d="M6 6V219.025C6 230.047 8.17087 240.96 12.3887 251.143C16.6065 261.326 22.7886 270.578 30.5821 278.371C38.3756 286.165 47.6278 292.347 57.8105 296.565C67.9931 300.783 78.9068 302.953 89.9285 302.953C100.95 302.953 111.864 300.783 122.047 296.565C132.229 292.347 141.481 286.165 149.275 278.371C157.068 270.578 163.251 261.326 167.468 251.143C171.686 240.96 173.857 230.047 173.857 219.025V6"
+          stroke="#1A1818"
+          stroke-width="12"
+          stroke-miterlimit="10"
+          stroke-linecap="round"
+        />
+      </svg>
+    </div>
+
+
+<!-- ++++++++++++++++ -->
+    <div class="plus-container" style="position: absolute; top: 30vh; left: 173.4px;">
+      <svg
+        id = "plus"
+        width="171px"
+        height="171px"
+        viewBox="0 0 183 183"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+        class = "plus"
+          d="M6 91.459L176.918 91.459M92.99 6L92.99 176.918"
+          stroke="#1A1818"
+          stroke-width="12"
+          stroke-miterlimit="10"
+          stroke-linecap="round"
+        />
+      </svg>
+    </div>
+  </div>
+</section>
 
 
 
@@ -146,8 +192,7 @@
 <script>
   function scrollLastMessageIntoView() {
     const messages = document.querySelectorAll('.comment');
-    const lastMessage = messages[messages.length - 1];
-
+    const lastMessage = messages[messages.length - 1]
     if (lastMessage !== undefined) {
       lastMessage.scrollIntoView();
     }
@@ -166,6 +211,35 @@
       }
     });
 </script>
+
+<script>
+const uPath = 'M6 6V219.025C6 230.047 8.17087 240.96 12.3887 251.143C16.6065 261.326 22.7886 270.578 30.5821 278.371C38.3756 286.165 47.6278 292.347 57.8105 296.565C67.9931 300.783 78.9068 302.953 89.9285 302.953C100.95 302.953 111.864 300.783 122.047 296.565C132.229 292.347 141.481 286.165 149.275 278.371C157.068 270.578 163.251 261.326 167.468 251.143C171.686 240.96 173.857 230.047 173.857 219.025V6';
+const plusPath = 'M6 82.459H176.918M92.99 6V176.918'
+const tiltedPlusPath = 'M42.0303 69.0304L162.888 189.888M163.97 70.113L43.1129 190.97'
+
+const plus = document.querySelector('#plus');
+
+const u = document.querySelector('#u');
+
+plus.addEventListener('click', () => {
+  const timeline = anime.timeline({
+    // duration : 750,
+    easing : 'easeInOutExpo',
+    });
+  timeline.add({
+    targets : "#plus",
+    // translateX: "-157px",
+    rotate: "90",
+
+  })
+
+  // timeline.add({
+  //   targets : ".plus-container",
+  //   translateX: "-100px",
+
+  // }, '-=750')
+});</script>
+
 <% end %>
 
 <%# simple_form_for [@event, @event_user] do |f| %>
