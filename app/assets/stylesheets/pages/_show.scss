@@ -77,6 +77,27 @@
   background: $red;
   height: 100%;
   border-radius: 6px;
+
+  .plus-container {
+    position: absolute;
+    top: 3px;
+    left: -13.3px;
+  }
+}
+
+.join-green {
+  border: 1px $green solid;
+  background: $green;
+  height: 100%;
+  border-radius: 6px;
+
+  .plus-container {
+    position: absolute;
+    top: 3px;
+    left: 13.2px;
+  }
+  // height: 100%;
+  // border-radius: 6px;
 }
 
 // .join-red:active {

@@ -5,21 +5,22 @@
   <div class="butn">
     <div class="green-border">
       <p class="x-small green-text" style="margin-bottom: 4px;">Going</p>
-      <h2 class="green-text"><%= @going_count %></h2>
+      <h2 class="green-text" id="going-count"><%= @going_count %></h2>
     </div>
   </div>
 
   <div class="butn">
     <div class="red-border">
       <p class="x-small red-text" style="margin-bottom: 4px;">Missing</p>
-      <h2 class="red-text"><%= @missing_count %></h2>
+      <h2 class="red-text" id="missing-count"><%= @missing_count %></h2>
     </div>
   </div>
 
   <!--- ADD JOIN LOGIC HERE --->
 
   <div class="butn">
-    <div class="butn join-red" id="join-button" style="margin-bottom: 4px; display: flex; justify-content: center; align-items: center; padding: 0;" data-cancel_url="<%= event_user_path(@event_user || 0) %>" data-join_url="<%= event_event_users_path(@event) %>" data-joined="<%= @event_user.present? %>">
+  <div class=" <%= @event_user.present? ? 'join-green' : 'join-red' %>" id="join-button" style="margin-bottom: 4px; display: flex; justify-content: center; align-items: center; padding: 0;" data-cancel_url="<%= event_user_path(@event_user || 0) %>" data-join_url="<%= event_event_users_path(@event) %>" data-joined="<%= @event_user.present? %>">
+
 <!--     <h2 class="white-text">  </h2>
  -->
   <!--    <section> -->
@@ -43,9 +44,9 @@
                   stroke-linecap="round"
                 />
               </svg>
-              <div class="plus-container" style="position: absolute; top: 3px; left: -13.3px;">
+              <div class="plus-container">
                 <svg
-                  id = "plus"
+                  id="plus<%= @event_user.present? ? '-joined' : '-join' %>"
                   width="28.5px"
                   height="28.5px"
                   viewBox="0 0 183 183"
@@ -68,13 +69,14 @@
         </div>
       </div>
     </div>
-
+</div>
   </div> <!-- Button Container -->
 
 <!--- IMAGE --->
+<div class="mt-40" style="height: 250px;">
+  <%=  cl_image_tag (@event.photo.key), class: "w-100",
+  style: "object-fit: cover; height: 250px;" %>
 
-<div class="mt-40">
-  <%=  cl_image_tag (@event.photo.key), class: "w-100 event-image" %>
 </div>
 
 <!--- CONTENT --->
