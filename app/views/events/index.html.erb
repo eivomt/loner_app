@@ -1,49 +1,28 @@
 <div class="contain" style="margin-top: 100px;">
   <div class="row">
-    <div class="row__inner">
-    <%= render 'carrousel', events: Event.where(time: (DateTime.now-9.hour..DateTime.now+15.hour)), title: 'Happening now' %>
+    <div class="row__inner" id="top_header">
+    <%= render 'carrousel', events: Event.where(time: (DateTime.now-9.hour..DateTime.now+4.hour)), title: 'Happening now' %>
     </div>
   </div>
 </div>
 
-<div class="contain">
-  <div class="row">
-    <div class="row__inner">
-    <%= render 'carrousel', events: Event.where(categories: 'feeling adventurous'), title: 'Feeling adventurous' %>
-    </div>
-  </div>
-</div>
-
-<div class="contain">
-  <div class="row">
-    <div class="row__inner">
-      <%= render 'carrousel-medium', events: Event.where(categories: 'game on'), title: 'Game on' %>
-    </div>
-  </div>
-</div>
-
-<div class="contain">
-  <div class="row">
-    <div class="row__inner">
-      <%= render 'carrousel', events: Event.where(categories: 'let\'s move around'), title: 'Let\'s move around' %>
-    </div>
-  </div>
-</div>
-
-<div class="contain">
-  <div class="row">
-    <div class="row__inner">
-      <%= render 'carrousel', events: Event.where(categories: 'mingle'), title: 'Let´s mingle!' %>
-    </div>
-  </div>
-</div>
 
 <!-- FRIENDS I HAVE MET -->
 
 <div class="contain">
-  <div class="row">
+  <div class="row-small">
     <div class="row__inner">
       <%= render 'carousel', users: @array_of_friends %>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="contain">
+  <div class="row-medium">
+    <div class="row__inner">
+      <%= render 'carrousel-medium', events: Event.where(categories: 'game on'), title: 'Game on' %>
     </div>
   </div>
 </div>
@@ -57,3 +36,36 @@
   >
 
   </div>
+
+
+
+
+<div class="contain">
+  <div class="row">
+    <div class="row__inner">
+    <%= render 'carrousel', events: Event.where(categories: 'feeling adventurous'), title: 'Feeling adventurous' %>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="contain">
+  <div class="row-medium">
+    <div class="row__inner">
+      <%= render 'carrousel-medium', events: Event.where(categories: 'let\'s move around'), title: 'Let\'s move around' %>
+    </div>
+  </div>
+</div>
+
+<div class="contain">
+  <div class="row">
+    <div class="row__inner">
+      <%= render 'carrousel', events: Event.where(categories: 'mingle'), title: 'Let\'s mingle!' %>
+    </div>
+  </div>
+</div>
+
+
+
+
