@@ -12,6 +12,19 @@
   </div>
 
   <!--- ADD JOIN LOGIC HERE --->
+
+
+
+
+
+
+
+
+
+
+
+
+
   <div class="butn join-red" style="margin-bottom: 4px;" >
 <!--     <h2 class="white-text">  </h2>
  -->
@@ -22,7 +35,25 @@
         <%= link_to "Join", event_event_users_path(@event), method: :post %>
       <% end %>
   </div>
-</div>
+</div> <!-- Button Container -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <!--- IMAGE --->
@@ -152,11 +183,7 @@
           stroke-linecap="round"
         />
       </svg>
-    </div>
-
-
-<!-- ++++++++++++++++ -->
-    <div class="plus-container" style="position: absolute; top: 30vh; left: 173.4px;">
+      <div class="plus-container" style="position: absolute; top: 5px; left: 78px;">
       <svg
         id = "plus"
         width="171px"
@@ -174,6 +201,11 @@
         />
       </svg>
     </div>
+    </div>
+
+
+<!-- ++++++++++++++++ -->
+
   </div>
 </section>
 
@@ -223,7 +255,7 @@ plus.addEventListener('click', () => {
     });
   timeline.add({
     targets : "#plus",
-    // translateX: "-157px",
+    translateX: "2px",
     rotate: "90",
 
   })
