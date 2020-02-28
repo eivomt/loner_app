@@ -71,7 +71,8 @@
 .join-red {
   border: 1px $red solid;
   background: $red;
-<<<<<<< HEAD
+  height: 100%;
+  border-radius: 6px;
 
   .plus-container {
     position: absolute;
@@ -83,16 +84,16 @@
 .join-green {
   border: 1px $green solid;
   background: $green;
+  height: 100%;
+  border-radius: 6px;
 
   .plus-container {
     position: absolute;
     top: 3px;
     left: 13.2px;
   }
-=======
-  height: 100%;
-  border-radius: 6px;
->>>>>>> 2d4018f1740fe4ceea7308d8ab5dd161c8888aaa
+  // height: 100%;
+  // border-radius: 6px;
 }
 
 // .join-red:active {
