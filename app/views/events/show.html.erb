@@ -1,23 +1,26 @@
 <!--- BUTTONS ON TOP --->
 
 <div class="button-container" style="margin-top: 100px;">
-  <div class="butn green-border">
-    <p class="x-small green-text" style="margin-bottom: 4px;">Going</p>
-    <h2 class="green-text" id="going-count">
-      <%= @going_count %>
-    </h2>
+
+  <div class="butn">
+    <div class="green-border">
+      <p class="x-small green-text" style="margin-bottom: 4px;">Going</p>
+      <h2 class="green-text"><%= @going_count %></h2>
+    </div>
   </div>
 
-  <div class="butn red-border">
-    <p class="x-small red-text" style="margin-bottom: 4px;">Missing</p>
-    <h2 class="red-text" id="missing-count">
-      <%= @missing_count %>
-    </h2>
+  <div class="butn">
+    <div class="red-border">
+      <p class="x-small red-text" style="margin-bottom: 4px;">Missing</p>
+      <h2 class="red-text"><%= @missing_count %></h2>
+    </div>
   </div>
 
   <!--- ADD JOIN LOGIC HERE --->
 
+
   <div class="butn join-red" id="join-button" style="margin-bottom: 4px; display: flex; justify-content: center; align-items: center; padding: 0;" data-cancel_url="<%= event_user_path(@event_user || 0) %>" data-join_url="<%= event_event_users_path(@event) %>" data-joined="<%= @event_user.present? %>">
+
 <!--     <h2 class="white-text">  </h2>
  -->
   <!--    <section> -->
@@ -69,56 +72,31 @@
 
   </div> <!-- Button Container -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!--- IMAGE --->
 
 <div class="mt-40">
-  <img class="image" src="../assets/beer" alt=""  />
+  <%=  cl_image_tag (@event.photo.key), class: "w-100" %>
 </div>
 
 <!--- CONTENT --->
 
 <div class="event-info">
-  <h2 class="mb-20">Beer Pong Ding Dong</h2>
+  <h2 class="mb-20"><%= @event.name %> </h2>
 
-  <div class="flex">
-    <%=  image_tag "clock.png", class: "clock" %>
+  <div class="flex mb-20">
+      <%=  image_tag "clock.png", class: "clock" %>
     <div class="grow">
-      <p class="bold">Monday, February 17</p>
-      <p class="small">at 2:10 PM</p>
+      <p class="red-text" style="font-weight: lighter;"><%= start_time_humanized(@event) %></p>
+      <p><%= @event.time.strftime("%A, %B %-d at %-l:%M%p") %> </p>
     </div>
-    <!-- <div>
-      <p class="x-small red-text" style="padding-top: 15px;">Check Calandar</p>
-    </div> -->
   </div>
 
     <div class="flex justify-between mb-40">
       <%=  image_tag "map.png", class: "map" %>
     <div class="grow">
-      <p class="bold">Oslo Mekaniske Verksted</p>
-      <p class="small">Tøyenbekken 34, 0188 Oslo</p>
+      <p><%= @event.address.split(',')[0] %> </p>
+      <p><%= @event.address.split(',')[1] %> </p>
     </div>
-<!--     <div>
-      <p class="x-small red-text" style="padding-top: 15px;">Get Directon</p>
-    </div> -->
   </div>
 
   <!--- UPDATE AND DELETE --->
@@ -129,31 +107,40 @@
   </div>
   <% end %>
 
+   <!--- DESCRIPTION --->
+
+  <div class="flex justify-between event-border">
+    <div>
+      <p class="red-text" style="font-weight: lighter;">Event Manager</p>
+      <p><%= @user.username.capitalize %> </p>
+    </div>
+      <%= image_tag @user.photo, class: "avatar" %>
+<!--     <img class="avatar" src="../assets/beer" alt=""  />
+ -->  </div>
+
+  <div>
+    <p class="mb-30"><%= @event.description %> </p>
+  </div>
+
+
   <!--- GOING --->
 
   <div class="event-border">
     <div>
-      <p class="bold">Going</p>
+      <p class="red-text" style="font-weight: lighter;">Going</p>
     </div>
-    <div class="flex">
-      <img class="avatar marginr-4" src="../assets/beer" alt=""  />
-      <img class="avatar marginr-4" src="../assets/beer" alt=""  />
+    <div class="flex mt-10">
+      <% @event_attendees.each do |user_id| %>
+        <% user =User.find(user_id) %>
+        <%= link_to cl_image_tag(user.photo.key, class: "avatar"), user_path(user) %>
+      <% end %>
+
+      <!-- the next lines are the avaatars of the ppl going -->
+     <!--  <img class="avatar marginr-4" src="../assets/beer" alt=""  />
+      <img class="avatar marginr-4" src="../assets/beer" alt=""  />  -->
     </div>
   </div>
 
-  <!--- DESCRIPTION --->
-
-  <div class="flex justify-between event-border">
-    <div>
-      <p class="bold">Event Manager</p>
-      <p class="small">Maria Lopez Gonzales</p>
-    </div>
-    <img class="avatar" src="../assets/beer" alt=""  />
-  </div>
-
-  <div>
-    <p>Lorem ipsum dolor sit sroa rai amet, cons ecsa aatatetur adipiscing elit, sed do eiusm sateatod tempor sagtat incididunt ut labore et dolosatre mana aliqua. Ut enim ad minim veniam, quis </p>
-  </div>
 
   <!--- CANCEL --->
 
@@ -163,8 +150,8 @@
 
   <!--- FACEBOOK WALL --->
 
-  <div class="flex justify-between mt-35">
-    <p class="bold red-text mb-20" style="font-weight: lighter;">Questions</p>
+  <div class="flex justify-between mt-35 event-border">
+    <p class="red-text mb-20" style="font-weight: lighter;">Questions</p>
   </div>
 
   <div class="mb-40">
@@ -207,13 +194,16 @@
       }
     });
 </script>
-
-<script>
-
-</script>
-
 <% end %>
-
-<%# simple_form_for [@event, @event_user] do |f| %>
-    <%#= f.button :submit, 'SEND' %>
-<%# end %>
+  
+   </div>
+    <%= form_with model: [@event, Comment.new] do |form| %>
+      <div class="form-group" style="display: flex; flex-direction: row;">
+   <!--      <%= form.label :body %> -->
+        <%= form.text_field :body, :placeholder => "Add your question" %>
+ <!--        <%= form.submit :class => "input_comment" %> -->
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
