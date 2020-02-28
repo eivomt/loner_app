@@ -1,7 +1,7 @@
 <div class="contain" style="margin-top: 100px;">
   <div class="row">
     <div class="row__inner">
-    <%= render 'carrousel', events: Event.where(time: (DateTime.now-9.hour..DateTime.now+4.hour)), title: 'Happening now' %>
+    <%= render 'carrousel', events: Event.where(time: (DateTime.now-9.hour..DateTime.now+15.hour)), title: 'Happening now' %>
     </div>
   </div>
 </div>
