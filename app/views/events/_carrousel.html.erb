@@ -1,4 +1,4 @@
-<h2 class="tile__tag"><%= title %></h2>
+<h2 class="tile__tag mb-20"><%= title %></h2>
 
 <% events.each do |event| %>
   <div class="tile">
@@ -20,7 +20,7 @@
           <h3 class="number green-text"><%= event.people_going %></h3>
         </div>
 
-        <div class="pl-20 pr-20">
+        <div class="pl-20">
           <p class="small red-text">Missing</p>
           <h3 class="number red-text"><%= event.people_needed %></h3>
         </div>
