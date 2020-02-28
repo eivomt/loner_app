@@ -6,13 +6,18 @@
   </div>
 </div>
 
+
+<!-- FRIENDS I HAVE MET -->
+
 <div class="contain">
-  <div class="row">
+  <div class="row-small">
     <div class="row__inner">
-    <%= render 'carrousel', events: Event.where(categories: 'feeling adventurous'), title: 'Feeling adventurous' %>
+      <%= render 'carousel', users: @array_of_friends %>
     </div>
   </div>
 </div>
+
+
 
 <div class="contain">
   <div class="row-medium">
@@ -21,6 +26,29 @@
     </div>
   </div>
 </div>
+
+<!-- MAP -->
+  <h2 class="pl-40 pr-40">Happening near you</h2>
+  <div
+    id="map"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV["MAPBOX_API_KEY"] %>"
+  >
+
+  </div>
+
+
+
+
+<div class="contain">
+  <div class="row">
+    <div class="row__inner">
+    <%= render 'carrousel', events: Event.where(categories: 'feeling adventurous'), title: 'Feeling adventurous' %>
+    </div>
+  </div>
+</div>
+
+
 
 <div class="contain">
   <div class="row-medium">
@@ -38,22 +66,6 @@
   </div>
 </div>
 
-<!-- FRIENDS I HAVE MET -->
 
-<div class="contain">
-  <div class="row">
-    <div class="row__inner">
-      <%= render 'carousel', users: @array_of_friends %>
-    </div>
-  </div>
-</div>
 
-<!-- MAP -->
-  <h2 class="pl-40 pr-40">Happening near you</h2>
-  <div
-    id="map"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV["MAPBOX_API_KEY"] %>"
-  >
 
-  </div>

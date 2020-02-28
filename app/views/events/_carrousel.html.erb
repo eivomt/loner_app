@@ -11,7 +11,10 @@
 
       <div class="flex justify-between white-card">
         <div class="grow">
-          <p class="small"> <%= t = event.time.strftime("%b, %-d, %Y, %H:%M") %></p>
+          <p class="small">
+            <%#= event.time.strftime("%b, %-d, %Y, %H:%M") %>
+            <%= start_time_humanized(event) %>
+          </p>
           <h3><%= event.name %></h3>
         </div>
 
