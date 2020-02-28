@@ -1,4 +1,4 @@
-<h2 class="tile__tag"><%= title %></h2>
+<h2 class="tile__tag mb-20"><%= title %></h2>
 
 <% events.each do |event| %>
   <div class="tile">
@@ -11,7 +11,10 @@
 
       <div class="flex justify-between white-card">
         <div class="grow">
-          <p class="small"> <%= t = event.time.strftime("%b, %-d, %Y, %H:%M") %></p>
+          <p class="small">
+            <%#= event.time.strftime("%b, %-d, %Y, %H:%M") %>
+            <%= start_time_humanized(event) %>
+          </p>
           <h3><%= event.name %></h3>
         </div>
 
@@ -20,7 +23,7 @@
           <h3 class="number green-text"><%= event.people_going %></h3>
         </div>
 
-        <div class="pl-20 pr-20">
+        <div class="pl-20">
           <p class="small red-text">Missing</p>
           <h3 class="number red-text"><%= event.people_needed %></h3>
         </div>
