@@ -58,15 +58,18 @@
 
 <!--    <%# if current_user %>
  -->
-    <nav class="menu">
-      <ul>
 
+    <nav class="menu">
+      <% if current_user.present? %>
+          <ul>
           <li><a href="#">Add Event</a></li>
           <li><a href="#"><%= link_to "Profile", user_path(current_user.id) %></a></li>
           <li><a href="#">Messages</a></li>
           <li><a href="#">Search</a></li>
-          <li><a href="#">Sign Out</a></li>
+          <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+           <li> <%= link_to "Log in!", new_user_session_path %></li>
       </ul>
+      <% end %>
   </nav>
 </div>
 
