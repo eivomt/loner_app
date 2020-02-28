@@ -161,7 +161,14 @@ user = User.create!({
 file = URI.open("https://www.deputy.com/uploads/2018/08/The-Guide-to-Creating-a-Powerful-LinkedIn-Profile_Content-image2-min-1024x895.png")
 user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
 
-
+user = User.create!({
+    username: "Max",
+    email: "max@gmail.com",
+    password: "password",
+    age: 27
+  })
+file = URI.open("https://jerrykieschnick.files.wordpress.com/2014/05/old-man-1.jpg")
+user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
 ###################### FEELING ADVENTUROUS ######################
 
 
@@ -169,7 +176,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
   event = Event.create!({
     name: "Midnight walk",
     people_going: 24,
-    people_needed: 3,
+    people_needed: 6,
     categories: "feeling adventurous",
     creator_id: 1,
     address: "Sognsveien 220, 0863 Oslo",
@@ -199,7 +206,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
   event = Event.create!({
     name: "Kayaking in Oslo",
     people_going: 4,
-    people_needed: 2,
+    people_needed: 4,
     categories: "feeling adventurous",
     creator_id: 3,
     address: "Fossumveien, 1359 Eiksmarka",
@@ -229,7 +236,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
   event = Event.create!({
     name: "Bike challange",
     people_going: 8,
-    people_needed: 1,
+    people_needed: 4,
     categories: "feeling adventurous",
     creator_id: 5,
     address: "Tryvannsveien 64, 0791 Oslo",
@@ -343,7 +350,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     categories: "mingle",
     creator_id: 10,
     address: "Schweigaards gate 34C, 0191 Oslo",
-    description: "Exciting beers for tasting!",
+    description: "Let´s enjoy a few Schous Bryggeri deliciousness together and talk about all the world problems we won´t get to fix by drinking! We´re always opened to meet new people, hope you can join!",
     time: "February 28, 2020 19:00"
   })
 
@@ -501,7 +508,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 26, 2020 14:14"
   })
 
-  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582821107/card_pzwxfj.png")
+  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582885374/card_new_ygnph4.png")
   event.photo.attach(io: file, filename: 'card.png', content_type: 'image/png')
 
   puts "Creating event Dart and fart"
@@ -516,7 +523,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 18, 2020 18:32"
   })
 
-  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582821108/dart_kbootc.png")
+  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582885801/dart_last_qaogen.png")
   event.photo.attach(io: file, filename: 'dart.png', content_type: 'image/png')
 
   puts "Creating event Let's get rich"
@@ -531,7 +538,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 6, 2020 16:00"
   })
 
-  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582821108/monopoly_ussves.png")
+  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582885801/monopoly_last_svooln.png")
   event.photo.attach(io: file, filename: 'monopoly.png', content_type: 'image/png')
 
   puts "Creating event No risk no reward"
@@ -546,7 +553,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 3, 2020 13:30"
   })
 
-  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582821108/risk_pclzgk.png")
+  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582885907/risk_last_vovjbt.png")
   event.photo.attach(io: file, filename: 'risk.png', content_type: 'image/png')
 
   puts "Creating event Ping pong"
@@ -561,7 +568,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 15, 2020 11:10"
   })
 
-  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582821108/tabletennis_nzryr2.png")
+  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582885800/tabletennis_last_kxuskj.png")
   event.photo.attach(io: file, filename: 'tabletennis.png', content_type: 'image/png')
 
 
@@ -582,7 +589,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 27, 2020 23:47"
   })
 
-  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582820759/basket_v305q7.png")
+  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582886551/basket_last_mwqhbw.png")
   event.photo.attach(io: file, filename: 'basket.png', content_type: 'image/png')
 
   puts "Creating event Jelly belly dancing"
@@ -597,7 +604,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 6, 2020 15:00"
   })
 
-  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582820759/bellydance_zkemaj.png")
+  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582886370/bellydance_new_fpfjxl.png")
   event.photo.attach(io: file, filename: 'bellydance.png', content_type: 'image/png')
 
   puts "Creating event King pin"
@@ -657,8 +664,75 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 5, 2020 10:00"
   })
 
-  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582820760/tennis_egur0q.png")
+  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582886551/tennis_last_aidzqz.png")
   event.photo.attach(io: file, filename: 'tennis.png', content_type: 'image/png')
 
 puts 'Finished!'
+
+puts "one event in the passed for friends ive met"
+
+  event = Event.create!({
+    name: "Le Wagon!",
+    people_going: 1,
+    people_needed: 15,
+    categories: "lewagon",
+    creator_id: 9,
+    address: "Schweigaardsgate 34, 0191 Oslo",
+    description: "We made it! =)",
+    time: "January 6, 2020 08:30"
+  })
+
+  file = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,h_840,q_auto,w_1952/v1578570211/cpizdoyq3k1z06saej2m.webp")
+  event.photo.attach(io: file, filename: 'tennis.png', content_type: 'image/png')
+
+
+puts "seeds for event im going to join"
+EventUser.create!(user_id: 2, event_id: 12)
+EventUser.create!(user_id: 3, event_id: 12)
+EventUser.create!(user_id: 11, event_id: 12)
+EventUser.create!(user_id: 12, event_id: 12)
+EventUser.create!(user_id: 8, event_id: 12)
+EventUser.create!(user_id: 16, event_id: 12)
+
+
+
+puts "Creating event users for le wagon, friends we´ve met!"
+
+EventUser.create!(user_id: 1, event_id: 33)
+EventUser.create!(user_id: 2, event_id: 33)
+EventUser.create!(user_id: 3, event_id: 33)
+EventUser.create!(user_id: 4, event_id: 33)
+EventUser.create!(user_id: 5, event_id: 33)
+EventUser.create!(user_id: 6, event_id: 33)
+EventUser.create!(user_id: 7, event_id: 33)
+EventUser.create!(user_id: 8, event_id: 33)
+EventUser.create!(user_id: 9, event_id: 33)
+EventUser.create!(user_id: 10, event_id: 33)
+EventUser.create!(user_id: 14, event_id: 33)
+EventUser.create!(user_id: 15, event_id: 33)
+EventUser.create!(user_id: 17, event_id: 33)
+
+puts "Creating event users"
+
+
+EventUser.create!(user_id: 1, event_id: 1)
+EventUser.create!(user_id: 3, event_id: 1)
+EventUser.create!(user_id: 2, event_id: 2)
+EventUser.create!(user_id: 4, event_id: 4)
+EventUser.create!(user_id: 6, event_id: 6)
+EventUser.create!(user_id: 3, event_id: 13)
+EventUser.create!(user_id: 8, event_id: 1)
+EventUser.create!(user_id: 7, event_id: 4)
+EventUser.create!(user_id: 9, event_id: 6)
+EventUser.create!(user_id: 10, event_id: 1)
+EventUser.create!(user_id: 11, event_id: 14)
+EventUser.create!(user_id: 12, event_id: 13)
+EventUser.create!(user_id: 13, event_id: 6)
+EventUser.create!(user_id: 14, event_id: 7)
+EventUser.create!(user_id: 1, event_id: 8)
+EventUser.create!(user_id: 7, event_id: 9)
+EventUser.create!(user_id: 15, event_id: 10)
+EventUser.create!(user_id: 13, event_id: 11)
+EventUser.create!(user_id: 5, event_id: 10)
+EventUser.create!(user_id: 9, event_id: 2)
 
