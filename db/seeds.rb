@@ -176,7 +176,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
   event = Event.create!({
     name: "Midnight walk",
     people_going: 24,
-    people_needed: 3,
+    people_needed: 6,
     categories: "feeling adventurous",
     creator_id: 1,
     address: "Sognsveien 220, 0863 Oslo",
@@ -206,7 +206,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
   event = Event.create!({
     name: "Kayaking in Oslo",
     people_going: 4,
-    people_needed: 2,
+    people_needed: 4,
     categories: "feeling adventurous",
     creator_id: 3,
     address: "Fossumveien, 1359 Eiksmarka",
@@ -236,7 +236,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
   event = Event.create!({
     name: "Bike challange",
     people_going: 8,
-    people_needed: 1,
+    people_needed: 4,
     categories: "feeling adventurous",
     creator_id: 5,
     address: "Tryvannsveien 64, 0791 Oslo",
@@ -350,7 +350,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     categories: "mingle",
     creator_id: 10,
     address: "Schweigaards gate 34C, 0191 Oslo",
-    description: "Exciting beers for tasting!",
+    description: "Let´s enjoy a few Schous Bryggeri deliciousness together and talk about all the world problems we won´t get to fix by drinking! We´re always opened to meet new people, hope you can join!",
     time: "February 28, 2020 19:00"
   })
 
@@ -684,6 +684,16 @@ puts "one event in the passed for friends ive met"
 
   file = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,h_840,q_auto,w_1952/v1578570211/cpizdoyq3k1z06saej2m.webp")
   event.photo.attach(io: file, filename: 'tennis.png', content_type: 'image/png')
+
+
+puts "seeds for event im going to join"
+EventUser.create!(user_id: 2, event_id: 12)
+EventUser.create!(user_id: 3, event_id: 12)
+EventUser.create!(user_id: 11, event_id: 12)
+EventUser.create!(user_id: 12, event_id: 12)
+EventUser.create!(user_id: 8, event_id: 12)
+EventUser.create!(user_id: 16, event_id: 12)
+
 
 
 puts "Creating event users for le wagon, friends we´ve met!"
