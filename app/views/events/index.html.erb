@@ -1,6 +1,6 @@
 <div class="contain" style="margin-top: 100px;">
   <div class="row">
-    <div class="row__inner">
+    <div class="row__inner" id="top_header">
     <%= render 'carrousel', events: Event.where(time: (DateTime.now-9.hour..DateTime.now+4.hour)), title: 'Happening now' %>
     </div>
   </div>
