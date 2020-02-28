@@ -501,7 +501,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 26, 2020 14:14"
   })
 
-  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582821107/card_pzwxfj.png")
+  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582885374/card_new_ygnph4.png")
   event.photo.attach(io: file, filename: 'card.png', content_type: 'image/png')
 
   puts "Creating event Dart and fart"
@@ -516,7 +516,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 18, 2020 18:32"
   })
 
-  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582821108/dart_kbootc.png")
+  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582885801/dart_last_qaogen.png")
   event.photo.attach(io: file, filename: 'dart.png', content_type: 'image/png')
 
   puts "Creating event Let's get rich"
@@ -531,7 +531,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 6, 2020 16:00"
   })
 
-  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582821108/monopoly_ussves.png")
+  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582885801/monopoly_last_svooln.png")
   event.photo.attach(io: file, filename: 'monopoly.png', content_type: 'image/png')
 
   puts "Creating event No risk no reward"
@@ -546,7 +546,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 3, 2020 13:30"
   })
 
-  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582821108/risk_pclzgk.png")
+  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582885907/risk_last_vovjbt.png")
   event.photo.attach(io: file, filename: 'risk.png', content_type: 'image/png')
 
   puts "Creating event Ping pong"
@@ -561,7 +561,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 15, 2020 11:10"
   })
 
-  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582821108/tabletennis_nzryr2.png")
+  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582885800/tabletennis_last_kxuskj.png")
   event.photo.attach(io: file, filename: 'tabletennis.png', content_type: 'image/png')
 
 
@@ -582,7 +582,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 27, 2020 23:47"
   })
 
-  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582820759/basket_v305q7.png")
+  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582886551/basket_last_mwqhbw.png")
   event.photo.attach(io: file, filename: 'basket.png', content_type: 'image/png')
 
   puts "Creating event Jelly belly dancing"
@@ -597,7 +597,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 6, 2020 15:00"
   })
 
-  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582820759/bellydance_zkemaj.png")
+  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582886370/bellydance_new_fpfjxl.png")
   event.photo.attach(io: file, filename: 'bellydance.png', content_type: 'image/png')
 
   puts "Creating event King pin"
@@ -657,7 +657,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 5, 2020 10:00"
   })
 
-  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582820760/tennis_egur0q.png")
+  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582886551/tennis_last_aidzqz.png")
   event.photo.attach(io: file, filename: 'tennis.png', content_type: 'image/png')
 
 puts 'Finished!'

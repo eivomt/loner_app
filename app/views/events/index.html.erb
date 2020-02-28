@@ -15,7 +15,7 @@
 </div>
 
 <div class="contain">
-  <div class="row">
+  <div class="row-medium">
     <div class="row__inner">
       <%= render 'carrousel-medium', events: Event.where(categories: 'game on'), title: 'Game on' %>
     </div>
@@ -23,9 +23,9 @@
 </div>
 
 <div class="contain">
-  <div class="row">
+  <div class="row-medium">
     <div class="row__inner">
-      <%= render 'carrousel', events: Event.where(categories: 'let\'s move around'), title: 'Let\'s move around' %>
+      <%= render 'carrousel-medium', events: Event.where(categories: 'let\'s move around'), title: 'Let\'s move around' %>
     </div>
   </div>
 </div>
@@ -33,7 +33,7 @@
 <div class="contain">
   <div class="row">
     <div class="row__inner">
-      <%= render 'carrousel', events: Event.where(categories: 'mingle'), title: 'Let´s mingle!' %>
+      <%= render 'carrousel', events: Event.where(categories: 'mingle'), title: 'Let\'s mingle!' %>
     </div>
   </div>
 </div>
