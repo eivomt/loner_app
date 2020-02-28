@@ -18,9 +18,8 @@
 
   <!--- ADD JOIN LOGIC HERE --->
 
-
-  <div class="butn join-red" id="join-button" style="margin-bottom: 4px; display: flex; justify-content: center; align-items: center; padding: 0;" data-cancel_url="<%= event_user_path(@event_user || 0) %>" data-join_url="<%= event_event_users_path(@event) %>" data-joined="<%= @event_user.present? %>">
-
+  <div class="butn">
+    <div class="butn join-red" id="join-button" style="margin-bottom: 4px; display: flex; justify-content: center; align-items: center; padding: 0;" data-cancel_url="<%= event_user_path(@event_user || 0) %>" data-join_url="<%= event_event_users_path(@event) %>" data-joined="<%= @event_user.present? %>">
 <!--     <h2 class="white-text">  </h2>
  -->
   <!--    <section> -->
@@ -30,7 +29,7 @@
       <div class="u-container" style=" position: relative; top: 0;">
               <svg
                 id="u"
-                width="28.5px"
+                width="25px"
                 height="50px"
                 viewBox="0 0 180 309"
                 fill="none"
@@ -66,7 +65,7 @@
           </div> <!-- butn join red -->
       <!--   </section> -->
 
-
+        </div>
       </div>
     </div>
 
@@ -75,7 +74,7 @@
 <!--- IMAGE --->
 
 <div class="mt-40">
-  <%=  cl_image_tag (@event.photo.key), class: "w-100" %>
+  <%=  cl_image_tag (@event.photo.key), class: "w-100 event-image" %>
 </div>
 
 <!--- CONTENT --->
@@ -195,15 +194,4 @@
     });
 </script>
 <% end %>
-  
-   </div>
-    <%= form_with model: [@event, Comment.new] do |form| %>
-      <div class="form-group" style="display: flex; flex-direction: row;">
-   <!--      <%= form.label :body %> -->
-        <%= form.text_field :body, :placeholder => "Add your question" %>
- <!--        <%= form.submit :class => "input_comment" %> -->
-      </div>
-    <% end %>
-    </div>
-  </div>
 </div>
