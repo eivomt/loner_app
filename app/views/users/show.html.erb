@@ -1,7 +1,7 @@
 <div class="user-profil"  style="margin-top: 100px;">
-  <img class="profil-picture" src="../assets/beer" alt=""  />
+  <%= cl_image_tag(@user.photo.key, class: "profil-picture") %>
   <div class="profil-info">
-    <h2 style="margin-bottom: 6px;">Username</h2>
+    <h2 style="margin-bottom: 6px;"><%= @user.username.capitalize %></h2>
     <p>Oslo, Norway</p>
 
     <!--- BUTTONS --->
@@ -17,7 +17,7 @@
 <div class="flex justify-center mb-40">
 
   <div class="mt-40 button-size">
-    <p class="button-big-black">Mail</p>
+    <p class="button-big-black">Email</p>
   </div>
 
   <div class="mt-40 button-size">
@@ -55,11 +55,9 @@
 </div>
 
 
-
-
-
-
 <!-- MY EVENTS -->
+
+
 
 <div class="contain">
   <div class="row">
@@ -68,22 +66,7 @@
       <div class="tile__small">
         <div class="tile__media">
           <h2>My events</h2>
-          <img class="tile__img__small" src="../assets/beer" alt=""  />
-          <h3>First name</h3>
-        </div>
-      </div>
-
-      <div class="tile__small">
-        <div class="tile__media">
-          <img class="tile__img__small" src="../assets/beer" alt=""  />
-          <h3>First name</h3>
-        </div>
-      </div>
-
-      <div class="tile__small">
-        <div class="tile__media">
-          <img class="tile__img__small" src="../assets/beer" alt=""  />
-          <h3>First name</h3>
+          <%= render 'eventcarrousel', events: Event.where(creator: @user) %>
         </div>
       </div>
 
@@ -100,25 +83,11 @@
 
       <div class="tile__small">
         <div class="tile__media">
-          <h2>Events attending</h2>
-          <img class="tile__img__small" src="../assets/beer" alt=""  />
-          <h3>First name</h3>
+          <h2>Events I am attending</h2>
+          <%= render 'eventcarrousel', events: @events %>
         </div>
       </div>
 
-      <div class="tile__small">
-        <div class="tile__media">
-          <img class="tile__img__small" src="../assets/beer" alt=""  />
-          <h3>First name</h3>
-        </div>
-      </div>
-
-      <div class="tile__small">
-        <div class="tile__media">
-          <img class="tile__img__small" src="../assets/beer" alt=""  />
-          <h3>First name</h3>
-        </div>
-      </div>
 
     </div>
   </div>
@@ -134,22 +103,7 @@
       <div class="tile__small">
         <div class="tile__media">
           <h2>Friends I have met</h2>
-          <img class="tile__img__small" src="../assets/beer" alt=""  />
-          <h3>First name</h3>
-        </div>
-      </div>
-
-      <div class="tile__small">
-        <div class="tile__media">
-          <img class="tile__img__small" src="../assets/beer" alt=""  />
-          <h3>First name</h3>
-        </div>
-      </div>
-
-      <div class="tile__small">
-        <div class="tile__media">
-          <img class="tile__img__small" src="../assets/beer" alt=""  />
-          <h3>First name</h3>
+          <%= render 'carousel', users: @array_of_friends %>
         </div>
       </div>
 
@@ -157,13 +111,3 @@
   </div>
 </div>
 
-
-<!--- OBS! THE TEXT IS WHITE--->
-<!--- the next lines come from the show and its a list of friends ive met in previous events--->
-<!---
-<div class="users_show">
-   @array_of_friends.each do |friend|
-     friend.username
-   end
-</div>
---->

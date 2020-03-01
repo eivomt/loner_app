@@ -30,6 +30,10 @@ class UsersController < ApplicationController
         # p "hello there array of instance #{@array_of_users_instances}"
     end
     @array_of_friends
+
+    @eventUsers  =  EventUser.where(user_id: @user)
+    @event_ids = @eventUsers.map { |eventUser| eventUser.event_id }
+    @events = @event_ids.map { |id| Event.find(id) }
   end
 
 end

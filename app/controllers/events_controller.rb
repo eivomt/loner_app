@@ -62,7 +62,7 @@ class EventsController < ApplicationController
       }
     end
     @event = Event.new(event_params)
-    @event.owner = current_user
+    @event.creator = current_user
     if @event.save
       redirect_to event_path(@event)
     else
