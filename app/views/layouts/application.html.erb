@@ -18,6 +18,56 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js"></script>
     <%= javascript_pack_tag 'application' %>
     <%= javascript_include_tag 'application' %>
+
+    <script>
+      function scrollLastMessageIntoView() {
+        const messages = document.querySelectorAll('.comment');
+        const lastMessage = messages[messages.length - 1]
+
+        if (lastMessage !== undefined) {
+          lastMessage.scrollIntoView();
+        }
+      }
+
+      function subscribeEvent(id) {
+        console.log("Subscribing ", id);
+        App[`event_show_${id}`] = App.cable.subscriptions.create({
+          channel: 'CommentChannel',
+          event_id: id
+        },
+        {
+          received: (data) => {
+            console.log('I RECIEVED SOMETHING')
+            const messagesContainer = document.querySelector('#comments');
+            let messageHTML = data.message_partial;
+
+            if (messagesContainer && parseInt(messagesContainer.dataset.event_id) === id) {
+              if (data.current_user_id == <%= current_user.id %>) {
+                messageHTML = messageHTML.replace('comment-body', 'comment-body-red');
+              }
+
+              messagesContainer.insertAdjacentHTML('beforeend', messageHTML);
+
+              if (data.current_user_id == <%= current_user.id %>) {
+                scrollLastMessageIntoView();
+              }
+            } else {
+              console.log('brrrrruuuuuuh')
+              alert('NEW MESSAGE');
+            }
+          }
+        });
+      }
+
+      window.eventIds = <%=j current_user.event_ids %>;
+
+      <% if signed_in? %>
+        document.addEventListener('DOMContentLoaded', () => {
+          window.eventIds.forEach(id => subscribeEvent(id));
+        });
+      <% end %>
+    </script>
+
     <%= yield(:after_js) %>
   </body>
 </html>
