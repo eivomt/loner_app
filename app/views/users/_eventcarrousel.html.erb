@@ -1,36 +1,21 @@
 <% events.each do |event| %>
-<div class="flex flex-wrap">
-  <div class="tile_date">
-    <h3 class="text-green text-center"><%= event.time.strftime("%d") %></h3>
-    <p class="text-white small text-center"><%= event.time.strftime("%a") %></p>
-  </div>
-
-  <div class="tile_event">
-    <div class="tile__media">
-      <%= link_to cl_image_tag(event.photo.key, class: "tile__img__small__event"), event_path(event) %>
-      <div class="white-card">
-      <p class="small text-green">
-        <%= start_time_humanized(event) %>
-      </p>
-      <h3><%= event.name %> </h3>
-
-        <div class="flex align-items-center mt-20">
-          <i class="fas fa-user small text-gray pr-7"></i>
-          <p class="small text-gray">Username</p>
-          <i class="fas fa-map-marker small text-gray pr-7 ml-12"></i>
-          <p class="small text-gray"><%= event.address.split(',')[1].split.last %> </p>
-        </div>
-      <!---
-        <div class="flex align-items-center mt-20">
-          <i class="fas fa-pen small text-gray pr-7"></i>
-          <p class="small text-gray">Edit</p>
-          <i class="fas fa-trash small text-gray pr-7 ml-12"></i>
-          <p class="small text-gray">Delete</p>
-        </div>
-      --->
-
-      </div>
+  <!-- we need a new class to distinguiss the events where we are the crator -->
+  <% if event.creator_id == current_user %>
+    <div class="tile__small">
+            <div class="tile__media">
+              <%= link_to cl_image_tag(event.photo.key, class: "tile__img"), event_path(event) %>
+              <h3><%= event.name %> </h3>
+              <p><%= event.description %></p>
+            </div>
     </div>
-  </div>
+  <% else %>
+  <!-- and the events where we are not the creator -->
+    <div class="tile__small">
+            <div class="tile__media">
+              <%= link_to cl_image_tag(event.photo.key, class: "tile__img"), event_path(event) %>
+              <h3><%= event.name %> </h3>
+              <p><%= event.description %></p>
+            </div>
+    </div>
   <% end %>
-</div>
+<% end %>
