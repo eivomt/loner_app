@@ -1,16 +1,18 @@
-<div class="flex justify-center mb-40 event-container">
-  <div class="event-info">
-      <%= image_tag @user.photo, class: "profil-picture" %>
-  <div class="profil-info">
-    <h3><%= @user.username.capitalize %> </h3>
-    <h3 class="text-green">Tøyen, Oslo</h3>
+<div class="flex justify-center mb-40 user-background">
+  <%= image_tag @user.photo, class: "user-background-image" %>
   </div>
-  </div>
+  <div class="flex justify-center mt-300">
+    <div class="event-info b-black">
+
+      <div class="profil-info">
+        <h3 class="pt-20"><%= @user.username.capitalize %> </h3>
+        <h3 class="text-green">Tøyen, Oslo</h3>
+      </div>
+    </div>
 </div>
 
-
 <div class="flex justify-center mb-40 event-container">
-  <div class="event-info">
+  <div class="event-info b-black">
 
 
   <!-- if current_user == @user -->
@@ -35,19 +37,12 @@
       </div>
     </div>
 
-   <!--  <div class="flex justify-between event-border">
-    <div>
-      <h3 class="text-red mb-16" style="text-align: left;">My events</h3>
-      <%#= render 'eventcarrousel', events: Event.where(creator: @user) %>
-    </div>
-    </div> -->
-
     <div class="flex justify-between event-border">
       <div>
         <h3 class="text-red mb-16" style="text-align: left;">My events this week:</h3>
         <%= render 'eventcarrousel', events: @events_this_week %>
-      </div>
-    </div>
+       </div>
+     </div>
 
     <div class="flex justify-between event-border">
       <div>
@@ -56,21 +51,17 @@
       </div>
     </div>
 
-
-
- <!--    <div class="flex justify-between event-border">
-      <div>
-        <h3 class="text-red mb-16" style="text-align: left;">Events attending</h3>
-        <%#= render 'eventcarrousel', events: Event.where(creator: @user) %>
-      </div>
-    </div> -->
-
     <div class="flex justify-between event-border">
       <div>
         <h3 class="text-red mb-16" style="text-align: left;">Friends I have met</h3>
         <%= render 'carousel', users: @array_of_friends %>
       </div>
     </div>
+
+
+
+
+
 
   </div>
 </div>

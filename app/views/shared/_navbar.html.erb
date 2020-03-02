@@ -1,5 +1,3 @@
-
-
 <div class="app-navbar">
   <div class="home" id="home"
   style="
@@ -47,7 +45,9 @@
 </div>
 </div> <!-- butn join red -->
 <!--   </section> -->
-
+<div class="avatar-container">
+  <img src="https://res.cloudinary.com/dzzozchgg/image/upload/ucs4tcqj9qxx0ek7if39vb3hfto0" alt="" class="avatar-profil">
+</div>
 <input id="burger" type="checkbox" />
 
 <label for="burger">
@@ -55,6 +55,7 @@
   <span></span>
   <span></span>
 </label>
+
 
 <% if user_signed_in? %>
   <nav class="menu">
@@ -69,7 +70,7 @@
 <% else %>
   <nav class="menu">
     <ul>
-      <li> <%= link_to "Log in!", new_user_session_path %></li>
+      <li> <%= link_to "Log in", new_user_session_path %></li>
     </ul>
 </nav>
 <% end %>

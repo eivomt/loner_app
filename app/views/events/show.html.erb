@@ -84,7 +84,7 @@
 
 <!--- CONTENT --->
 <div class="flex justify-content-center event-container">
-<div class="event-info">
+<div class="event-info mt-40">
   <h3><%= @event.name %> </h3>
   <h3 class="text-green mb-60"><%= start_time_humanized(@event) %></h3>
 
@@ -101,7 +101,7 @@
     <div>
       <p class="text-gray margin-bottom-5">
         <i class="fas fa-clock x-small text-gray pr-7"></i>
-        <%= @event.time.strftime("%A, %B %-d at %-l:%M%p") %>
+        <%= @event.time.strftime("%B %-d at %-l:%M%p") %>
       </p>
     </div>
     <div class="mb-20">
@@ -169,15 +169,21 @@
   </div>
 
   <div class="mb-40">
-    <div>
-      <div id="comments">
-      <%= render @comments %>
-      </div>
-      <%= form_with model: [@event, Comment.new] do |form| %>
-        <div class="form-group" style="display: flex; flex-direction: row;">
-        <!--- form.label :body --->
-          <%= form.text_field :body, :placeholder => "Add your comment" %>
-          <% form.submit  %>
+   <div>
+    <div id="comments">
+      <% if @comments.count > 0 %>
+        <%= render @comments %>
+      <% else %>
+
+        <%= 'Add the first comment' %>
+
+      <% end %>
+    </div>
+    <%= form_with model: [@event, Comment.new] do |form| %>
+      <div class="form-group" style="display: flex; flex-direction: row;">
+   <!--      <%= form.label :body %> -->
+        <%= form.text_field :body, :placeholder => "Add your comment" %>
+ <!--        <%= form.submit :class => "input_comment" %> -->
         </div>
       <% end %>
     </div>
