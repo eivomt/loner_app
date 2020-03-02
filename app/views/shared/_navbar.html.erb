@@ -45,9 +45,11 @@
 </div>
 </div> <!-- butn join red -->
 <!--   </section> -->
-<div class="avatar-container">
-  <img src="https://res.cloudinary.com/dzzozchgg/image/upload/ucs4tcqj9qxx0ek7if39vb3hfto0" alt="" class="avatar-profil">
-</div>
+<% if user_signed_in? %>
+  <div class="avatar-container">
+    <%= link_to cl_image_tag(current_user.photo.key, class: "avatar-profil"), user_path(current_user.id) %>
+  </div>
+<% end %>
 <input id="burger" type="checkbox" />
 
 <label for="burger">
@@ -61,9 +63,6 @@
   <nav class="menu">
     <ul>
       <li><%= link_to "Add Event", new_event_path %></li>
-      <li><%= link_to "Profile", user_path(current_user.id) %></li>
-      <li><a href="#">Messages</a></li>
-      <li><a href="#">Search</a></li>
       <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
    </ul>
   </nav>
