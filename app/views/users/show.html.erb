@@ -1,9 +1,10 @@
 
 <div class="flex justify-center mb-40 user-background">
+  <%= image_tag @user.photo, class: "user-background-image" %>
   </div>
   <div class="flex justify-center mt-300">
     <div class="event-info b-black">
-        <!-- image_tag @user.photo, class: "profil-picture" -->
+
       <div class="profil-info">
         <h3 class="pt-20"><%= @user.username.capitalize %> </h3>
         <h3 class="text-green">Tøyen, Oslo</h3>

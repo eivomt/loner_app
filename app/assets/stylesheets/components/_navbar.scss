@@ -26,7 +26,7 @@ $blackColor: #020304;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0px 10px 23px -10px rgba(29, 29, 29, 0.1);
+    //box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.2);
   }
 
   input + label {
@@ -45,7 +45,7 @@ $blackColor: #020304;
       margin-top: -1px;
       left: 0;
       display: block;
-      background: $blackColor;
+      background: white;
       transition: .5s;
     }
     span:first-child {
@@ -62,14 +62,17 @@ $blackColor: #020304;
     span {
       opacity: 0;
       top: 50%;
+      background: $black;
     }
     span:first-child {
       opacity: 1;
       transform: rotate(405deg);
+      background: $black;
     }
     span:last-child {
       opacity: 1;
       transform: rotate(-405deg);
+      background: $black;
     }
   }
   input ~ nav {
@@ -132,4 +135,25 @@ $blackColor: #020304;
     color: $red;
     text-decoration: none;
   }
+}
+
+.avatar-profil {
+  border-radius: 50%;
+  margin: 0 10px 0 10px;
+  object-fit: cover;
+  overflow: hidden;
+  width: 30px;
+  height: 30px;
+  opacity: 0.8;
+  z-index: 100;
+  filter: grayscale(100%);
+}
+
+.avatar-container {
+  position: fixed;
+  right: 75px;
+  top: 25px;
+  z-index: 100;
+  border-left: 1px $gray solid;
+  border-right: 1px $gray solid;
 }

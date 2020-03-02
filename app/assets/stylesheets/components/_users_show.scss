@@ -8,13 +8,17 @@
   letter-spacing: 1px;
 }
 
+.user-background-image {
+  width: 100%;
+  object-fit: cover;
+}
+
 .user-background {
   width: 100%;
   background-blend-mode: luminosity;
   height: 100vh;
   background-size: cover;
   opacity: 0.2;
-  background-image: url(https://res.cloudinary.com/dzzozchgg/image/upload/v1583134441/ho7iejxcdj0boqr2msrdss9sn4db.jpg);
   background-color: #38063A;
   background-position: center;
 }
