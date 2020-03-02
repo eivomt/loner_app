@@ -30,14 +30,13 @@
       }
 
       function subscribeEvent(id) {
-        console.log("Subscribing ", id);
+        <% if signed_in? %>
         App[`event_show_${id}`] = App.cable.subscriptions.create({
           channel: 'CommentChannel',
           event_id: id
         },
         {
           received: (data) => {
-            console.log('I RECIEVED SOMETHING')
             const messagesContainer = document.querySelector('#comments');
             let messageHTML = data.message_partial;
 
@@ -52,7 +51,6 @@
                 scrollLastMessageIntoView();
               }
             } else {
-              console.log('brrrrruuuuuuh')
               alert('NEW MESSAGE');
             }
           }
@@ -60,11 +58,9 @@
       }
 
       window.eventIds = <%=j current_user.event_ids %>;
-
-      <% if signed_in? %>
-        document.addEventListener('DOMContentLoaded', () => {
-          window.eventIds.forEach(id => subscribeEvent(id));
-        });
+      document.addEventListener('DOMContentLoaded', () => {
+        window.eventIds.forEach(id => subscribeEvent(id));
+      });
       <% end %>
     </script>
 

@@ -165,7 +165,7 @@
   <!--- FACEBOOK WALL --->
 
   <div class="flex justify-between mt-35 event-border">
-    <h3 class="red-text mb-16">Question</h3>
+    <h3 class="red-text">Question</h3>
   </div>
 
   <div class="mb-40">
@@ -173,10 +173,6 @@
     <div id="comments" data-event_id="<%= @event.id %>">
       <% if @comments.count > 0 %>
         <%= render @comments %>
-      <% else %>
-
-        <%= 'Add the first comment' %>
-
       <% end %>
     </div>
 
