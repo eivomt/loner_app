@@ -3,20 +3,29 @@
   <div class="comment">
 
     <div class="img-container">
-      <div class="avatar"><%= cl_image_tag(comment.user.photo.key, width: 60) %></div>
+      <div class=>
+        <%= cl_image_tag(comment.user.photo.key, width: 60, class: "avatar") %>
+        </div>
     </div>
-    <div class="content-container">
+    <div class="content-container w-100">
       <div class="header-container">
         <div class="username">
-          <p><%= comment.user.username %></p>
-        </div>
-        <div class="time-ago">
-          <p style=" font-weight: lighter;"><%= (Time.now - comment.created_at).fdiv(60).floor %> min ago</p>
+          <p class="text-gray"><%= comment.user.username %> • <span><%= (Time.now - comment.created_at).fdiv(60).floor %> min ago</span></p>
         </div>
       </div>
       <div class="content">
-        <p><%= comment.body %></p>
+
+        <% if current_user == comment.user %>
+          <p class="comment-body-red"><%= comment.body %></p>
+        <% else %>
+          <p class="comment-body"><%= comment.body %></p>
+        <% end %>
       </div>
-      <div class="reply"><p><i class="fas fa-reply red-text" style="margin-right: 10px;"></p></i><p style="font-weight: lighter;">Reply</p></div>
+      <div class="reply">
+        <p class="text-gray">
+          <i class="fas fa-reply small" style="margin-right: 5px;"></i>
+          </p>
+        <p class="small padding-top-2 text-gray">Reply</p>
+      </div>
     </div>
   </div>

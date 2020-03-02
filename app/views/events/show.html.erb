@@ -1,95 +1,160 @@
 <!--- BUTTONS ON TOP --->
-
-<div class="button-container" style="margin-top: 100px;">
-  <div class="butn green-border">
-    <p class="x-small green-text" style="margin-bottom: 4px;">Going</p>
-    <h2 class="green-text"><%= @going_count %></h2>
-  </div>
-
-  <div class="butn red-border">
-    <p class="x-small red-text" style="margin-bottom: 4px;">Missing</p>
-    <h2 class="red-text"><%= @missing_count %></h2>
-  </div>
-
-  <!--- ADD JOIN LOGIC HERE --->
-  <div class="butn join-red" style="margin-bottom: 4px;" >
-<!--     <h2 class="white-text">  </h2>
- -->
-    <% if @event_user.present? %>
-      <%= link_to "Cancel", event_user_path(@event_user), method: :delete %>
-      <% else %>
-        <%= link_to "Join", event_event_users_path(@event), method: :post %>
-      <% end %>
+<div class="flex justify-content-center event-container">
+  <div class="button-container" style="margin-top: 80px;">
+  <div>
+    <p class="text-gray xs-small text-center mb-10">People Going</p>
+  <div class="butn">
+    <div class="green-border">
+      <!--- <p class="x-small green-text" style="margin-bottom: 4px;">Going</p> --->
+      <h2 class="white-text" id="going-count"><%= @going_count %></h2>
+    </div>
   </div>
 </div>
 
+<div>
+  <p class="text-gray xs-small text-center mb-10">People Needed</p>
+  <div class="butn">
+    <div class="red-border">
+      <!--- <p class="x-small red-text" style="margin-bottom: 4px;">Missing</p> --->
+      <h2 class="white-text" id="missing-count"><%= @missing_count %></h2>
+    </div>
+  </div>
+</div>
+
+<!--- ADD JOIN LOGIC HERE --->
+<div>
+  <p class="text-gray xs-small text-center mb-10">Join event</p>
+  <div class="butn">
+    <div class=" <%= @event_user.present? ? 'join-green' : 'join-red' %>" id="join-button" style="margin-bottom: 4px; display: flex; justify-content: center; align-items: center; padding: 0;" data-cancel_url="<%= event_user_path(@event_user || 0) %>" data-join_url="<%= event_event_users_path(@event) %>" data-joined="<%= @event_user.present? %>">
+
+<!--     <h2 class="white-text">  </h2>
+ -->
+  <!--    <section> -->
+     <!--  <div class="logo-comtainer" style="position: sticky; top: 0; left: 0; display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;"> -->
+  <!--   <div class="logo-container" style="height: 80%; width: 80%;"> -->
+
+      <div class="u-container" style=" position: relative; top: 0;">
+              <svg
+                id="u"
+                width="25px"
+                height="50px"
+                viewBox="0 0 180 309"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  class = "u"
+                  d="M6 6V219.025C6 230.047 8.17087 240.96 12.3887 251.143C16.6065 261.326 22.7886 270.578 30.5821 278.371C38.3756 286.165 47.6278 292.347 57.8105 296.565C67.9931 300.783 78.9068 302.953 89.9285 302.953C100.95 302.953 111.864 300.783 122.047 296.565C132.229 292.347 141.481 286.165 149.275 278.371C157.068 270.578 163.251 261.326 167.468 251.143C171.686 240.96 173.857 230.047 173.857 219.025V6"
+                  stroke="#FFF"
+                  stroke-width="10"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                />
+              </svg>
+              <div class="plus-container">
+                <svg
+                  id="plus<%= @event_user.present? ? '-joined' : '-join' %>"
+                  width="28.5px"
+                  height="28.5px"
+                  viewBox="0 0 183 183"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                  class = "plus"
+                    d="M6 91.459L176.918 91.459M92.99 6L92.99 176.918"
+                    stroke="#FFF"
+                    stroke-width="7"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div> <!-- butn join red -->
+      <!--   </section> -->
+      </div>
+    </div>
+  </div>
+</div>
 
 <!--- IMAGE --->
-
-<div class="mt-40">
-  <img class="image" src="../assets/beer" alt=""  />
+<div class="mt-40 event-image-container">
+  <%=  cl_image_tag (@event.photo.key), class: "w-100 event-image" %>
 </div>
 
 <!--- CONTENT --->
-
+<div class="flex justify-content-center event-container">
 <div class="event-info">
-  <h2 class="mb-20">Beer Pong Ding Dong</h2>
+  <h3><%= @event.name %> </h3>
+  <h3 class="text-green mb-60"><%= start_time_humanized(@event) %></h3>
 
-  <div class="flex">
-    <%=  image_tag "clock.png", class: "clock" %>
-    <div class="grow">
-      <p class="bold">Monday, February 17</p>
-      <p class="small">at 2:10 PM</p>
-    </div>
-    <!-- <div>
-      <p class="x-small red-text" style="padding-top: 15px;">Check Calandar</p>
-    </div> -->
-  </div>
-
-    <div class="flex justify-between mb-40">
-      <%=  image_tag "map.png", class: "map" %>
-    <div class="grow">
-      <p class="bold">Oslo Mekaniske Verksted</p>
-      <p class="small">Tøyenbekken 34, 0188 Oslo</p>
-    </div>
-<!--     <div>
-      <p class="x-small red-text" style="padding-top: 15px;">Get Directon</p>
-    </div> -->
-  </div>
-
-  <!--- UPDATE AND DELETE --->
+    <!--- UPDATE AND DELETE --->
   <% if current_user == @event.creator %>
-  <div class="flex mb-35">
-    <p class="button-black small"> <%= link_to "UPDATE", edit_event_path(params[:id]) %> </p>
-    <p class="button-black small"><%= link_to "CANCEL", event_path, method: :delete %></p>
+  <div class="flex mb-20">
+    <p class="button-gray-border small text-gray"><%= link_to "UPDATE", edit_event_path(params[:id]) %> </p>
+    <p class="button-gray-border small"><%= link_to "CANCEL", event_path, method: :delete %></p>
   </div>
   <% end %>
+
+
+  <div class="flex">
+    <div>
+      <p class="text-gray margin-bottom-5">
+        <i class="fas fa-clock x-small text-gray pr-7"></i>
+        <%= @event.time.strftime("%A, %B %-d at %-l:%M%p") %>
+      </p>
+    </div>
+    <div class="mb-20">
+      <p class="text-gray">
+        <i class="fas fa-map-marker small text-gray pr-7 ml-12"></i>
+        <%= @event.address.split(',')[1].split.last %> </p>
+    </div>
+  </div>
+
+
+
+
+   <!--- DESCRIPTION --->
+
+  <div class="flex justify-between event-border">
+    <div>
+      <h3 class="text-red mb-16">Event Manager</h3>
+      <p class="text-white margin-bottom-5">
+        <i class="fas fa-user small text-white pr-7"></i>
+        <%= @user.username.capitalize %>
+      </p>
+      <p class="text-white">
+        <i class="fas fa-envelope x-small text-white pr-7"></i>
+        <%= @user.email %>
+      </p>
+    </div>
+      <%= image_tag @user.photo, class: "avatar-big" %>
+  </div>
+
+  <div class="event-border">
+    <h3 class="text-red mb-16">Description</h3>
+    <p class="mb-30"><%= @event.description %> </p>
+  </div>
+
 
   <!--- GOING --->
 
   <div class="event-border">
     <div>
-      <p class="bold">Going</p>
+      <h3 class="red-text mb-20">People going</h3>
     </div>
     <div class="flex">
-      <img class="avatar marginr-4" src="../assets/beer" alt=""  />
-      <img class="avatar marginr-4" src="../assets/beer" alt=""  />
+      <% @event_attendees.each do |user_id| %>
+        <% user =User.find(user_id) %>
+        <%= link_to cl_image_tag(user.photo.key, class: "avatar"), user_path(user) %>
+      <% end %>
+
+      <!-- the next lines are the avaatars of the ppl going -->
+     <!--  <img class="avatar marginr-4" src="../assets/beer" alt=""  />
+      <img class="avatar marginr-4" src="../assets/beer" alt=""  />  -->
     </div>
   </div>
 
-  <!--- DESCRIPTION --->
-
-  <div class="flex justify-between event-border">
-    <div>
-      <p class="bold">Event Manager</p>
-      <p class="small">Maria Lopez Gonzales</p>
-    </div>
-    <img class="avatar" src="../assets/beer" alt=""  />
-  </div>
-
-  <div>
-    <p>Lorem ipsum dolor sit sroa rai amet, cons ecsa aatatetur adipiscing elit, sed do eiusm sateatod tempor sagtat incididunt ut labore et dolosatre mana aliqua. Ut enim ad minim veniam, quis </p>
-  </div>
 
   <!--- CANCEL --->
 
@@ -99,8 +164,8 @@
 
   <!--- FACEBOOK WALL --->
 
-  <div class="flex justify-between mt-35">
-    <p class="bold red-text mb-20" style="font-weight: lighter;">Questions</p>
+  <div class="flex justify-between mt-35 event-border">
+    <h3 class="red-text mb-16">Question</h3>
   </div>
 
   <div class="mb-40">
@@ -119,25 +184,11 @@
    <!--      <%= form.label :body %> -->
         <%= form.text_field :body, :placeholder => "Add your comment" %>
  <!--        <%= form.submit :class => "input_comment" %> -->
-      </div>
-    <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
-  </div>
-
-
-
-
-
-
-
 </div>
-
-
-
-
-
-
-
 
 
 
@@ -147,8 +198,7 @@
 <script>
   function scrollLastMessageIntoView() {
     const messages = document.querySelectorAll('.comment');
-    const lastMessage = messages[messages.length - 1];
-
+    const lastMessage = messages[messages.length - 1]
     if (lastMessage !== undefined) {
       lastMessage.scrollIntoView();
     }
@@ -168,7 +218,5 @@
     });
 </script>
 <% end %>
-
-<%# simple_form_for [@event, @event_user] do |f| %>
-    <%#= f.button :submit, 'SEND' %>
-<%# end %>
+</div>
+</div>

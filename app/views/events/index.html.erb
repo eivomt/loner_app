@@ -1,71 +1,35 @@
 <div class="contain" style="margin-top: 100px;">
   <div class="row">
-    <div class="row__inner">
-    <%= render 'carrousel', events: Event.where(time: (DateTime.now-2.hour..DateTime.now+2.hour)), title: 'Happening now' %>
+    <div class="row__inner" id="top_header">
+    <%= render 'carrousel', events: Event.where(time: (DateTime.now-9.hour..DateTime.now+4.hour)), title: 'Happening now' %>
     </div>
   </div>
 </div>
-
-<div class="contain">
-  <div class="row">
-    <div class="row__inner">
-    <%= render 'carrousel', events: Event.where(categories: 'sport'), title: 'Sports' %>
-    </div>
-  </div>
-</div>
-
-<div class="contain">
-  <div class="row">
-    <div class="row__inner">
-      <%= render 'carrousel-medium', events: Event.where(categories: 'board games'), title: 'Board Games' %>
-    </div>
-  </div>
-</div>
-
-<div class="contain">
-  <div class="row">
-    <div class="row__inner">
-      <%= render 'carrousel', events: Event.where(categories: 'social'), title: 'Mingle' %>
-    </div>
-  </div>
-</div>
-
 
 
 <!-- FRIENDS I HAVE MET -->
+<% if user_signed_in? && @array_of_friends != []%>
+  <div class="contain">
+    <div class="row-small">
+      <div class="row__inner">
+        <%= render 'carousel', users: @array_of_friends %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+
 
 <div class="contain">
-  <div class="row">
+  <div class="row-medium">
     <div class="row__inner">
-
-      <div class="tile__small">
-        <div class="tile__media">
-          <h2>Friends I have met</h2>
-          <img class="tile__img__small" src="../assets/beer" alt=""  />
-          <h3>First name</h3>
-        </div>
-      </div>
-
-      <div class="tile__small">
-        <div class="tile__media">
-          <img class="tile__img__small" src="../assets/beer" alt=""  />
-          <h3>First name</h3>
-        </div>
-      </div>
-
-      <div class="tile__small">
-        <div class="tile__media">
-          <img class="tile__img__small" src="../assets/beer" alt=""  />
-          <h3>First name</h3>
-        </div>
-      </div>
-
+      <%= render 'carrousel-medium', events: Event.where(categories: 'game on'), title: 'Game on' %>
     </div>
   </div>
 </div>
 
 <!-- MAP -->
-  <h2 class="pl-40 pr-40">Happening near you</h2>
+  <h3 class="pl-40 pr-40">Happening near you</h2>
   <div
     id="map"
     data-markers="<%= @markers.to_json %>"
@@ -73,3 +37,36 @@
   >
 
   </div>
+
+
+
+
+<div class="contain" style="margin-top: 80px;">
+  <div class="row">
+    <div class="row__inner">
+    <%= render 'carrousel', events: Event.where(categories: 'feeling adventurous'), title: 'Feeling adventurous' %>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="contain">
+  <div class="row-medium">
+    <div class="row__inner">
+      <%= render 'carrousel-medium', events: Event.where(categories: 'let\'s move around'), title: 'Let\'s move around' %>
+    </div>
+  </div>
+</div>
+
+<div class="contain">
+  <div class="row">
+    <div class="row__inner">
+      <%= render 'carrousel', events: Event.where(categories: 'mingle'), title: 'Let\'s mingle!' %>
+    </div>
+  </div>
+</div>
+
+
+
+

@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
-    before_action :find_event, only: [:show, :edit, :update, :destroy]
+  before_action :find_event, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:index]
 
 
   def index
@@ -12,6 +13,37 @@ class EventsController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { event: event }),
         image_url: helpers.asset_url('marker-stroked-15.svg')
       }
+    end
+
+    @user_friends_id = []
+    @array_of_events_instances = []
+    @events_id = []
+    @array_of_friends = []
+    if user_signed_in?
+      current_user.event_users.each do |event|
+        event  = Event.find(event.event_id)
+        if event.time < DateTime.now
+          @events_id << event.id
+          @events_id.each do |id|
+            e = Event.find(id)
+            @array_of_events_instances << e
+
+            @array_of_events_instances.each do |event_instances|
+              u = event_instances.user_ids
+              u.each do |user_id|
+                user = User.find(user_id)
+                if current_user == user
+
+                elsif @array_of_friends.include?(user)
+                else
+                  @array_of_friends << user
+                end
+              end
+            end
+          end
+        end
+      end
+      @array_of_friends
     end
   end
 
@@ -30,7 +62,7 @@ class EventsController < ApplicationController
       }
     end
     @event = Event.new(event_params)
-    @event.owner = current_user
+    @event.creator = current_user
     if @event.save
       redirect_to event_path(@event)
     else
@@ -62,6 +94,13 @@ class EventsController < ApplicationController
     @going_count = @event.people_going + @event.event_users.count
     @missing_count = @event.people_needed - @event.event_users.count
     @comments = Comment.where(event_id: [@event.id])
+    @event_attendees = []
+    @event.event_users.each do |event_user|
+       id = event_user.user_id
+       @event_attendees << id
+    end
+    @event_attendees
+    @user = User.find(@event.creator_id)
   end
 
 

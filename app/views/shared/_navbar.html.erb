@@ -1,22 +1,124 @@
+
+
 <div class="app-navbar">
-  <h1>+U</h1>
-
-  <input id="burger" type="checkbox" />
-
-  <label for="burger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </label>
-  <% if current_user %>
-    <nav class="menu">
-      <ul>
-        <li><a href="#">Add Event</a></li>
-        <li><a href="#"><%= link_to "Profile", user_path(current_user.id) %></a></li>
-        <li><a href="#">Messages</a></li>
-        <li><a href="#">Search</a></li>
-        <li><a href="#">Sign Out</a></li>
-      </ul>
-  <% end %>
-  </nav>
+  <div class="home" id="home"
+  style="
+  position: fixed;
+  top: 22px;
+  left: 40px;
+  height: 30px;
+  width: 40px;
+  z-index: 5;">
+  <div class="u-container">
+    <svg
+    id="top_u"
+    width="21.375px"
+    height="37.5px"
+    viewBox="0 0 180 309"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg">
+    <path
+    class = "top_u"
+    d="M6 6V219.025C6 230.047 8.17087 240.96 12.3887 251.143C16.6065 261.326 22.7886 270.578 30.5821 278.371C38.3756 286.165 47.6278 292.347 57.8105 296.565C67.9931 300.783 78.9068 302.953 89.9285 302.953C100.95 302.953 111.864 300.783 122.047 296.565C132.229 292.347 141.481 286.165 149.275 278.371C157.068 270.578 163.251 261.326 167.468 251.143C171.686 240.96 173.857 230.047 173.857 219.025V6"
+    stroke="#000"
+    stroke-width="20"
+    stroke-miterlimit="10"
+    stroke-linecap="round"
+    />
+  </svg>
+  <div class="plus-container" style="position: absolute; top: 0; left: -10.13px;">
+    <svg
+    id = "top_plus"
+    width="21.375px"
+    height="21.375px"
+    viewBox="0 0 183 183"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg">
+    <path
+    class = "top_plus"
+    d="M6 91.459L176.918 91.459M92.99 6L92.99 176.918"
+    stroke="#000"
+    stroke-width="12"
+    stroke-miterlimit="10"
+    stroke-linecap="round"
+    />
+  </svg>
 </div>
+</div>
+</div> <!-- butn join red -->
+<!--   </section> -->
+
+<input id="burger" type="checkbox" />
+
+<label for="burger">
+  <span></span>
+  <span></span>
+  <span></span>
+</label>
+
+<% if user_signed_in? %>
+  <nav class="menu">
+    <ul>
+      <li><%= link_to "Add Event", new_event_path %></li>
+      <li><%= link_to "Profile", user_path(current_user.id) %></li>
+      <li><a href="#">Messages</a></li>
+      <li><a href="#">Search</a></li>
+      <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+   </ul>
+  </nav>
+<% else %>
+  <nav class="menu">
+    <ul>
+      <li> <%= link_to "Log in!", new_user_session_path %></li>
+    </ul>
+</nav>
+<% end %>
+</div>
+
+<script>
+  const home = document.querySelector('#home')
+  const scrollToTop = () => {
+    const topHeader = document.getElementById('top_header');
+    topHeader.scrollIntoView({ behavior: 'smooth' });
+  }
+
+
+  let navToggle = false;
+
+  home.addEventListener('click', () => {
+    const timeline = anime.timeline({
+      duration : 650,
+      easing : 'easeInOutExpo',
+      complete: function() {
+        if ( window.location.href == 'http://localhost:3000/' ) {
+          scrollToTop();
+        }else{
+          window.location = '/';
+        }
+      }
+    });
+    timeline.add({
+      targets : "#top_plus",
+      // translateX: navToggle ? "0px" : "19.3px",
+      // translateY: navToggle ? "0px" : "2px",
+      rotate: navToggle ? "0" : "180",
+
+    })
+
+    if(!navToggle){
+       // if @event_user.present?
+       //    link_to "", event_user_path(@event_user), method: :delete
+       //    else
+       //      link_to " ", event_event_users_path(@event), method: :post
+       //      end
+       navToggle = true
+     }else{
+      navToggle = false
+    }
+
+    // timeline.add({
+    //   targets : ".plus-container",
+    //   translateX: "-100px",
+
+    // }, '-=750')
+  });</script>

@@ -1,4 +1,4 @@
-<h2 class="tile__tag"><%= title %></h2>
+<h3 class="tile__tag mb-20"><%= title %></h3>
 
 <% events.each do |event| %>
   <div class="tile">
@@ -9,22 +9,37 @@
         <%= link_to cl_image_tag(event.photo.key, class: "tile__img"), event_path(event) %>
       </div>
 
-      <div class="flex justify-between white-card">
-        <div class="grow">
-          <p class="small"> <%= t = event.time.strftime("%b, %-d, %Y, %H:%M") %></p>
-          <h3><%= event.name %></h3>
+      <div class="white-card">
+        <div class="flex">
+          <div class="grow">
+            <p class="small text-green">
+              <%#= event.time.strftime("%b, %-d, %Y, %H:%M") %>
+              <%= start_time_humanized(event) %>
+            </p>
+            <h3><%= event.name %></h3>
+          </div>
+          <div class="number-missing flex justify-content-center align-items-center">
+            <h3 class="number"><%= event.people_needed %></h3>
+          </div>
         </div>
 
+        <div class="flex align-items-center mt-20">
+          <i class="fas fa-user small text-gray pr-7"></i>
+          <p class="small text-gray">Username</p>
+          <i class="fas fa-map-marker small text-gray pr-7 ml-12"></i>
+          <p class="small text-gray"><%= event.address.split(',')[1].split.last %> </p>
+        </div>
+      </div>
+
+<!----
         <div class="pl-20 pr-20 number-border">
           <p class="small green-text">Going</p>
           <h3 class="number green-text"><%= event.people_going %></h3>
         </div>
 
-        <div class="pl-20 pr-20">
-          <p class="small red-text">Missing</p>
-          <h3 class="number red-text"><%= event.people_needed %></h3>
-        </div>
-      </div>
+        ---->
+
+
 
     </div>
   </div>
