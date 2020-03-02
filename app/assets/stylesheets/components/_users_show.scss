@@ -8,6 +8,69 @@
   letter-spacing: 1px;
 }
 
+.user-background {
+  width: 100%;
+  background-blend-mode: luminosity;
+  height: 100vh;
+  background-size: cover;
+  opacity: 0.2;
+  background-image: url(https://res.cloudinary.com/dzzozchgg/image/upload/v1583134441/ho7iejxcdj0boqr2msrdss9sn4db.jpg);
+  background-color: #38063A;
+  background-position: center;
+}
+
+.pt-20 {
+  padding-top: 20px;
+}
+
+.b-black {
+  background: $black;
+  position: relative;
+}
+
+.mt-300 {
+  margin-top: -300px;
+}
+
+.tile_event {
+  width: 100%;
+  background-color: #3f0542;
+  border-radius: 6px;
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);
+  font-size: 20px;
+  -webkit-transition: 450ms all;
+  transition: 450ms all;
+  -webkit-transform-origin: center left;
+  transform-origin: center left;
+  margin-bottom: 40px;
+  width: 50%;
+  flex-grow: 1;
+}
+
+.tile_date {
+  width: 35px;
+  margin-right: 20px;
+}
+
+
+.tile__img__small__event {
+  width: 100%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 6px 6px 0 0;
+  opacity: 0.8;
+}
+
+
+.margin-bottom-5 {
+  margin-bottom: 5px;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .justify-center {
   justify-content: center;
 }
