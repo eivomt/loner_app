@@ -1,0 +1,9 @@
+<% events.each do |event| %>
+<div class="tile__small">
+        <div class="tile__media">
+          <%= link_to cl_image_tag(event.photo.key, class: "tile__img"), event_path(event) %>
+          <h3><%= event.name %> </h3>
+          <p><%= event.description %></p>
+        </div>
+</div>
+<% end %>

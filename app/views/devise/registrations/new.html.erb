@@ -5,27 +5,29 @@
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
 
-      <div class="form-inputs">
-        <%= f.input :username,
-                    required: true,
-                    autofocus: true,
-                    input_html: { autocomplete: "name" }%>
-        <%= f.input :age,
-                    required: true,
-                    autofocus: true,
-                    input_html: { autocomplete: "age" }%>
-        <%= f.input :email,
-                    required: true,
-                    autofocus: true,
-                    input_html: { autocomplete: "email" }%>
-        <%= f.input :password,
-                    required: true,
-                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                    input_html: { autocomplete: "new-password" } %>
-        <%= f.input :password_confirmation,
-                    required: true,
-                    input_html: { autocomplete: "new-password" } %>
-      </div>
+  <div class="form-inputs">
+    <%= f.input :username,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "name" }%>
+    <%= f.input :age,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "age" }%>
+    <%= f.input :email,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "email" }%>
+    <%= f.input :photo, as: :file, input_html: { multiple: false } %>
+    <%= f.input :password,
+                required: true,
+                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                input_html: { autocomplete: "new-password" } %>
+    <%= f.input :password_confirmation,
+                required: true,
+                input_html: { autocomplete: "new-password" } %>
+  </div>
+
 
       <div class="form-action mt-40 mb-40">
         <%= f.button :submit, "Sign up" %>

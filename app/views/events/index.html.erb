@@ -8,14 +8,15 @@
 
 
 <!-- FRIENDS I HAVE MET -->
-
-<div class="contain">
-  <div class="row-small">
-    <div class="row__inner">
-      <%= render 'carousel', users: @array_of_friends %>
+<% if user_signed_in? && @array_of_friends != []%>
+  <div class="contain">
+    <div class="row-small">
+      <div class="row__inner">
+        <%= render 'carousel', users: @array_of_friends %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
 
 
 

@@ -59,7 +59,7 @@
 <% if user_signed_in? %>
   <nav class="menu">
     <ul>
-      <li><a href="#">Add Event</a></li>
+      <li><%= link_to "Add Event", new_event_path %></li>
       <li><%= link_to "Profile", user_path(current_user.id) %></li>
       <li><a href="#">Messages</a></li>
       <li><a href="#">Search</a></li>

@@ -1,3 +1,4 @@
+
 <div class="flex justify-center mb-40 event-container">
   <div class="event-info">
       <%= image_tag @user.photo, class: "profil-picture" %>
@@ -8,24 +9,17 @@
   </div>
 </div>
 
-    <!--- BUTTONS --->
-<!---
-  <div class="flex justify-center mb-35">
-    <p class="button-gray small">SPORTS</p>
-    <p class="button-gray small">SPORTS</p>
-    <p class="button-gray small">SPORTS</p>
-  </div>
---->
-
 
 <div class="flex justify-center mb-40 event-container">
   <div class="event-info">
+
 
   <!-- if current_user == @user -->
   <div class="flex mb-20">
     <p class="button-gray-border small text-gray"><%= link_to "UPDATE" %> </p>
     <p class="button-gray-border small"><%= link_to "DELETE", user_path, method: :delete %></p>
   </div>
+
   <!-- end -->
 
     <div class="flex justify-between event-border">
@@ -45,31 +39,25 @@
     <div class="flex justify-between event-border">
     <div>
       <h3 class="text-red mb-16" style="text-align: left;">My events</h3>
+      <%= render 'eventcarrousel', events: Event.where(creator: @user) %>
     </div>
     </div>
+
 
     <div class="flex justify-between event-border">
     <div>
       <h3 class="text-red mb-16" style="text-align: left;">Events attending</h3>
+      <%= render 'eventcarrousel', events: Event.where(creator: @user) %>
     </div>
     </div>
 
     <div class="flex justify-between event-border">
     <div>
       <h3 class="text-red mb-16" style="text-align: left;">Friends I have met</h3>
+      <%= render 'carousel', users: @array_of_friends %>
     </div>
     </div>
 
   </div>
 </div>
 
-
-<!--- OBS! THE TEXT IS WHITE--->
-<!--- the next lines come from the show and its a list of friends ive met in previous events--->
-<!---
-<div class="users_show">
-   @array_of_friends.each do |friend|
-     friend.username
-   end
-</div>
---->
