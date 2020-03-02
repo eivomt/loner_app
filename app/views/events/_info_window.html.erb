@@ -1,21 +1,9 @@
 <%= link_to event_path(event) do %>
 <div>
-  <div class="mb-20">
-  <h3 class="mb-12"><%= event.name %></h3>
-  <p class="bold map-small"><%= event.address %></p>
-  <p class="small"> <%= t = event.time.strftime("%b, %-d, %Y, %H:%M") %></p>
+  <div>
+    <p class="small text-green"> <%= start_time_humanized(event) %></p>
+    <h3 class="mb-20"><%= event.name %></h3>
+    <p class="small map-direction">Get directions</p>
   </div>
-</div>
-
-<div class="flex">
- <div class="marginr-6 green-border w-100">
-  <p class="small green-text text-center">Going</p>
-  <h3 class="number green-text"><%= event.people_going %></h3>
-</div>
-
-<div class="marginl-6 red-border w-100">
-  <p class="small red-text text-center">Missing</p>
-  <h3 class="number red-text"><%= event.people_needed %></h3>
-</div>
 </div>
 <% end %>

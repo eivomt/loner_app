@@ -169,6 +169,15 @@ p {
   padding: 0 0 0 30px;
 }
 
+.row-small-user {
+  overflow: scroll;
+  width: 100%;
+  height: 225px;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding: 0;
+}
+
 .row::-webkit-scrollbar {
     display: none;
 }
