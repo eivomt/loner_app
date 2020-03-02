@@ -8,7 +8,10 @@ class Comment < ApplicationRecord
     ActionCable.server.broadcast("event_show_#{event.id}", {
       message_partial: ApplicationController.renderer.render(
         partial: "comments/comment",
-        locals: { comment: self }
+        locals: {
+          comment: self,
+          current_user: nil
+        }
       ),
       current_user_id: user.id
     })

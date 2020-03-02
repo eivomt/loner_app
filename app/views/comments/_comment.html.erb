@@ -14,8 +14,7 @@
         </div>
       </div>
       <div class="content">
-
-        <% if current_user == comment.user %>
+        <% if current_user && current_user == comment.user %>
           <p class="comment-body-red"><%= comment.body %></p>
         <% else %>
           <p class="comment-body"><%= comment.body %></p>

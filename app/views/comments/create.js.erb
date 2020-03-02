@@ -1,15 +1,3 @@
-// function insertMessage(comment) {
-//   const messagesContainer = document.querySelector('#comments');
-//   messagesContainer.insertAdjacentHTML('beforeend', comment);
-//   const input = document.querySelector('#comment_body');
-//   input.value = '';
-//   input.blur();
-//   scrollLastMessageIntoView();
-// }
-
-// insertMessage('<%= j render "comment", comment: @comment %>');
-
-const input = document.querySelector('#comment_body');
+var input = document.querySelector('#comment_body');
 input.value = '';
 input.blur();
-scrollLastMessageIntoView();
