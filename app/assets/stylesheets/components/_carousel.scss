@@ -1,7 +1,7 @@
 body,
 html {
   margin: 0;
-  color: #ecf0f1;
+  color: #white;
   min-height: 100vh;
   width: 100%;
 }
@@ -14,6 +14,25 @@ html {
   display: -webkit-box;
   width: 100%;
   margin-bottom: 40px;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.pr-7 {
+  padding-right: 7px;
+}
+
+.ml-12 {
+  margin-left: 12px;
+}
+
+.number-missing {
+  border: 1px solid #ff3b6b;
+  border-radius: 4px;
+  color: #ff3b6b;
+  width: 45px;
 }
 
 .number-border {
@@ -79,8 +98,8 @@ h3 {
   font-style: normal;
   font-stretch: normal;
   font-size: 1.17rem;
-  color: $black;
-  margin-bottom: 0px;
+  color: white;
+  margin-bottom: 2px;
 }
 
 .number {
@@ -97,8 +116,9 @@ h2 {
   font-weight: 600;
   font-style: normal;
   font-stretch: normal;
-  font-size: 1.75rem;
-  color: $black;
+  font-size: 1.5rem;
+  color: white;
+  margin: 0;
 }
 
 .tile__going h2 {
@@ -113,7 +133,7 @@ p {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;;
   font-weight: 400;
   font-size: .9rem;
-  color: $black;
+  color: white;
   margin-bottom: 0;
 }
 
@@ -125,7 +145,7 @@ p {
 .row {
   overflow: scroll;
   width: 100%;
-  height: 475px;
+  height: 465px;
   margin-left: 0px;
   margin-right: 0px;
   padding: 0 0 0 30px;
@@ -134,7 +154,7 @@ p {
 .row-medium {
   overflow: scroll;
   width: 100%;
-  height: 400px;
+  height: 425px;
   margin-left: 0px;
   margin-right: 0px;
   padding: 0 0 0 30px;
@@ -143,7 +163,7 @@ p {
 .row-small {
   overflow: scroll;
   width: 100%;
-  height: 300px;
+  height: 225px;
   margin-left: 0px;
   margin-right: 0px;
   padding: 0 0 0 30px;
@@ -173,10 +193,11 @@ p {
 .tile {
   position: relative;
   display: inline-block;
-  background-color: white;
-  box-shadow: 0 0 10px 2px rgba(0,0,0,.1);
-  width: calc(100vw - 60px);
-  margin-right: 10px;
+  background-color: #3f0542;
+  //box-shadow: 0 0 10px 2px rgba(0,0,0,.1);
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);
+  width: calc(100vw - 100px);
+  margin-right: 15px;
   font-size: 20px;
   border-radius: 6px;
   -webkit-transition: 450ms all;
@@ -185,26 +206,45 @@ p {
           transform-origin: center left;
 }
 
+.text-green {
+  color: $green;
+}
+
+.text-gray {
+  color: $gray;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
 .white-card {
   padding: 25px 25px 25px 20px;
 }
 
+
+.white-card-small {
+  padding: 20px 25px 20px 20px
+}
+
 .tile__img {
   width: 100%;
-  height: 300px;
+  height: 250px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 6px 6px 0 0;
+  opacity: 0.8;
 }
 
 .tile__img__medium {
-  width: 354px;
+  width: 101.5%;
   margin-bottom: -34px;
   position: relative;
   top: -36px;
   overflow: hidden;
   -o-object-fit: cover;
      object-fit: cover;
+  opacity: 0.8;
 }
 
 .tile__img__small {
@@ -212,17 +252,22 @@ p {
   height: 150px;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 6px 6px 0 0;
+  border-radius: 6px;
+  opacity: 0.8;
+}
+
+.text-red {
+  color: $red;
 }
 
 .tile__small {
   position: relative;
   display: inline-block;
-  width: calc(100vw/2 - 35px);
-  margin-right: 10px;
-  background-color: white;
+  width: calc(100vw/2 - 57px);
+  margin-right: 15px;
+  background-color: #3f0542;
   border-radius: 6px;
-  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);
   font-size: 20px;
   -webkit-transition: 450ms all;
   transition: 450ms all;
@@ -253,9 +298,21 @@ p {
   padding: 10px;
 }
 
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 415px) {
   .tile {
-    width: 250px;
+    width: 315px;
+  }
+  .tile__small {
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .tile {
+    width: calc(100vw - 60px);
+  }
+    .tile__img__medium {
+    width: 100%;
   }
 }
 

@@ -1,25 +1,31 @@
 <!--- BUTTONS ON TOP --->
-
-<div class="button-container" style="margin-top: 100px;">
-
+<div class="flex justify-content-center event-container">
+  <div class="button-container" style="margin-top: 80px;">
+  <div>
+    <p class="text-gray xs-small text-center mb-10">People Going</p>
   <div class="butn">
     <div class="green-border">
-      <p class="x-small green-text" style="margin-bottom: 4px;">Going</p>
-      <h2 class="green-text" id="going-count"><%= @going_count %></h2>
+      <!--- <p class="x-small green-text" style="margin-bottom: 4px;">Going</p> --->
+      <h2 class="white-text" id="going-count"><%= @going_count %></h2>
     </div>
   </div>
+</div>
 
+<div>
+  <p class="text-gray xs-small text-center mb-10">People Needed</p>
   <div class="butn">
     <div class="red-border">
-      <p class="x-small red-text" style="margin-bottom: 4px;">Missing</p>
-      <h2 class="red-text" id="missing-count"><%= @missing_count %></h2>
+      <!--- <p class="x-small red-text" style="margin-bottom: 4px;">Missing</p> --->
+      <h2 class="white-text" id="missing-count"><%= @missing_count %></h2>
     </div>
   </div>
+</div>
 
-  <!--- ADD JOIN LOGIC HERE --->
-
+<!--- ADD JOIN LOGIC HERE --->
+<div>
+  <p class="text-gray xs-small text-center mb-10">Join event</p>
   <div class="butn">
-  <div class=" <%= @event_user.present? ? 'join-green' : 'join-red' %>" id="join-button" style="margin-bottom: 4px; display: flex; justify-content: center; align-items: center; padding: 0;" data-cancel_url="<%= event_user_path(@event_user || 0) %>" data-join_url="<%= event_event_users_path(@event) %>" data-joined="<%= @event_user.present? %>">
+    <div class=" <%= @event_user.present? ? 'join-green' : 'join-red' %>" id="join-button" style="margin-bottom: 4px; display: flex; justify-content: center; align-items: center; padding: 0;" data-cancel_url="<%= event_user_path(@event_user || 0) %>" data-join_url="<%= event_event_users_path(@event) %>" data-joined="<%= @event_user.present? %>">
 
 <!--     <h2 class="white-text">  </h2>
  -->
@@ -63,63 +69,70 @@
                 </svg>
               </div>
             </div>
-          </div> <!-- butn join red -->
+          </div>
+        </div> <!-- butn join red -->
       <!--   </section> -->
-
-        </div>
       </div>
     </div>
+  </div>
 </div>
-  </div> <!-- Button Container -->
 
 <!--- IMAGE --->
-<div class="mt-40" style="height: 250px;">
-  <%=  cl_image_tag (@event.photo.key), class: "w-100",
-  style: "object-fit: cover; height: 250px;" %>
-
+<div class="mt-40 event-image-container">
+  <%=  cl_image_tag (@event.photo.key), class: "w-100 event-image" %>
 </div>
 
 <!--- CONTENT --->
-
+<div class="flex justify-content-center event-container">
 <div class="event-info">
-  <h2 class="mb-20"><%= @event.name %> </h2>
+  <h3><%= @event.name %> </h3>
+  <h3 class="text-green mb-60"><%= start_time_humanized(@event) %></h3>
 
-  <div class="flex mb-20">
-      <%=  image_tag "clock.png", class: "clock" %>
-    <div class="grow">
-      <p class="red-text" style="font-weight: lighter;"><%= start_time_humanized(@event) %></p>
-      <p><%= @event.time.strftime("%A, %B %-d at %-l:%M%p") %> </p>
-    </div>
-  </div>
-
-    <div class="flex justify-between mb-40">
-      <%=  image_tag "map.png", class: "map" %>
-    <div class="grow">
-      <p><%= @event.address.split(',')[0] %> </p>
-      <p><%= @event.address.split(',')[1] %> </p>
-    </div>
-  </div>
-
-  <!--- UPDATE AND DELETE --->
+    <!--- UPDATE AND DELETE --->
   <% if current_user == @event.creator %>
-  <div class="flex mb-35">
-    <p class="button-black small"> <%= link_to "UPDATE", edit_event_path(params[:id]) %> </p>
-    <p class="button-black small"><%= link_to "CANCEL", event_path, method: :delete %></p>
+  <div class="flex mb-20">
+    <p class="button-gray-border small text-gray"><%= link_to "UPDATE", edit_event_path(params[:id]) %> </p>
+    <p class="button-gray-border small"><%= link_to "CANCEL", event_path, method: :delete %></p>
   </div>
   <% end %>
+
+
+  <div class="flex">
+    <div>
+      <p class="text-gray margin-bottom-5">
+        <i class="fas fa-clock x-small text-gray pr-7"></i>
+        <%= @event.time.strftime("%A, %B %-d at %-l:%M%p") %>
+      </p>
+    </div>
+    <div class="mb-20">
+      <p class="text-gray">
+        <i class="fas fa-map-marker small text-gray pr-7 ml-12"></i>
+        <%= @event.address.split(',')[1].split.last %> </p>
+    </div>
+  </div>
+
+
+
 
    <!--- DESCRIPTION --->
 
   <div class="flex justify-between event-border">
     <div>
-      <p class="red-text" style="font-weight: lighter;">Event Manager</p>
-      <p><%= @user.username.capitalize %> </p>
+      <h3 class="text-red mb-16">Event Manager</h3>
+      <p class="text-white margin-bottom-5">
+        <i class="fas fa-user small text-white pr-7"></i>
+        <%= @user.username.capitalize %>
+      </p>
+      <p class="text-white">
+        <i class="fas fa-envelope x-small text-white pr-7"></i>
+        <%= @user.email %>
+      </p>
     </div>
-      <%= image_tag @user.photo, class: "avatar" %>
-<!--     <img class="avatar" src="../assets/beer" alt=""  />
- -->  </div>
+      <%= image_tag @user.photo, class: "avatar-big" %>
+  </div>
 
-  <div>
+  <div class="event-border">
+    <h3 class="text-red mb-16">Description</h3>
     <p class="mb-30"><%= @event.description %> </p>
   </div>
 
@@ -128,9 +141,9 @@
 
   <div class="event-border">
     <div>
-      <p class="red-text" style="font-weight: lighter;">Going</p>
+      <h3 class="red-text mb-20">People going</h3>
     </div>
-    <div class="flex mt-10">
+    <div class="flex">
       <% @event_attendees.each do |user_id| %>
         <% user =User.find(user_id) %>
         <%= link_to cl_image_tag(user.photo.key, class: "avatar"), user_path(user) %>
@@ -152,7 +165,7 @@
   <!--- FACEBOOK WALL --->
 
   <div class="flex justify-between mt-35 event-border">
-    <p class="red-text mb-20" style="font-weight: lighter;">Questions</p>
+    <h3 class="red-text mb-16">Question</h3>
   </div>
 
   <div class="mb-40">
@@ -162,14 +175,17 @@
       </div>
       <%= form_with model: [@event, Comment.new] do |form| %>
         <div class="form-group" style="display: flex; flex-direction: row;">
-        <!--      <%= form.label :body %> -->
+        <!--- form.label :body --->
           <%= form.text_field :body, :placeholder => "Add your comment" %>
-        <!--        <%= form.submit :class => "input_comment" %> -->
+          <% form.submit  %>
         </div>
       <% end %>
     </div>
   </div>
 </div>
+
+
+
 
 
 <% content_for :after_js do %>
@@ -196,4 +212,5 @@
     });
 </script>
 <% end %>
+</div>
 </div>

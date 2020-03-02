@@ -1,8 +1,12 @@
-<div class="user-profil"  style="margin-top: 100px;">
-  <img class="profil-picture" src="../assets/beer" alt=""  />
+<div class="flex justify-center mb-40 event-container">
+  <div class="event-info">
+      <%= image_tag @user.photo, class: "profil-picture" %>
   <div class="profil-info">
-    <h2 style="margin-bottom: 6px;">Username</h2>
-    <p>Oslo, Norway</p>
+    <h3><%= @user.username.capitalize %> </h3>
+    <h3 class="text-green">Tøyen, Oslo</h3>
+  </div>
+  </div>
+</div>
 
     <!--- BUTTONS --->
 <!---
@@ -14,146 +18,48 @@
 --->
 
 
-<div class="flex justify-center mb-40">
+<div class="flex justify-center mb-40 event-container">
+  <div class="event-info">
 
-  <div class="mt-40 button-size">
-    <p class="button-big-black">Mail</p>
+  <!-- if current_user == @user -->
+  <div class="flex mb-20">
+    <p class="button-gray-border small text-gray"><%= link_to "UPDATE" %> </p>
+    <p class="button-gray-border small"><%= link_to "DELETE", user_path, method: :delete %></p>
   </div>
+  <!-- end -->
 
-  <div class="mt-40 button-size">
-    <p class="button-big-black">Chat</p>
-  </div>
-
-  <div class="mt-40 button-size">
-    <p class="button-big-black">Edit</p>
-  </div>
-
-</div>
-
-<div class="flex">
-  <div class="profil-text marginr-10">
-    <p class="bold">Email</p>
-    <p class="small">my_mail@gmail.com</p>
-  </div>
-
-  <div class="profil-text marginl-10">
-    <p class="bold">Email</p>
-    <p class="small">my_mail@gmail.com</p>
-  </div>
-</div>
-
-<div class="flex mb-40">
-  <div class="profil-text marginr-10">
-    <p class="bold">Email</p>
-    <p class="small">my_mail@gmail.com</p>
-  </div>
-
-  <div class="profil-text marginl-10">
-    <p class="bold">Email</p>
-    <p class="small">my_mail@gmail.com</p>
-  </div>
-</div>
-
-
-
-
-
-
-<!-- MY EVENTS -->
-
-<div class="contain">
-  <div class="row">
-    <div class="row__inner">
-
-      <div class="tile__small">
-        <div class="tile__media">
-          <h2>My events</h2>
-          <img class="tile__img__small" src="../assets/beer" alt=""  />
-          <h3>First name</h3>
-        </div>
+    <div class="flex justify-between event-border">
+    <div>
+      <h3 class="text-red mb-16" style="text-align: left;">Info</h3>
+        <p class="text-white margin-bottom-5" style="text-align: left;">
+          <i class="fas fa-user small text-white pr-7"></i>
+          <%= @user.username.capitalize %>
+        </p>
+        <p class="text-white">
+          <i class="fas fa-envelope x-small text-white pr-7"></i>
+          <%= @user.email %>
+        </p>
       </div>
-
-      <div class="tile__small">
-        <div class="tile__media">
-          <img class="tile__img__small" src="../assets/beer" alt=""  />
-          <h3>First name</h3>
-        </div>
-      </div>
-
-      <div class="tile__small">
-        <div class="tile__media">
-          <img class="tile__img__small" src="../assets/beer" alt=""  />
-          <h3>First name</h3>
-        </div>
-      </div>
-
     </div>
-  </div>
-</div>
 
-
-<!-- EVENTS ATTENDING -->
-
-<div class="contain">
-  <div class="row">
-    <div class="row__inner">
-
-      <div class="tile__small">
-        <div class="tile__media">
-          <h2>Events attending</h2>
-          <img class="tile__img__small" src="../assets/beer" alt=""  />
-          <h3>First name</h3>
-        </div>
-      </div>
-
-      <div class="tile__small">
-        <div class="tile__media">
-          <img class="tile__img__small" src="../assets/beer" alt=""  />
-          <h3>First name</h3>
-        </div>
-      </div>
-
-      <div class="tile__small">
-        <div class="tile__media">
-          <img class="tile__img__small" src="../assets/beer" alt=""  />
-          <h3>First name</h3>
-        </div>
-      </div>
-
+    <div class="flex justify-between event-border">
+    <div>
+      <h3 class="text-red mb-16" style="text-align: left;">My events</h3>
     </div>
-  </div>
-</div>
-
-
-<!-- FRIENDS I HAVE MET -->
-
-<div class="contain">
-  <div class="row">
-    <div class="row__inner">
-
-      <div class="tile__small">
-        <div class="tile__media">
-          <h2>Friends I have met</h2>
-          <img class="tile__img__small" src="../assets/beer" alt=""  />
-          <h3>First name</h3>
-        </div>
-      </div>
-
-      <div class="tile__small">
-        <div class="tile__media">
-          <img class="tile__img__small" src="../assets/beer" alt=""  />
-          <h3>First name</h3>
-        </div>
-      </div>
-
-      <div class="tile__small">
-        <div class="tile__media">
-          <img class="tile__img__small" src="../assets/beer" alt=""  />
-          <h3>First name</h3>
-        </div>
-      </div>
-
     </div>
+
+    <div class="flex justify-between event-border">
+    <div>
+      <h3 class="text-red mb-16" style="text-align: left;">Events attending</h3>
+    </div>
+    </div>
+
+    <div class="flex justify-between event-border">
+    <div>
+      <h3 class="text-red mb-16" style="text-align: left;">Friends I have met</h3>
+    </div>
+    </div>
+
   </div>
 </div>
 

@@ -1,7 +1,8 @@
 .profil-picture {
-  height: 250px;
-  width: 250px;
-  border-radius: 50%;
+  height: 350px;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0.8;
 }
 
 .profil {
@@ -55,4 +56,11 @@
   border-radius: 15px;
   display: inline-block;
   padding: 0 1rem .4rem 1rem;
+}
+
+
+@media screen and (min-width: 768px) {
+  .profil-picture {
+    height: 400px;
+  }
 }
