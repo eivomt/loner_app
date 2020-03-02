@@ -13,4 +13,12 @@ class Event < ApplicationRecord
   validates :address, :description, presence: true
 
   after_validation :geocode, if: :will_save_change_to_address?
+
+  def marker
+    [{
+      lat: latitude,
+      lng: longitude,
+      image_url: ApplicationController.helpers.asset_url('marker-stroked-15.svg')
+    }]
+  end
 end

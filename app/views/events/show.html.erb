@@ -136,6 +136,17 @@
     <p class="mb-30"><%= @event.description %> </p>
   </div>
 
+  <div class="event-border">
+  <h3 class="text-red mb-16">Find your way there:</h3>
+
+    <div
+      id="map"
+      data-markers="<%= @event.marker.to_json %>"
+      data-mapbox-api-key="<%= ENV["MAPBOX_API_KEY"] %>"
+    >
+    </div>
+  </div>
+
 
   <!--- GOING --->
 

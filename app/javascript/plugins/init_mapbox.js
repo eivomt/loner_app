@@ -1,7 +1,6 @@
 import mapboxgl from 'mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
-
 const mapElement = document.getElementById('map');
 
 const buildMap = () => {
@@ -44,7 +43,7 @@ const addGeolocateControl = (map) => {
   map.addControl(
   new mapboxgl.GeolocateControl({
   positionOptions: {
-  enableHighAccuracy: true
+    enableHighAccuracy: true
   },
   trackUserLocation: true
 })
@@ -57,13 +56,13 @@ const initMapbox = () => {
     const markers = JSON.parse(mapElement.dataset.markers);
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
-    addGeolocateControl(map)
-    map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
-                                      mapboxgl: mapboxgl }));
+    // addGeolocateControl(map);
+
+    // map.addControl(new MapboxGeocoder({
+    //   accessToken: mapboxgl.accessToken,
+    //   mapboxgl: mapboxgl
+    // }));
   }
 };
-
-
-
 
 export { initMapbox };
