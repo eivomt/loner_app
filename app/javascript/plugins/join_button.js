@@ -87,8 +87,8 @@ const initJoinButton = () => {
 
     timeline.add({
       targets : "#join-button",
-      backgroundColor: joined ? "#FF4B4E" : "#00bd67",
-      borderColor: joined ? "#FF4B4E" : "#00bd67",
+      backgroundColor: joined ? "#ff3b6b" : "#00bd67",
+      borderColor: joined ? "#ff3b6b" : "#00bd67",
     }, '-=630');
 
     if (joined) {

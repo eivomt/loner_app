@@ -181,7 +181,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     creator_id: 1,
     address: "Sognsveien 220, 0863 Oslo",
     description: "Let,s go for a walk and have fun!",
-    time: "February 28, 2020 20:45"
+    time: "March 2, 2020 20:45"
   })
 
   file = URI.open("https://images.unsplash.com/photo-1464207687429-7505649dae38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1952&q=80")
@@ -211,7 +211,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     creator_id: 3,
     address: "Fossumveien, 1359 Eiksmarka",
     description: "Kayaking with new friends!",
-    time: "March 1, 2020 08:30"
+    time: "March 2, 2020 12:30"
   })
 
   file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Kayaking_in_Alaska_P1010034.JPG/1200px-Kayaking_in_Alaska_P1010034.JPG")
@@ -287,7 +287,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     creator_id: 7,
     address: "Sons gate 3A, 0654 Oslo",
     description: "Always good to go for a hike!",
-    time: "March 1, 2020 10:30"
+    time: "March 2, 2020 10:30"
   })
 
   file = URI.open("https://images.unsplash.com/photo-1501535033-a594139be346?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80")
@@ -336,7 +336,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     creator_id: 9,
     address: "Sonja Henies plass 2, 0185 Oslo",
     description: "Live impro jazz!",
-    time: "February 28, 2020 21:00"
+    time: "March 2, 2020 17:00"
   })
 
   file = URI.open("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjF9&auto=format&fit=crop&w=1867&q=80")
@@ -351,7 +351,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     creator_id: 10,
     address: "Schweigaards gate 34C, 0191 Oslo",
     description: "Let´s enjoy a few Schous Bryggeri deliciousness together and talk about all the world problems we won´t get to fix by drinking! We´re always opened to meet new people, hope you can join!",
-    time: "February 28, 2020 19:00"
+    time: "March 2, 2020 15:00"
   })
 
   file = URI.open("https://images.unsplash.com/photo-1575444758702-4a6b9222336e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80")
@@ -366,7 +366,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     creator_id: 1,
     address: "Monolitveien 6, 0375 Oslo",
     description: "Our dogs needs friends too!",
-    time: "February 28, 2020 19:00"
+    time: "March 2, 2020 19:00"
   })
 
   file = URI.open("https://images.unsplash.com/photo-1539692443065-f8a9c4af6b5b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80")
@@ -381,7 +381,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     creator_id: 2,
     address: "Kirkeveien 50, 0368 Oslo",
     description: "Organic food and hydrophonics!",
-    time: "February 28, 2020 19:00"
+    time: "March 2, 2020 19:00"
   })
 
   file = URI.open("https://images.unsplash.com/photo-1445052520430-32c8ebc92fe3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80")
@@ -396,7 +396,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     creator_id: 3,
     address: "Kirkeveien 50, 0368 Oslo",
     description: "Let´s run 5km!",
-    time: "February 28, 2020 18:00"
+    time: "March 2, 2020 18:00"
   })
 
   file = URI.open("https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80")
@@ -411,7 +411,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     creator_id: 4,
     address: "0314, Problemveien 9, 0371 Oslo",
     description: "Book market!",
-    time: "February 28, 2020 17:30"
+    time: "March 2, 2020 17:30"
   })
 
   file = URI.open("https://images.unsplash.com/photo-1573390609456-919e3ed0da7e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80")
@@ -426,7 +426,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     creator_id: 5,
     address: "Vulkan 26, 0175 Oslo",
     description: "Champions league match at the bar!",
-    time: "February 28, 2020 17:30"
+    time: "March 2, 2020 17:30"
   })
 
   file = URI.open("https://images.unsplash.com/photo-1577705665410-a0b630d39aea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80")
@@ -441,7 +441,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     creator_id: 6,
     address: "Maridalsveien 87 bygg 7, 0461 Oslo",
     description: "Learn to make carbonara!",
-    time: "February 28, 2020 21:10"
+    time: "March 2, 2020 21:10"
   })
 
   file = URI.open("https://images.unsplash.com/photo-1528605248644-14dd04022da1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80")
@@ -456,7 +456,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     creator_id: 4,
     address: "Schweigaards gate 34C, 0191 Oslo",
     description: "Time for a hackathon!",
-    time: "February 28, 2020 18:10"
+    time: "March 2, 2020 18:10"
   })
 
   file = URI.open("https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80")
@@ -471,7 +471,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     creator_id: 6,
     address: "Grüners gate 1, 0552 Oslo",
     description: "Taste the best coffee in town!",
-    time: "February 28, 2020 18:47"
+    time: "March 2, 2020 18:47"
   })
 
   file = URI.open("https://images.unsplash.com/photo-1485182708500-e8f1f318ba72?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1985&q=80")

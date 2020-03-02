@@ -10,7 +10,7 @@
     <div class="content-container w-100">
       <div class="header-container">
         <div class="username">
-          <p class="bold"><%= comment.user.username %> • <span class="light"><%= (Time.now - comment.created_at).fdiv(60).floor %> min ago</span></p>
+          <p class="text-gray"><%= comment.user.username %> • <span><%= (Time.now - comment.created_at).fdiv(60).floor %> min ago</span></p>
         </div>
       </div>
       <div class="content">
@@ -22,10 +22,10 @@
         <% end %>
       </div>
       <div class="reply">
-        <p>
+        <p class="text-gray">
           <i class="fas fa-reply small" style="margin-right: 5px;"></i>
           </p>
-        <p class="small padding-top-2">Reply</p>
+        <p class="small padding-top-2 text-gray">Reply</p>
       </div>
     </div>
   </div>
