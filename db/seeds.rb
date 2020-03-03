@@ -169,7 +169,110 @@ user = User.create!({
   })
 file = URI.open("https://jerrykieschnick.files.wordpress.com/2014/05/old-man-1.jpg")
 user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
-###################### FEELING ADVENTUROUS ######################
+
+
+
+
+
+
+################################## VOLUNTEERING #####################################
+
+
+
+  puts "Summer camp for kids!"
+  event = Event.create!({
+    name: "Summer camp",
+    people_going: 24,
+    people_needed: 6,
+    categories: "volunteering",
+    creator_id: 16,
+    address: "Lørenskog, Norway",
+    description: "Kids having a difficult year will have the best summer ever!",
+    time: "March 10, 2020 20:45"
+  })
+
+  file = URI.open("https://images.unsplash.com/photo-1526976668912-1a811878dd37?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&q=80")
+  event.photo.attach(io: file, filename: 'summercamp.png', content_type: 'image/png')
+
+  puts "Soul kitchen for the ones in need"
+  event = Event.create!({
+    name: "Souls kitchen for those in need",
+    people_going: 24,
+    people_needed: 6,
+    categories: "volunteering",
+    creator_id: 16,
+    address: "Kolstadgata 1, 0652 Oslo",
+    description: "Serving is caring. Food for people in need.",
+    time: "March 6, 2020 19:00"
+  })
+
+  file = URI.open("https://images.unsplash.com/photo-1541802645635-11f2286a7482?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&q=80")
+  event.photo.attach(io: file, filename: 'soulkitchen.png', content_type: 'image/png')
+
+  puts "Bingo!"
+  event = Event.create!({
+    name: "Bingo!",
+    people_going: 24,
+    people_needed: 6,
+    categories: "volunteering",
+    creator_id: 16,
+    address: "Colletts gate 52, 0456 Oslo",
+    description: "Come to our nursing home and play BINGOOOO!",
+    time: "March 16, 2020 14:00"
+  })
+
+  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1583225809/bingo_sqougd.jpg")
+  event.photo.attach(io: file, filename: 'bingo.png', content_type: 'image/png')
+
+  puts "Grocery shopping"
+  event = Event.create!({
+    name: "Grocery shopping and tea!",
+    people_going: 24,
+    people_needed: 6,
+    categories: "volunteering",
+    creator_id: 16,
+    address: "Grønland 30, 0188 Oslo",
+    description: "Help our elders with their shopping and they will share their awesome stories with  you over a cozy cup of tea! Anytime is good!",
+    time: "March 20, 2020 12:00"
+  })
+
+  file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Kayaking_in_Alaska_P1010034.JPG/1200px-Kayaking_in_Alaska_P1010034.JPG")
+  event.photo.attach(io: file, filename: 'shopping.png', content_type: 'image/png')
+
+  puts "Bicycle rides!"
+  event = Event.create!({
+    name: "Bicycle rides",
+    people_going: 24,
+    people_needed: 6,
+    categories: "volunteering",
+    creator_id: 16,
+    address: "Grønland 30, 0188 Oslo",
+    description: "Take our elders for a bicycle ride. We provide  the bicycle!",
+    time: "March 12, 2020 11:00"
+  })
+
+  file = URI.open("https://ecomm2018.com/wp-content/uploads/2018/05/Cycling-without-age-800x440.jpg")
+  event.photo.attach(io: file, filename: 'bicycle.png', content_type: 'image/png')
+
+
+  puts "Christmas with the wise ones"
+  event = Event.create!({
+    name: "Christmas with murmur",
+    people_going: 24,
+    people_needed: 6,
+    categories: "volunteering",
+    creator_id: 16,
+    address: "Grønland 30, 0188 Oslo",
+    description: "Our elders would love to join your christmas dinner!",
+    time: "December 24, 2021 16:00"
+  })
+
+  file = URI.open("https://images.unsplash.com/photo-1543598098-622a5e218f43?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&q=80")
+  event.photo.attach(io: file, filename: 'kayaking.png', content_type: 'image/png')
+
+
+
+###############################FEELING ADVENTUROUS#############################
 
 
   puts "Creating event Midnight walk"
