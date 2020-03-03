@@ -13,7 +13,14 @@ class Comment < ApplicationRecord
           current_user: nil
         }
       ),
-      current_user_id: user.id
+      notification_partial: ApplicationController.renderer.render(
+        partial: 'shared/notification',
+        locals: {
+          comment: self
+        }
+      ),
+      current_user_id: user.id,
+      url: "/events/#{event.id}#bottom"
     })
   end
 end
