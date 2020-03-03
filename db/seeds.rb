@@ -236,7 +236,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 20, 2020 12:00"
   })
 
-  file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Kayaking_in_Alaska_P1010034.JPG/1200px-Kayaking_in_Alaska_P1010034.JPG")
+  file = URI.open("https://www.griswoldhomecare.com/wp-content/uploads/2019/02/Senior-Man-Receiving-Groceries.jpg")
   event.photo.attach(io: file, filename: 'shopping.png', content_type: 'image/png')
 
   puts "Bicycle rides!"
