@@ -33,7 +33,19 @@
           <i class="fas fa-envelope x-small text-white pr-7"></i>
           <%= @user.email %>
         </p>
+        <p class="text-white">
+          <%= render @user %>
+        </p>
+
       </div>
+      <!-- <div class="flex mb-20">
+   <#% if current_user.is_following?(@user.id) %>
+          <%#= link_to "Unfollow", unfollow_user_path(@user.id), method: :post, remote: true %>
+        <%# else %>
+          <%#= link_to "Follow", follow_user_path(@user.id), method: :post, remote: true %>
+        <%# end %>
+        <%#= render @user %>
+      </div> -->
     </div>
 
     <div class="flex event-border">
@@ -80,15 +92,6 @@
         </div>
       </div>
     <% end %>
-
-    <div class="flex mb-20">
-<!--       <#% if current_user.is_following?(@user.id) %>
-        <%#= link_to "Unfollow", unfollow_user_path(@user.id), method: :post, remote: true %>
-      <%# else %>
-        <%#= link_to "Follow", follow_user_path(@user.id), method: :post, remote: true %>
-      <%# end %> -->
-      <%= render @user %>
-    </div>
 
   </div>
 </div>
