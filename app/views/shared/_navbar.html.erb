@@ -1,53 +1,38 @@
-<div class="app-navbar">
+<div class="app-navbar" id="navbar">
   <div class="home" id="home"
   style="
   position: fixed;
   top: 22px;
-  left: 40px;
-  height: 30px;
+  left: 30px;
+  height: 27,3px;
   width: 40px;
   z-index: 5;">
-  <div class="u-container">
+  <div style="padding-top: 5px;">
     <svg
-    id="top_u"
-    width="21.375px"
-    height="37.5px"
-    viewBox="0 0 180 309"
+    width="30"
+    height="28"
+    viewBox="0 0 30 28"
     fill="none"
     xmlns="http://www.w3.org/2000/svg">
-    <path
-    class = "top_u"
-    d="M6 6V219.025C6 230.047 8.17087 240.96 12.3887 251.143C16.6065 261.326 22.7886 270.578 30.5821 278.371C38.3756 286.165 47.6278 292.347 57.8105 296.565C67.9931 300.783 78.9068 302.953 89.9285 302.953C100.95 302.953 111.864 300.783 122.047 296.565C132.229 292.347 141.481 286.165 149.275 278.371C157.068 270.578 163.251 261.326 167.468 251.143C171.686 240.96 173.857 230.047 173.857 219.025V6"
-    stroke="#000"
-    stroke-width="20"
-    stroke-miterlimit="10"
-    stroke-linecap="round"
-    />
+    <rect x="5.2998" y="15" width="1" height="7" fill="#EC4E6E"/>
+    <rect x="2.2998" y="19" width="1" height="7" transform="rotate(-90 2.2998 19)" fill="#EC4E6E"/>
+    <rect x="5.30957" y="6" width="1" height="5.1" fill="#7D8088"/>
+    <path d="M12 0V0.34232C10.5857 0.51348 8.82857 1.06975 7.71428 2.65298C6.81428 3.8511 6.29688 7.18872 6.29688 8.68636H5.3125C5.3125 7.18872 4.58393 3.76552 3.72679 2.5674C2.74107 1.15533 1.67143 0.55627 -1.90735e-06 0.34232V0H12ZM26.5714 16.7737C26.5714 21.0955 25.2429 24.3047 22.2429 25.9307C20.5714 26.8293 18.1714 27.3 15.3429 27.3C12.4714 27.3 10.2 26.273 9.72857 25.9735V25.674C11.9571 25.9735 14.5286 25.5028 16.0286 24.6042C18.1286 23.3205 18.8571 21.4378 18.8571 17.9718V5.30596C18.8571 1.54044 17.7429 0.72743 15.4714 0.34232V0H30V0.34232C27.5143 0.72743 26.5714 1.75439 26.5714 5.30596V16.7737Z" fill="#7D8088"/>
   </svg>
-  <div class="plus-container" style="position: absolute; top: 0; left: -10.13px;">
-    <svg
-    id = "top_plus"
-    width="21.375px"
-    height="21.375px"
-    viewBox="0 0 183 183"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg">
-    <path
-    class = "top_plus"
-    d="M6 91.459L176.918 91.459M92.99 6L92.99 176.918"
-    stroke="#000"
-    stroke-width="12"
-    stroke-miterlimit="10"
-    stroke-linecap="round"
-    />
-  </svg>
-</div>
+
 </div>
 </div> <!-- butn join red -->
 <!--   </section> -->
 <% if user_signed_in? %>
+  <div class="user-status-logout">
+    <p class="text-gray"><%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
+  </div>
   <div class="avatar-container">
     <%= link_to cl_image_tag(current_user.photo.key, class: "avatar-profil"), user_path(current_user.id) %>
+  </div>
+<% else %>
+  <div class="user-status-login">
+    <p class="text-gray"><%= link_to "Login", new_user_session_path %></p>
   </div>
 <% end %>
 <input id="burger" type="checkbox" />
@@ -59,20 +44,24 @@
 </label>
 
 
-<% if user_signed_in? %>
   <nav class="menu">
     <ul>
-      <li><%= link_to "Add Event", new_event_path %></li>
-      <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-   </ul>
+      <div>
+        <h3 class="ad-tag">Bekjentskap</h3>
+      </div>
+    <div class="margin-top-7">
+    <li class="ad">
+      Ensom enke u/familie<br>
+      ønsker noen å være sammen<br>
+      med på julaften. Betaler<br>
+      godt. Bm. 1139.
+    </li>
+    </div>
+    <br>
+    <div>
+      <li class="footnote">Why we created this app</li>
+    </div>
   </nav>
-<% else %>
-  <nav class="menu">
-    <ul>
-      <li> <%= link_to "Log in", new_user_session_path %></li>
-    </ul>
-</nav>
-<% end %>
 </div>
 
 <script>
@@ -121,4 +110,5 @@
     //   translateX: "-100px",
 
     // }, '-=750')
-  });</script>
+  });
+</script>

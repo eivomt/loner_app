@@ -41,6 +41,7 @@ class UsersController < ApplicationController
       @events << event
     end
     @all_my_events = []
+    @events
     @events.each do |event|
       @all_my_events << event
     end
@@ -69,14 +70,22 @@ class UsersController < ApplicationController
        @events_this_week << event
       end
     end
-    @events_this_week
+    if @events_this_week.count > 1
+      @events_this_week = @events_this_week.sort_by{ |event| event.time }
+    else
+      @events_this_week
+    end
+
 
     @all_my_events.each do |event|
       if event.time.to_date > @sunday && event.time.to_date < @last_day_this_month
        @events_this_month << event
       end
     end
-    @events_this_month
-
+    if @events_this_month.count > 1
+      @events_this_month = @events_this_month.sort_by{ |event| event.time }
+    else
+      @events_this_month
+    end
   end
 end

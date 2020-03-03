@@ -6,6 +6,16 @@
   </div>
 </div>
 
+<!-- HAPPY HELPING PUT YOUR CODE  -->
+
+<div class="contain">
+  <div class="row">
+    <div class="row__inner">
+    <%= render 'carousel-volunteer', events: Event.where(categories: 'volunteering'), title: 'Happy helping' %>
+    </div>
+  </div>
+</div>
+
 
 <!-- FRIENDS I HAVE MET -->
 <% if user_signed_in? && @array_of_friends != []%>
@@ -18,15 +28,6 @@
   </div>
 <% end %>
 
-
-
-<div class="contain">
-  <div class="row-medium">
-    <div class="row__inner">
-      <%= render 'carrousel-medium', events: Event.where(categories: 'game on'), title: 'Game on' %>
-    </div>
-  </div>
-</div>
 
 <!-- MAP -->
   <h3 class="pl-40 pr-40">Happening near you</h2>
@@ -48,7 +49,13 @@
   </div>
 </div>
 
-
+<div class="contain">
+  <div class="row-medium">
+    <div class="row__inner">
+      <%= render 'carrousel-medium', events: Event.where(categories: 'game on'), title: 'Game on' %>
+    </div>
+  </div>
+</div>
 
 <div class="contain">
   <div class="row-medium">
