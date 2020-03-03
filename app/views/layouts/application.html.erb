@@ -54,7 +54,6 @@
         }
 
       function subscribeEvent(id) {
-        <% if signed_in? %>
         App[`event_show_${id}`] = App.cable.subscriptions.create({
           channel: 'CommentChannel',
           event_id: id
