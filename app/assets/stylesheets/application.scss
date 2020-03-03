@@ -15,3 +15,19 @@
 @import "pages/show";
 @import "pages/profile";
 @import "pages/new";
+
+
+.hidden {
+
+}
+
+.hidden-text {
+  color: #FFF;
+  position: sticky;
+  left: -100vw;
+  top: 50vh
+}
+
+.shown-text {
+  left: 50vw;
+}

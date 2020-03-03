@@ -11,6 +11,8 @@
     <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
+
+
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
@@ -20,48 +22,44 @@
     <%= javascript_include_tag 'application' %>
 
     <script>
-      function scrollLastMessageIntoView() {
-        const messages = document.querySelectorAll('.comment');
-        const lastMessage = messages[messages.length - 1]
-
-        if (lastMessage !== undefined) {
-          lastMessage.scrollIntoView();
-        }
-      }
-
-      function subscribeEvent(id) {
-        console.log("Subscribing ", id);
-        App[`event_show_${id}`] = App.cable.subscriptions.create({
-          channel: 'CommentChannel',
-          event_id: id
-        },
-        {
-          received: (data) => {
-            console.log('I RECIEVED SOMETHING')
-            const messagesContainer = document.querySelector('#comments');
-            let messageHTML = data.message_partial;
-
-            if (messagesContainer && parseInt(messagesContainer.dataset.event_id) === id) {
-              if (data.current_user_id == <%= current_user.id %>) {
-                messageHTML = messageHTML.replace('comment-body', 'comment-body-red');
-              }
-
-              messagesContainer.insertAdjacentHTML('beforeend', messageHTML);
-
-              if (data.current_user_id == <%= current_user.id %>) {
-                scrollLastMessageIntoView();
-              }
-            } else {
-              console.log('brrrrruuuuuuh')
-              alert('NEW MESSAGE');
-            }
-          }
-        });
-      }
-
-      window.eventIds = <%=j current_user.event_ids %>;
-
       <% if signed_in? %>
+        function scrollLastMessageIntoView() {
+          const messages = document.querySelectorAll('.comment');
+          const lastMessage = messages[messages.length - 1]
+
+          if (lastMessage !== undefined) {
+            lastMessage.scrollIntoView();
+          }
+        }
+
+        function subscribeEvent(id) {
+          App[`event_show_${id}`] = App.cable.subscriptions.create({
+            channel: 'CommentChannel',
+            event_id: id
+          },
+          {
+            received: (data) => {
+              const messagesContainer = document.querySelector('#comments');
+              let messageHTML = data.message_partial;
+
+              if (messagesContainer && parseInt(messagesContainer.dataset.event_id) === id) {
+                if (data.current_user_id == <%= current_user.id %>) {
+                  messageHTML = messageHTML.replace('comment-body', 'comment-body-red');
+                }
+
+                messagesContainer.insertAdjacentHTML('beforeend', messageHTML);
+
+                if (data.current_user_id == <%= current_user.id %>) {
+                  scrollLastMessageIntoView();
+                }
+              } else {
+                showNotification(data.notification_partial, data.url);
+              }
+            }
+          });
+        }
+
+        window.eventIds = <%=j current_user.event_ids %>;
         document.addEventListener('DOMContentLoaded', () => {
           window.eventIds.forEach(id => subscribeEvent(id));
         });

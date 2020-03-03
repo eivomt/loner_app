@@ -191,7 +191,7 @@
       <% end %>
     </div>
 
-    <%= form_with model: [@event, Comment.new] do |form| %>
+    <%= form_with model: [@event, Comment.new], html: { id: 'bottom' } do |form| %>
       <div class="form-group" style="display: flex; flex-direction: row;">
    <!--      <%= form.label :body %> -->
         <%= form.text_field :body, placeholder: "Add your comment" %>

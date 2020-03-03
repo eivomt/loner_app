@@ -2,6 +2,8 @@
 import Rails from '@rails/ujs';
 Rails.start();
 
+import toastr from 'toastr';
+
 require("@rails/activestorage").start()
 require("channels")
 
@@ -10,6 +12,13 @@ import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the styleshe
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import { initMapbox } from '../plugins/init_mapbox';
 import { initJoinButton } from '../plugins/join_button';
+
+window.showNotification = (text, url) => {
+  // toastr.options.progressBar = true;
+  toastr.info(text);
+  toastr.options.timeOut = 3000;
+  toastr.options.onclick = () => window.location = url;
+}
 
 initMapbox();
 initJoinButton();
