@@ -1,59 +1,26 @@
-<% if current_user && current_user == comment.user %>
-  <div class="comment">
-    <div class="content-container w-100">
-      <div class="header-container">
-        <div class="username">
-          <p class="text-gray"><%= comment.user.username %> • <span><%= (Time.now - comment.created_at).fdiv(60).floor %> min ago</span></p>
-        </div>
-      </div>
-      <div class="content">
-        <p class="comment-body-red"><%= comment.body %></p>
-      </div>
-      <div class="reply">
-        <p class="text-gray">
-        <i class="fas fa-reply small" style="margin-right: 5px;"></i>
-        </p>
-      <p class="small padding-top-2 text-gray">Reply</p>
-      </div>
-    </div>
-    <div class="img-container">
-      <div class=>
-        <%= cl_image_tag(comment.user.photo.key, width: 60, class: "avatar-red") %>
-      </div>
-    </div>
-  </div>
-
-
-<% else %>
-  <div class="comment">
-    <div class="img-container">
-      <div class=>
-        <%= cl_image_tag(comment.user.photo.key, width: 60, class: "avatar-gray") %>
-        </div>
-    </div>
-    <div class="content-container w-100">
-      <div class="header-container">
-        <div class="username">
+<div class="comment <%= current_user && current_user == comment.user ? 'self-comment' : 'other-comment' %>">
+  <div class="content-container">
+    <div class="header-container">
+      <div class="username">
         <p class="text-gray"><%= comment.user.username %> • <span><%= (Time.now - comment.created_at).fdiv(60).floor %> min ago</span></p>
-        </div>
-      </div>
-      <div class="content">
-        <p class="comment-body"><%= comment.body %></p>
-      </div>
-      <div class="reply">
-        <p class="text-gray">
-          <i class="fas fa-reply small" style="margin-right: 5px;"></i>
-          </p>
-        <p class="small padding-top-2 text-gray">Reply</p>
       </div>
     </div>
+    <div class="content">
+      <p class="comment-body"><%= comment.body %></p>
+    </div>
+    <div class="reply">
+      <p class="text-gray">
+      <i class="fas fa-reply small" style="margin-right: 5px;"></i>
+      </p>
+    <p class="small padding-top-2 text-gray">Reply</p>
+    </div>
   </div>
-<% end %>
-
-
-
-
-
+  <div class="img-container">
+    <div class=>
+      <%= cl_image_tag(comment.user.photo.key, width: 60, class: "avatar-red") %>
+    </div>
+  </div>
+</div>
 
 
 

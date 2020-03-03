@@ -190,7 +190,7 @@
     <%= form_with model: [@event, Comment.new], html: { id: 'bottom' } do |form| %>
       <div class="form-group" style="display: flex; flex-direction: row;">
    <!--      <%= form.label :body %> -->
-        <%= form.text_field :body, placeholder: "Add your comment" %>
+        <%= form.text_field :body, placeholder: "Add your comment", autocomplete: "off" %>
  <!--        <%= form.submit :class => "input_comment" %> -->
         </div>
       <% end %>

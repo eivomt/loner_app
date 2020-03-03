@@ -1,7 +1,6 @@
 <div class="notification">
-  <div class="img-name-container" style="display: flex; flex-direction: row; justify-content: space-between;">
-    <p class="text-shadow"><%= comment.user.username %> <i class="fas fa-comments"></i></p>
-    <p class="text-gray"><%= comment.event.name %></p>
+  <div class="img-name-container">
+    <p class="text-white"><%= comment.user.username %></p>
   </div>
 
   <div class="content-container w-100">
@@ -9,6 +8,6 @@
 
     </div>
     <div class="content">
-      <%= comment.body %>
+      <p class="text-black"><%= comment.body %></p>
     </div>
   </div>
