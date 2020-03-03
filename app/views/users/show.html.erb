@@ -33,11 +33,15 @@
           <i class="fas fa-envelope x-small text-white pr-7"></i>
           <%= @user.email %>
         </p>
+        <!-- the next lines render a partial with a follow unfollow button.
+          we need to take out the name and make it render itself automatically -->
         <p class="text-white">
           <%= render @user %>
         </p>
 
       </div>
+
+      <!-- the next few lines are also an attempt to redirect when following or opposite -->
       <!-- <div class="flex mb-20">
    <#% if current_user.is_following?(@user.id) %>
           <%#= link_to "Unfollow", unfollow_user_path(@user.id), method: :post, remote: true %>
