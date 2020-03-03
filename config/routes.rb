@@ -11,5 +11,12 @@ Rails.application.routes.draw do
 
   resources :event_users, only: :destroy
   resources :users, only: :show
+
+  resources :users, only: [:index] do
+    member do
+      post :follow
+      post :unfollow
+    end
+  end
 end
 
