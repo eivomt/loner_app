@@ -7,12 +7,21 @@ class EventsController < ApplicationController
     @events = Event.geocoded #returns flats with coordinates
 
     @markers = @events.map do |event|
-      {
-        lat: event.latitude,
-        lng: event.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { event: event }),
-        image_url: helpers.asset_url('marker-stroked-15.svg')
-      }
+      if event.categories == "volunteering"
+        {
+          lat: event.latitude,
+          lng: event.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { event: event }),
+          image_url: helpers.asset_url('heart-15.svg'),
+        }
+      else
+        {
+          lat: event.latitude,
+          lng: event.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { event: event }),
+          image_url: helpers.asset_url('marker-stroked-15.svg')
+        }
+      end
     end
 
     @user_friends_id = []
@@ -101,6 +110,26 @@ class EventsController < ApplicationController
     end
     @event_attendees
     @user = User.find(@event.creator_id)
+
+
+      if @event.categories == "volunteering"
+        @marker =
+        [{
+          lat: @event.latitude,
+          lng: @event.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { event: @event }),
+          image_url: helpers.asset_url('heart-15.svg'),
+        }]
+      else
+        @marker =
+        [{
+          lat: @event.latitude,
+          lng: @event.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { event: @event }),
+          image_url: helpers.asset_url('marker-stroked-15.svg')
+        }]
+      end
+      return @marker
   end
 
 

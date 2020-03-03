@@ -18,7 +18,8 @@ class Event < ApplicationRecord
     [{
       lat: latitude,
       lng: longitude,
-      image_url: ApplicationController.helpers.asset_url('marker-stroked-15.svg')
+      image_url: ApplicationController.helpers.asset_url('marker-stroked-15.svg'),
+      image_url: ApplicationController.helpers.asset_url('heart-15.svg')
     }]
   end
 end
