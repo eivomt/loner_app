@@ -7,4 +7,8 @@ class ApplicationController < ActionController::Base
       redirect_to "http://plus-u.best/"
     end
   end
+
+  def default_url_options
+  { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
 end
