@@ -46,8 +46,15 @@
 </div> <!-- butn join red -->
 <!--   </section> -->
 <% if user_signed_in? %>
+  <div class="user-status-logout">
+    <p class="text-gray"><%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
+  </div>
   <div class="avatar-container">
     <%= link_to cl_image_tag(current_user.photo.key, class: "avatar-profil"), user_path(current_user.id) %>
+  </div>
+<% else %>
+  <div class="user-status-login">
+    <p class="text-gray"><%= link_to "Login", new_user_session_path %></p>
   </div>
 <% end %>
 <input id="burger" type="checkbox" />
@@ -59,20 +66,24 @@
 </label>
 
 
-<% if user_signed_in? %>
   <nav class="menu">
     <ul>
-      <li><%= link_to "Add Event", new_event_path %></li>
-      <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-   </ul>
+    <div>
+      <li class="ad-tag">Bekjentskap</li>
+    </div>
+    <div>
+    <li class="ad">
+      Ensom enke u/familie<br>
+      ønsker noen å være sammen<br>
+      med på julaften. Betaler<br>
+      godt. Bm. 1139.
+    </li>
+    </div>
+    <br>
+    <div>
+      <li class="footnote">Why we created this app</li>
+    </div>
   </nav>
-<% else %>
-  <nav class="menu">
-    <ul>
-      <li> <%= link_to "Log in", new_user_session_path %></li>
-    </ul>
-</nav>
-<% end %>
 </div>
 
 <script>
