@@ -12,7 +12,6 @@ $blackColor: #020304;
     font-style: normal;
     font-stretch: normal;
     font-size: 1.75rem;
-    color: $black;
 
     > span {
       text-transform: none;
@@ -26,7 +25,7 @@ $blackColor: #020304;
     display: flex;
     align-items: center;
     justify-content: center;
-    //box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.2);
+    background-color: #38063A;
   }
 
 
@@ -41,12 +40,12 @@ $blackColor: #020304;
     span {
       position: absolute;
       width: 100%;
-      height: 2px;
+      height: 1px;
       top: 50%;
       margin-top: -1px;
       left: 0;
       display: block;
-      background: white;
+      background: $gray;
       transition: .5s;
     }
     span:first-child {
@@ -63,17 +62,17 @@ $blackColor: #020304;
     span {
       opacity: 0;
       top: 50%;
-      background: $black;
+      background: $gray;
     }
     span:first-child {
       opacity: 1;
       transform: rotate(405deg);
-      background: $black;
+      background: $gray;
     }
     span:last-child {
       opacity: 1;
       transform: rotate(-405deg);
-      background: $black;
+      background: $gray;
     }
   }
   input ~ nav {
@@ -94,6 +93,11 @@ $blackColor: #020304;
       text-align: center;
       width: 100vw;
       padding-inline-start: 0px;
+      > div > h3 {
+        opacity: 0;
+        transition: .5s;
+        transition-delay: 0s;
+      }
       > div > li {
         opacity: 0;
         transition: .5s;
@@ -126,10 +130,14 @@ $blackColor: #020304;
     background: white;
     transition-delay: 0s;
     > ul {
+      text-align: center;
+      > div > h3 {
+        opacity: 1;
+        transition-delay: .7s;
+      }
       > div > li {
         opacity: 1;
         transition-delay: .7s;
-        display: inline;
         font-family: 'Canela Web';
         font-weight: 600;
         font-style: normal;
@@ -196,6 +204,14 @@ $blackColor: #020304;
   padding: 0 10px 0 10px;
 }
 
+.margin-top-7 {
+  margin-top: 7px;
+}
+
+li {
+  text-decoration: none;
+}
+
 
 .footnote {
   position: fixed;
@@ -205,7 +221,11 @@ $blackColor: #020304;
 }
 
 .ad-tag {
-  border: 1px black solid;
-  padding: 10px;
-  border-radius: 6px;
+  width: 200px;
+  margin: 0 auto;
+  text-decoration: none;
+  color: $black;
+  display: inline;
+  border-bottom: 1px $black solid;
+  padding-bottom: 5px;
 }
