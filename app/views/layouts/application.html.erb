@@ -65,7 +65,7 @@
 
               if (messagesContainer && parseInt(messagesContainer.dataset.event_id) === id) {
                 if (data.current_user_id == <%= current_user.id %>) {
-                  messageHTML = messageHTML.replace('comment-body', 'comment-body-red');
+                  messageHTML = messageHTML.replace('other-comment', 'self-comment');
                 }
 
                 messagesContainer.insertAdjacentHTML('beforeend', messageHTML);
