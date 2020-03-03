@@ -194,7 +194,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
   file = URI.open("https://images.unsplash.com/photo-1526976668912-1a811878dd37?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&q=80")
   event.photo.attach(io: file, filename: 'summercamp.png', content_type: 'image/png')
 
-  puts "Soul kitchen for the ones in need"
+  puts "Soul kitchen"
   event = Event.create!({
     name: "Souls kitchen for those in need",
     people_going: 24,
@@ -226,7 +226,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
 
   puts "Grocery shopping"
   event = Event.create!({
-    name: "Grocery shopping and tea!",
+    name: "Grocery shopping",
     people_going: 24,
     people_needed: 6,
     categories: "volunteering",
@@ -239,7 +239,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
   file = URI.open("https://www.griswoldhomecare.com/wp-content/uploads/2019/02/Senior-Man-Receiving-Groceries.jpg")
   event.photo.attach(io: file, filename: 'shopping.png', content_type: 'image/png')
 
-  puts "Bicycle rides!"
+  puts "Bicycle rides"
   event = Event.create!({
     name: "Bicycle rides",
     people_going: 24,
@@ -257,7 +257,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
 
   puts "Christmas with the wise ones"
   event = Event.create!({
-    name: "Christmas with murmur",
+    name: "Christmas with mormor",
     people_going: 24,
     people_needed: 6,
     categories: "volunteering",

@@ -76,6 +76,13 @@ w-100 {
   box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);
 }
 
+#map-event {
+  width: 100%;
+  height: 50vh;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
 .mapboxgl-ctrl-top-right {
   display: flex;
 }

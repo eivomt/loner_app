@@ -15,13 +15,12 @@
   <div class="event-info b-black">
 
 
-  <!-- if current_user == @user -->
-  <div class="flex mb-20">
-    <p class="button-gray-border small text-gray"><%= link_to "UPDATE" %> </p>
-    <p class="button-gray-border small"><%= link_to "DELETE", user_path, method: :delete %></p>
-  </div>
-
-  <!-- end -->
+  <% if current_user == @user %>
+    <div class="flex mb-20">
+      <p class="button-gray-border small text-gray"><%= link_to "UPDATE" %> </p>
+      <p class="button-gray-border small"><%= link_to "DELETE", user_path, method: :delete %></p>
+    </div>
+  <% end %>
 
     <div class="flex justify-between event-border">
     <div>
