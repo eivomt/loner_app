@@ -246,7 +246,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     people_needed: 6,
     categories: "volunteering",
     creator_id: 16,
-    address: "Sognsveien 220, 0863 Oslo",
+    address: "Grønland 30, 0188 Oslo",
     description: "Take our elders for a bicycle ride. We provide  the bicycle!",
     time: "March 12, 2020 11:00"
   })
