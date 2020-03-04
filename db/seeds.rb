@@ -71,6 +71,7 @@ user = User.create!({
 file = URI.open("http://2hngz4f6s7y2dzzb25efew8p.wpengine.netdna-cdn.com/wp-content/uploads/2015/10/Michael-Fotis_Smart-Money-People.jpg")
 user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
 
+puts "picture url 7"
 user = User.create!({
     username: "Dennis",
     email: "dennis@gmail.com",
@@ -80,6 +81,7 @@ user = User.create!({
 file = URI.open("https://www.thefamouspeople.com/profiles/images/nicolas-cage-2.jpg")
 user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
 
+puts "picture url 8"
 user = User.create!({
     username: "Nikolai",
     email: "nikolai@gmail.com",
@@ -89,6 +91,7 @@ user = User.create!({
 file = URI.open("https://www.wikihow.com/images/thumb/9/95/Profile-People-Step-13.jpg/aid2555150-v4-728px-Profile-People-Step-13.jpg")
 user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
 
+puts "picture url 9"
 user = User.create!({
     username: "Joana",
     email: "joana@gmail.com",
@@ -97,6 +100,8 @@ user = User.create!({
   })
 file = URI.open("https://assets.entrepreneur.com/content/3x2/1300/20150406145944-dos-donts-taking-perfect-linkedin-profile-picture-selfie-mobile-camera-2.jpeg")
   user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
+
+puts "picture url 10"
 
 user = User.create!({
     username: "Agnieszka",
@@ -107,6 +112,7 @@ user = User.create!({
 file = URI.open("https://static.businessinsider.com/image/5171c012eab8eabb72000001/image.jpg")
 user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
 
+puts "picture url 11"
 user = User.create!({
     username: "Laura",
     email: "laura@gmail.com",
@@ -115,6 +121,8 @@ user = User.create!({
   })
 file = URI.open("https://www.gold.ac.uk/media/images-by-section/about-us/our-people/profile-hub/iqra-ba-english.jpg")
 user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
+
+puts "picture url 12"
 
 user = User.create!({
     username: "Silje",
@@ -125,6 +133,8 @@ user = User.create!({
 file = URI.open("https://naturalpod.com/wp-content/uploads/2016/02/Salt-Spring-Dina-Ottoni-Battistessa.jpg")
 user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
 
+puts "picture url 13"
+
 user = User.create!({
     username: "Kim",
     email: "kim@gmail.com",
@@ -133,6 +143,8 @@ user = User.create!({
   })
 file = URI.open("https://cfl.dropboxstatic.com/static/images/jobs/jobs_2015/profile-home-makers-vflWnMtf7.jpg")
 user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
+
+puts "picture url 14"
 
 user = User.create!({
     username: "Jeremy",
@@ -143,6 +155,8 @@ user = User.create!({
 file = URI.open("http://www.leisureopportunities.com/images/995586_746594.jpg")
   user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
 
+puts "picture url 15"
+
 user = User.create!({
     username: "Ricardo",
     email: "ricardo@gmail.com",
@@ -152,6 +166,8 @@ user = User.create!({
 file = URI.open("http://www.allinsonsphotography.co.uk/wp-content/uploads/2013/04/untitled-20.jpg")
 user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
 
+puts "picture url 16"
+
 user = User.create!({
     username: "Amanda",
     email: "amanda@gmail.com",
@@ -160,6 +176,8 @@ user = User.create!({
   })
 file = URI.open("https://www.deputy.com/uploads/2018/08/The-Guide-to-Creating-a-Powerful-LinkedIn-Profile_Content-image2-min-1024x895.png")
 user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
+
+puts "picture url 17"
 
 user = User.create!({
     username: "Max",

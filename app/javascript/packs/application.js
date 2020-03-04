@@ -20,5 +20,27 @@ window.showNotification = (text, url) => {
   toastr.options.onclick = () => window.location = url;
 }
 
+const link = document.getElementById("alert-list");
+if (link) {
+  console.log("We have link");
+  $('.dropdown').on('show.bs.dropdown', () => {
+    Rails.ajax({
+      url: `/users/${link.dataset.userid}/read_alerts`,
+      type: 'PATCH',
+      data: "",
+      success: function(data) {  },
+      error: function(data) {}
+    })
+  });
+
+  $('.dropdown').on('hide.bs.dropdown', () => {
+    const badge = document.getElementById('unread-count');
+
+    if (badge) {
+      badge.innerHTML = '';
+    }
+  });
+}
+
 initMapbox();
 initJoinButton();
