@@ -196,7 +196,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
 
   puts "Soul kitchen"
   event = Event.create!({
-    name: "Souls kitchen for those in need",
+    name: "Soul kitchen",
     people_going: 24,
     people_needed: 6,
     categories: "volunteering",
