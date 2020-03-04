@@ -1,7 +1,16 @@
-<div data-user=<%= @user.id %>>
-  <% if current_user.is_following?(@user.id) %>
-    <%= link_to "Unfollow", unfollow_user_path(user.id), method: :post, remote: true %>
-  <% else %>
-    <%= link_to "Follow", follow_user_path(user.id), method: :post, remote: true %>
-  <% end %>
+<div class="flex">
+  <div data-user=<%= @user.id %>>
+    <% if current_user.is_following?(@user.id) %>
+
+      <p class="button-green-border">
+        <%= link_to "Following", unfollow_user_path(user.id), method: :post, remote: true, class: "text-green x-small" %>
+      </p>
+
+    <% else %>
+      <p class="button-white-border">
+      <%= link_to "Follow", follow_user_path(user.id), method: :post, remote: true, class: "text-white x-small" %>
+      </p>
+    <% end %>
+  </div>
 </div>
+

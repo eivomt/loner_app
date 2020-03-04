@@ -128,7 +128,7 @@
         <%= @user.email %>
       </p>
     </div>
-      <%= image_tag @user.photo, class: "avatar-big" %>
+      <%= link_to image_tag(@user.photo, class: "avatar-big"), @user %>
   </div>
 
   <div class="event-border">

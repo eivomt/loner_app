@@ -56,7 +56,6 @@
   margin-right: 20px;
 }
 
-
 .tile__img__small__event {
   width: 100%;
   height: 200px;
@@ -65,7 +64,6 @@
   border-radius: 6px 6px 0 0;
   opacity: 0.8;
 }
-
 
 .margin-bottom-5 {
   margin-bottom: 5px;
@@ -112,9 +110,10 @@
   margin-left: 10px;
 }
 
-
 .creator{
-  border: solid $red;
+  background: $green;
+  border-radius: 6px;
+}
 
 .people-following{
   border: 2px solid $red;
