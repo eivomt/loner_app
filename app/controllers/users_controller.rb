@@ -113,7 +113,6 @@ class UsersController < ApplicationController
         format.html { redirect_to user_path(params[:id]) }
         format.js
       end
-      redirect_to user_path(params[:id])
     end
   end
 
@@ -123,7 +122,6 @@ class UsersController < ApplicationController
         format.html { redirect_to user_path(params[:id]) }
         format.js { render action: :follow }
       end
-      redirect_to user_path(params[:id])
     end
   end
 
