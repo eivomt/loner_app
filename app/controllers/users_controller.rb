@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:follow, :unfollow]
+
   def show
     @user = User.find(params[:id])
 
@@ -26,10 +28,26 @@ class UsersController < ApplicationController
         end
       end
     end
-        # p "hello there user friend id #{@user_friends_id}"
-        # p "hello there array of instance #{@array_of_users_instances}"
+    @array_of_friends
 
-        @array_of_friends
+
+    @ids_user_follows = []
+    @follows = Follow.all
+    @user_follows = @follows.where(follower_id: params[:id])
+    @user_follows.each do |follow|
+      @ids_user_follows << follow.following_id
+    end
+
+    @users_following = []
+    @ids_user_follows.each do |id|
+      @user_following = User.find(id)
+      @users_following << @user_following
+    end
+
+    @users_following
+
+    #combining both arrays of friends:
+    @all_my_friends = (@users_following + @array_of_friends).uniq
 
 
     #the next lines find events that i have attended to find my friends:
@@ -87,5 +105,32 @@ class UsersController < ApplicationController
     else
       @events_this_month
     end
+
+    @users = User.where.not(id: current_user.id)
+  end
+
+
+  def follow
+    if current_user.follow(@user.id)
+      respond_to do |format|
+        format.html { redirect_to user_path(params[:id]) }
+        format.js
+      end
+    end
+  end
+
+  def unfollow
+    if current_user.unfollow(@user.id)
+      respond_to do |format|
+        format.html { redirect_to user_path(params[:id]) }
+        format.js { render action: :follow }
+      end
+    end
+  end
+
+  private
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end

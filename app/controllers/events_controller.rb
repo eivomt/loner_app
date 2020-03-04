@@ -12,7 +12,7 @@ class EventsController < ApplicationController
           lat: event.latitude,
           lng: event.longitude,
           infoWindow: render_to_string(partial: "info_window", locals: { event: event }),
-          image_url: helpers.asset_url('heart-15.svg'),
+          image_url: helpers.asset_url('heart-15-map.svg'),
         }
       else
         {
@@ -118,7 +118,7 @@ class EventsController < ApplicationController
           lat: @event.latitude,
           lng: @event.longitude,
           infoWindow: render_to_string(partial: "info_window", locals: { event: @event }),
-          image_url: helpers.asset_url('heart-15.svg'),
+          image_url: helpers.asset_url('heart-15-map.svg'),
         }]
       else
         @marker =
