@@ -46,6 +46,9 @@ class UsersController < ApplicationController
 
     @users_following
 
+    #combining both arrays of friends:
+    @all_my_friends = (@users_following + @array_of_friends).uniq
+
 
     #the next lines find events that i have attended to find my friends:
     @eventUsers  =  EventUser.where(user_id: @user.id)

@@ -24,7 +24,7 @@
 
     <div class="flex justify-between event-border">
     <div>
-      <h3 class="text-red mb-16" style="text-align: left;">Info</h3>
+      <h3 class="text-red mb-16" style="text-align: left;">Info:</h3>
         <p class="text-white margin-bottom-5" style="text-align: left;">
           <i class="fas fa-user small text-white pr-7"></i>
           <%= @user.username.capitalize %>
@@ -44,7 +44,7 @@
 
     <div class="flex event-border">
       <div>
-        <h3 class="text-red">My events this week</h3>
+        <h3 class="text-red">My events this week:</h3>
       </div>
     </div>
       <%= render 'eventcarrousel', events: @events_this_week %>
@@ -52,40 +52,21 @@
 
     <div class="flex event-border mt-40 w-100">
       <div>
-        <h3 class="text-red">My events this month</h3>
+        <h3 class="text-red">My events this month:</h3>
       </div>
     </div>
         <%= render 'eventcarrousel', events: @events_this_month %>
 
 
-    <div class="event-border mt-40 mb-40">
-      <div>
-        <h3 class="text-red mb-40" style="text-align: left;">Friends I have met</h3>
-      </div>
-      <div class="flex flex-wrap">
-        <%= render 'smallcarousel', users: @array_of_friends %>
-      </div>
-    </div>
 
-    <% if current_user == params[:id] %>
       <div class="event-border mt-40 mb-40">
         <div>
-          <h3 class="text-red mb-40" style="text-align: left;">Friends I follow</h3>
+          <h3 class="text-red mb-40" style="text-align: left;">Friends:</h3>
         </div>
         <div class="flex flex-wrap">
-          <%= render 'smallcarousel', users: @users_following %>
+          <%= render 'smallcarousel', users: @all_my_friends %>
         </div>
       </div>
-    <% else %>
-      <div class="event-border mt-40 mb-40">
-        <div>
-          <h3 class="text-red mb-40" style="text-align: left;">Friends following</h3>
-        </div>
-        <div class="flex flex-wrap">
-          <%= render 'smallcarousel', users: @users_following %>
-        </div>
-      </div>
-    <% end %>
 
   </div>
 </div>

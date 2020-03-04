@@ -1,5 +1,7 @@
 <% users.each do |user| %>
-  <div>
-    <%= link_to cl_image_tag(user.photo.key, class: "avatar margin-bottom-5"), user_path(user) %>
-  </div>
+  <% if @user.is_following?(user.id) %>
+    <%= link_to cl_image_tag(user.photo.key, class: "avatar margin-bottom-5 people-following"), user_path(user) %>
+  <% else %>
+    <%= link_to cl_image_tag(user.photo.key, class: "avatar margin-bottom-5 people-i-have-met"), user_path(user) %>
+  <% end %>
 <% end %>
