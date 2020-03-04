@@ -5,9 +5,15 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.event = @event
     @comment.user = current_user
-    @comment.save
 
     # and then is rendering comments/create.js.erb
+
+    if @comment.save
+      respond_to do |format|
+        format.html { redirect_to event_path(@event) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
+    end
   end
 
    private
@@ -16,3 +22,20 @@ class CommentsController < ApplicationController
     params.require(:comment).permit(:body)
   end
 end
+
+
+
+def create
+    # [...]
+    if @review.save
+      respond_to do |format|
+        format.html { redirect_to restaurant_path(@restaurant) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
+    else
+      respond_to do |format|
+        format.html { render 'restaurants/show' }
+        format.js  # <-- idem
+      end
+    end
+  end
