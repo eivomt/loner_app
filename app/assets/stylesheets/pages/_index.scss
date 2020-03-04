@@ -12,3 +12,12 @@ body {
   left: 0;
   right: 0;
 }
+
+@media all and (min-width: 556px) {
+  .catchphrase {
+  bottom: 20%;
+}
+  .catchphrase h3 {
+    font-size: 1.5rem;
+  }
+}

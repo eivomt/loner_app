@@ -13,6 +13,7 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import { initMapbox } from '../plugins/init_mapbox';
 import { initHeroAnimation } from '../plugins/hero_animation';
 import { initJoinButton } from '../plugins/join_button';
+import { initFadeOnScroll } from '../plugins/hero_fade';
 
 
 window.showNotification = (text, url) => {
@@ -25,4 +26,5 @@ window.showNotification = (text, url) => {
 initMapbox();
 initHeroAnimation();
 initJoinButton();
+initFadeOnScroll();
 
