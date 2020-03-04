@@ -2,6 +2,14 @@
   <input type="checkbox">
   <div class="add-button">
   </div>
-  <div class="add-event">
+
+  <div class="add-event" style="overflow: scroll; padding-bottom: 100px;">
+    <div class="new-form">
+      <div>
+        <h3 class="text-gray">Create Event</h3>
+      </div>
+
+      <%= render 'events/form', event: Event.new %>
+    </div>
   </div>
 </div>
