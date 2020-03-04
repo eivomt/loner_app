@@ -33,7 +33,23 @@
           <i class="fas fa-envelope x-small text-white pr-7"></i>
           <%= @user.email %>
         </p>
+        <!-- the next lines render a partial with a follow unfollow button.
+          we need to take out the name and make it render itself automatically -->
+        <p class="text-white">
+          <%= render @user %>
+        </p>
+
       </div>
+
+      <!-- the next few lines are also an attempt to redirect when following or opposite -->
+      <!-- <div class="flex mb-20">
+   <#% if current_user.is_following?(@user.id) %>
+          <%#= link_to "Unfollow", unfollow_user_path(@user.id), method: :post, remote: true %>
+        <%# else %>
+          <%#= link_to "Follow", follow_user_path(@user.id), method: :post, remote: true %>
+        <%# end %>
+        <%#= render @user %>
+      </div> -->
     </div>
 
     <div class="flex event-border">
@@ -54,7 +70,7 @@
 
     <div class="event-border mt-40 mb-40">
       <div>
-      <h3 class="text-red mb-40" style="text-align: left;">Friends I have met</h3>
+        <h3 class="text-red mb-40" style="text-align: left;">Friends I have met</h3>
       </div>
       <div class="flex flex-wrap">
         <%= render 'smallcarousel', users: @array_of_friends %>
@@ -64,7 +80,7 @@
     <% if current_user == params[:id] %>
       <div class="event-border mt-40 mb-40">
         <div>
-        <h3 class="text-red mb-40" style="text-align: left;">Friends I follow</h3>
+          <h3 class="text-red mb-40" style="text-align: left;">Friends I follow</h3>
         </div>
         <div class="flex flex-wrap">
           <%= render 'smallcarousel', users: @users_following %>
@@ -73,7 +89,7 @@
     <% else %>
       <div class="event-border mt-40 mb-40">
         <div>
-        <h3 class="text-red mb-40" style="text-align: left;">Friends following</h3>
+          <h3 class="text-red mb-40" style="text-align: left;">Friends following</h3>
         </div>
         <div class="flex flex-wrap">
           <%= render 'smallcarousel', users: @users_following %>
@@ -83,8 +99,6 @@
 
   </div>
 </div>
-
-
 
 
 

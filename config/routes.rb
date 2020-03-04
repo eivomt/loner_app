@@ -10,9 +10,8 @@ Rails.application.routes.draw do
   end
 
   resources :event_users, only: :destroy
-  resources :users, only: :show
 
-  resources :users, only: [:index] do
+  resources :users, only: [:show] do
     member do
       post :follow
       post :unfollow
