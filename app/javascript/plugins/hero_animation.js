@@ -43,7 +43,7 @@ const initHeroAnimation = () => {
       targets: smallArrow,
       translateY: '100',
       easing: 'spring(1, 80, 10, 0)',
-      stroke: '#68E184',
+      stroke: '#FFF',
       duration: '1000'
     }, '-=1600')
 
@@ -52,6 +52,15 @@ const initHeroAnimation = () => {
       duration: '500'
     }, '-=0');
 
+    // (document).scroll(function() {
+    //    if($(window).scrollTop() > 50){
+    //     $("#header").hide();
+    //     $("#header2").show();
+
+    //    }else if($(window).scrollTop() < 50){
+
+    //     $("#headerline").css("background","blue");
+    //     $("#header2").hide();
 
   } else {
     console.log('you fail')
