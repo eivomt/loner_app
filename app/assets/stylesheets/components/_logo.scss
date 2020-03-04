@@ -1,0 +1,55 @@
+.hero-container {
+  display: flex;
+  justify-content: center;
+  left: 0;
+  width: 100%;
+  height: 58vh;
+  margin-top: 13vh;
+  margin-bottom: 20vh;
+}
+
+.hero-plus {
+  pointer-events: none;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 4px;
+  display: inline-block;
+}
+
+#one {
+  text-align: left;
+  position: absolute;
+  top: 49vh;
+  left: 19vw;
+}
+
+.square {
+  pointer-events: none;
+  position: relative;
+  width: 64px;
+  height: 64px;
+  margin: 4px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroll-indicator-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.small-arrow {
+  position: absolute;
+  top: 74vh;
+  overflow: visible;
+}
+
+.big-arrow {
+  position: absolute;
+  top: 76vh;
+}
+
