@@ -13,11 +13,30 @@ body {
   right: 0;
 }
 
+#hero-logo {
+  height: 100vh;
+  background: linear-gradient(-45deg, #38063a, #701374, #38063a, #9d1568);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
 @media all and (min-width: 556px) {
   .catchphrase {
   bottom: 20%;
 }
   .catchphrase h3 {
     font-size: 1.5rem;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
