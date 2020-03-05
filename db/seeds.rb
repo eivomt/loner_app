@@ -819,7 +819,23 @@ puts "one event in the passed for friends ive met"
     creator_id: 9,
     address: "Schweigaardsgate 34, 0191 Oslo",
     description: "We made it! =)",
-    time: "January 6, 2020 08:30"
+    time: "March 6, 2020 08:30"
+  })
+
+  file = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,h_840,q_auto,w_1952/v1578570211/cpizdoyq3k1z06saej2m.webp")
+  event.photo.attach(io: file, filename: 'tennis.png', content_type: 'image/png')
+
+puts "oevent in the past so that eivind has friends for the presentation"
+
+  event = Event.create!({
+    name: "Le Wagon!",
+    people_going: 1,
+    people_needed: 15,
+    categories: "lewagon",
+    creator_id: 9,
+    address: "Schweigaardsgate 34, 0191 Oslo",
+    description: "We made it! =)",
+    time: "March 6, 2020 08:30"
   })
 
   file = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,h_840,q_auto,w_1952/v1578570211/cpizdoyq3k1z06saej2m.webp")
@@ -837,6 +853,22 @@ EventUser.create!(user_id: 16, event_id: 12)
 
 
 puts "Creating event users for le wagon, friends we´ve met!"
+
+EventUser.create!(user_id: 1, event_id: 34)
+EventUser.create!(user_id: 2, event_id: 34)
+EventUser.create!(user_id: 3, event_id: 34)
+EventUser.create!(user_id: 4, event_id: 34)
+EventUser.create!(user_id: 5, event_id: 34)
+EventUser.create!(user_id: 6, event_id: 34)
+EventUser.create!(user_id: 7, event_id: 34)
+EventUser.create!(user_id: 8, event_id: 34)
+EventUser.create!(user_id: 9, event_id: 34)
+EventUser.create!(user_id: 10, event_id: 34)
+EventUser.create!(user_id: 14, event_id: 34)
+EventUser.create!(user_id: 15, event_id: 34)
+EventUser.create!(user_id: 17, event_id: 34)
+
+puts "le wagon event after ptitch"
 
 EventUser.create!(user_id: 1, event_id: 33)
 EventUser.create!(user_id: 2, event_id: 33)
