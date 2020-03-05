@@ -1,10 +1,8 @@
 <div class="flex justify-center mb-40 user-background">
   <%= image_tag @user.photo, class: "user-background-image" %>
-
   </div>
   <div class="flex justify-center mt-300">
     <div class="event-info b-black">
-
       <div class="profil-info">
         <h3 class="pt-20"><%= @user.username.capitalize %> </h3>
         <h3 class="text-green">Oslo, Norway</h3>
@@ -26,30 +24,29 @@
       </div>
     <% end %>
 
-    <div class="flex justify-between event-border">
-      <div>
-        <h3 class="text-red mb-16" style="text-align: left;">Info</h3>
-        <p class="text-white margin-bottom-5" style="text-align: left;">
-          <i class="fas fa-user small text-white pr-7"></i>
-          <%= @user.username.capitalize %>
-        </p>
-        <p class="text-white">
-          <i class="fas fa-envelope x-small text-white pr-7"></i>
-          <%= @user.email %>
-        </p>
-      </div>
-    </div>
 
-    <% if @events_this_week != [] %>
-      <div class="flex event-border">
-          <div>
-            <h3 class="text-red">My events this week</h3>
-          </div>
-      </div>
-if_empty_no_carousel
+  <div class="flex justify-between event-border">
+    <div>
+      <h3 class="text-red mb-16" style="text-align: left;">Info</h3>
+      <p class="text-white margin-bottom-5" style="text-align: left;">
+        <i class="fas fa-user small text-white pr-7"></i>
+        <%= @user.username.capitalize %>
+      </p>
+      <p class="text-white">
+        <i class="fas fa-envelope x-small text-white pr-7"></i>
+        <%= @user.email %>
+      </p>
     </div>
-      <%= render 'eventcarrousel', events: @events_this_week %>
-    <% end %>
+  </div>
+
+  <% if @events_this_week != [] %>
+    <div class="flex event-border">
+        <div>
+          <h3 class="text-red">My events this week</h3>
+        </div>
+    </div>
+    <%= render 'eventcarrousel', events: @events_this_week %>
+  <% end %>
 
 
     <% if @events_this_month != [] %>
@@ -71,8 +68,8 @@ if_empty_no_carousel
         </div>
       </div>
     <% end %>
+   </div>
   </div>
-</div>
 
 
 
