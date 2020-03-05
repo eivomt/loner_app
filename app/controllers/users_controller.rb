@@ -22,6 +22,7 @@ class UsersController < ApplicationController
 
             elsif @array_of_friends.include?(user)
             else
+              next if user == @user
               @array_of_friends << user
             end
           end
