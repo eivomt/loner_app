@@ -397,7 +397,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     creator_id: 6,
     address: "Trollvannsveien 1, 0490 Oslo",
     description: "Alpine skiing!",
-    time: "March 12, 2020 09:30"
+    time: "March 04, 2020 09:30"
 })
 
   file = URI.open("http://blog.davidgiralphoto.com/wp-content/uploads/2013/03/editorial-travel-montreal-winter-mont-royal-park-19.jpg")
@@ -829,7 +829,7 @@ puts "one event in the passed for friends ive met"
 puts "seeds for event im going to join"
 EventUser.create!(user_id: 2, event_id: 12)
 EventUser.create!(user_id: 3, event_id: 12)
-EventUser.create!(user_id: 11, event_id: 12)
+EventUser.create!(user_id: 1, event_id: 12)
 EventUser.create!(user_id: 12, event_id: 12)
 EventUser.create!(user_id: 8, event_id: 12)
 EventUser.create!(user_id: 16, event_id: 12)
