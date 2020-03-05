@@ -22,15 +22,26 @@ const initJoinButton = () => {
     const missingDiv = document.getElementById('missing-count');
     const going = parseInt(document.getElementById('going-count').innerText);
     const missing = parseInt(document.getElementById('missing-count').innerText);
+    const goingText = document.getElementById('going-text');
+    const joinText = document.getElementById('join-text');
+    const userAvatarLink = document.querySelector('.navbar-avatar');
+    const peopleGoing = document.getElementById('event-people-going');
 
     if (missing == 0 && !joined) {
-      alert('NO MORE ROOM!');
       return;
     }
 
     const updateState = () => {
       joined = !joined;
       updating = false;
+
+      if (joined) {
+        joinText.classList.add('d-none');
+        goingText.classList.remove('d-none');
+      } else {
+        joinText.classList.remove('d-none');
+        goingText.classList.add('d-none');
+      }
     }
 
     const updateCounters = (num) => {
@@ -40,6 +51,7 @@ const initJoinButton = () => {
 
     const joinRequest = () => {
       updateCounters(1);
+      peopleGoing.insertAdjacentElement('afterbegin', userAvatarLink.cloneNode(true));
 
       Rails.ajax({
         url: button.dataset.join_url,
@@ -55,6 +67,7 @@ const initJoinButton = () => {
 
     const cancelRequest = () => {
       updateCounters(-1);
+      peopleGoing.querySelector(`#${userAvatarLink.id}`).remove();
 
       Rails.ajax({
         url: button.dataset.cancel_url,
@@ -87,8 +100,8 @@ const initJoinButton = () => {
 
     timeline.add({
       targets : "#join-button",
-      backgroundColor: joined ? "#ff3b6b" : "#00bd67",
-      borderColor: joined ? "#ff3b6b" : "#00bd67",
+      backgroundColor: joined ? "#68E184" : "#68E184",
+      borderColor: joined ? "#68E184" : "#68E184",
     }, '-=630');
 
     if (joined) {
