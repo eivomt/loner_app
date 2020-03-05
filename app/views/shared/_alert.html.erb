@@ -1,6 +1,7 @@
+
 <div class="dropdown">
   <a href="#" id="alert-list" data-userid="<%= current_user.id %>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    BELL
+
     <% if current_user.comment_alerts.not_read.count > 0 %>
       <span class="badge badge-light" id="unread-count">
         <%= current_user.comment_alerts.not_read.count %>
