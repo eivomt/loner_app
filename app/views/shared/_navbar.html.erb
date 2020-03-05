@@ -28,7 +28,9 @@
     <p class="text-gray"><%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
   </div>
   <div class="avatar-container">
-    <%= link_to cl_image_tag(current_user.photo.key, class: "avatar-profil"), user_path(current_user.id) %>
+    <%= link_to user_path(current_user.id), id: "avatar-#{current_user.id}", class: 'navbar-avatar' do %>
+      <%= cl_image_tag(current_user.photo.key, class: "avatar") %>
+    <% end %>
   </div>
 <% else %>
   <div class="user-status-login">

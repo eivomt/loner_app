@@ -1,77 +1,49 @@
 <!--- BUTTONS ON TOP --->
 <div class="flex justify-content-center event-container">
   <div class="button-container" style="margin-top: 80px;">
+    <div>
+      <p class="text-gray xs-small text-center mb-10">People Going</p>
+    <div class="butn">
+      <div class="green-border">
+        <!--- <p class="x-small green-text" style="margin-bottom: 4px;">Going</p> --->
+        <h2 class="white-text" id="going-count"><%= @going_count %></h2>
+      </div>
+    </div>
+  </div>
+
   <div>
-    <p class="text-gray xs-small text-center mb-10">People Going</p>
-  <div class="butn">
-    <div class="green-border">
-      <!--- <p class="x-small green-text" style="margin-bottom: 4px;">Going</p> --->
-      <h2 class="white-text" id="going-count"><%= @going_count %></h2>
+    <p class="text-gray xs-small text-center mb-10">People Needed</p>
+    <div class="butn">
+      <div class="red-border">
+        <!--- <p class="x-small red-text" style="margin-bottom: 4px;">Missing</p> --->
+        <h2 class="white-text" id="missing-count"><%= @missing_count %></h2>
+      </div>
     </div>
   </div>
-</div>
 
-<div>
-  <p class="text-gray xs-small text-center mb-10">People Needed</p>
-  <div class="butn">
-    <div class="red-border">
-      <!--- <p class="x-small red-text" style="margin-bottom: 4px;">Missing</p> --->
-      <h2 class="white-text" id="missing-count"><%= @missing_count %></h2>
-    </div>
-  </div>
-</div>
+      <div>
+        <p class="text-gray xs-small text-center mb-10">
+          <span id="going-text" class="<%= @event_user.present? ? '' : 'd-none' %>">
+            You are going!
+          </span>
 
-<!--- ADD JOIN LOGIC HERE --->
-<div>
-  <p class="text-gray xs-small text-center mb-10">Join event</p>
-  <div class="butn">
-    <div class=" <%= @event_user.present? ? 'join-green' : 'join-red' %>" id="join-button" style="margin-bottom: 4px; display: flex; justify-content: center; align-items: center; padding: 0;" data-cancel_url="<%= event_user_path(@event_user || 0) %>" data-join_url="<%= event_event_users_path(@event) %>" data-joined="<%= @event_user.present? %>">
-
-<!--     <h2 class="white-text">  </h2>
- -->
-  <!--    <section> -->
-     <!--  <div class="logo-comtainer" style="position: sticky; top: 0; left: 0; display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;"> -->
-  <!--   <div class="logo-container" style="height: 80%; width: 80%;"> -->
-
-      <div class="u-container" style=" position: relative; top: 0;">
-              <svg
-                id="u"
-                width="25px"
-                height="50px"
-                viewBox="0 0 180 309"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  class = "u"
-                  d="M6 6V219.025C6 230.047 8.17087 240.96 12.3887 251.143C16.6065 261.326 22.7886 270.578 30.5821 278.371C38.3756 286.165 47.6278 292.347 57.8105 296.565C67.9931 300.783 78.9068 302.953 89.9285 302.953C100.95 302.953 111.864 300.783 122.047 296.565C132.229 292.347 141.481 286.165 149.275 278.371C157.068 270.578 163.251 261.326 167.468 251.143C171.686 240.96 173.857 230.047 173.857 219.025V6"
-                  stroke="#FFF"
-                  stroke-width="10"
-                  stroke-miterlimit="10"
-                  stroke-linecap="round"
-                />
-              </svg>
-              <div class="plus-container">
-                <svg
-                  id="plus<%= @event_user.present? ? '-joined' : '-join' %>"
-                  width="28.5px"
-                  height="28.5px"
-                  viewBox="0 0 183 183"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                  class = "plus"
-                    d="M6 91.459L176.918 91.459M92.99 6L92.99 176.918"
-                    stroke="#FFF"
-                    stroke-width="7"
-                    stroke-miterlimit="10"
-                    stroke-linecap="round"
-                  />
-                </svg>
-              </div>
-            </div>
+          <span id="join-text" class="<%= @event_user.present? ? 'd-none' : '' %>">
+            Join event
+          </span>
+        </p>
+        <div class="butn">
+          <div class="join-green flex justify-content-center align-items-center" id="join-button" data-cancel_url="<%= event_user_path(@event_user || 0) %>" data-join_url="<%= event_event_users_path(@event) %>" data-joined="<%= @event_user.present? %>">
+            <svg width="55"
+            height="50"
+            viewBox="0 0 55 50"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.582 37.8288V38.7826H11.3496V43.0449H10.3958V38.7826H6.16337V37.8288H10.3958V33.6262H11.3496V37.8288H15.582Z" fill="#EC4E6E"/>
+            <rect x="10.2061" y="15.6594" width="0.865385" height="9.34066" fill="white"/>
+            <path d="M21.9783 0V0.62696C19.388 0.94044 16.1698 1.95925 14.129 4.85894C12.4806 7.05329 11.0678 13.1661 11.0678 15.9091H10.2043C10.2043 13.1661 8.86996 6.89655 7.3001 4.70219C5.49476 2.11599 3.06148 1.01881 0.000255585 0.62696V0H21.9783ZM48.6659 30.721C48.6659 38.6364 46.2326 44.5141 40.7381 47.4922C37.6769 49.1379 33.2813 50 28.1007 50C22.8417 50 18.6816 48.1191 17.8181 47.5705V47.0219C21.8998 47.5705 26.6094 46.7085 29.3566 45.0627C33.2028 42.7116 34.5371 39.2633 34.5371 32.9154V9.71787C34.5371 2.82132 32.4963 1.33229 28.3362 0.62696V0H54.9453V0.62696C50.3927 1.33229 48.6659 3.21317 48.6659 9.71787V30.721Z" fill="white"/>
+            </svg>
           </div>
-        </div> <!-- butn join red -->
-      <!--   </section> -->
+        </div>
       </div>
     </div>
   </div>
@@ -154,10 +126,10 @@
     <div>
       <h3 class="red-text mb-20">People going</h3>
     </div>
-    <div class="flex">
+    <div class="flex" id="event-people-going">
       <% @event_attendees.each do |user_id| %>
         <% user =User.find(user_id) %>
-        <%= link_to cl_image_tag(user.photo.key, class: "avatar"), user_path(user) %>
+        <%= link_to cl_image_tag(user.photo.key, class: "avatar", id: "avatar-#{user_id}"), user_path(user) %>
       <% end %>
 
       <!-- the next lines are the avaatars of the ppl going -->
