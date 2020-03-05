@@ -1,4 +1,3 @@
-console.log('hello fader')
 const initFadeOnScroll = () => {
   let heroLogo = document.getElementById("hero-logo")
   window.addEventListener('scroll', function() {
@@ -9,3 +8,5 @@ const initFadeOnScroll = () => {
 }
 
 export { initFadeOnScroll };
+
+
