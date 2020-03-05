@@ -64,9 +64,10 @@
 
 <% if @events_now != [] %>
   <div class="contain" style="margin-top: 100px;">
+    <h3 class="tile__tag mb-20 text-white ml-30">Happening now</h3>
     <div class="row">
       <div class="row__inner" id="top_header">
-      <%= render 'carrousel', events: @events_now, title: 'Happening now' %>
+      <%= render 'carrousel', events: @events_now %>
       </div>
     </div>
   </div>
@@ -77,9 +78,10 @@
 
 <% if @volunteer_events != [] %>
   <div class="contain">
+    <h3 class="tile__tag mb-20 text-white ml-30">Happy helping</h3>
     <div class="row">
       <div class="row__inner">
-      <%= render 'carousel-volunteer', events: @volunteer_events, title: 'Happy helping' %>
+      <%= render 'carousel-volunteer', events: @volunteer_events %>
       </div>
     </div>
   </div>
@@ -110,9 +112,10 @@
 <% @events = Event.where(categories: 'feeling adventurous') %>
 <% if @adveturous != []  %>
   <div class="contain" style="margin-top: 80px;">
+    <h3 class="tile__tag mb-20 text-white ml-30">Feeling adventurous</h3>
     <div class="row">
       <div class="row__inner">
-      <%= render 'carrousel', events: @events, title: 'Feeling adventurous' %>
+      <%= render 'carrousel', events: @events %>
       </div>
     </div>
   </div>
@@ -121,9 +124,10 @@
 <% @events = Event.where(categories: 'game on') %>
 <% if @events != [] %>
   <div class="contain">
+    <h3 class="tile__tag mb-20 text-white ml-30">Game on</h3>
     <div class="row-medium">
       <div class="row__inner">
-        <%= render 'carrousel-medium', events: @events, title: 'Game on' %>
+        <%= render 'carrousel-medium', events: @events %>
       </div>
     </div>
   </div>
@@ -132,9 +136,10 @@
 <% @events = Event.where(categories: 'let\'s move around') %>
 <% if @events != [] %>
   <div class="contain">
+    <h3 class="tile__tag mb-20 text-white ml-30">Let's move around</h3>
     <div class="row-medium">
       <div class="row__inner">
-        <%= render 'carrousel-medium', events: @events, title: 'Let\'s move around' %>
+        <%= render 'carrousel-medium', events: @events %>
       </div>
     </div>
   </div>
@@ -143,9 +148,10 @@
 <% @events = Event.where(categories: 'mingle') %>
 <% if @events != [] %>
   <div class="contain">
+    <h3 class="tile__tag mb-20 text-white ml-30">Let's mingle!</h3>
     <div class="row">
       <div class="row__inner">
-        <%= render 'carrousel', events: @events, title: 'Let\'s mingle!' %>
+        <%= render 'carrousel', events: @events %>
       </div>
     </div>
   </div>
