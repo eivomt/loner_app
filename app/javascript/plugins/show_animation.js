@@ -157,7 +157,7 @@ const initShowAnimation = () => {
     targets: ".feedback-container",
     top: "-100vh",
     easing: "easeInOutExpo"
-    }, '-=1600');
+    }, '-=1900');
 
 
 

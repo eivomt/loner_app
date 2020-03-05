@@ -1,9 +1,11 @@
 const initFadeOnScroll = () => {
 /*  const heroLogo = document.getElementById('hero-logo');
 
+
   if (!heroLogo) {
     return;
   }
+
 
   window.addEventListener('scroll', () => {
     heroLogo.style.opacity = 1 - window.pageYOffset/400 + '';
