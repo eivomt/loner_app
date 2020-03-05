@@ -44,11 +44,6 @@ ActiveRecord::Schema.define(version: 2020_03_05_102201) do
     t.index ["user_id"], name: "index_comment_alerts_on_user_id"
   end
 
-  create_table "commentalerts", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "comments", force: :cascade do |t|
     t.text "body"
     t.integer "event_id"
