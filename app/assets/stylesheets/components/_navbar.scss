@@ -159,18 +159,6 @@ $blackColor: #020304;
   }
 }
 
-.avatar-profil {
-  border-radius: 50%;
-  margin: 0 10px 0 10px;
-  object-fit: cover;
-  overflow: hidden;
-  width: 30px;
-  height: 30px;
-  opacity: 0.8;
-  z-index: 100;
-  filter: grayscale(100%);
-}
-
 .avatar-container {
   position: fixed;
   right: 70px;
@@ -178,6 +166,18 @@ $blackColor: #020304;
   z-index: 100;
   border-left: 1px $gray solid;
   border-right: 1px $gray solid;
+
+  .avatar {
+    border-radius: 50%;
+    margin: 0 10px 0 10px;
+    object-fit: cover;
+    overflow: hidden;
+    width: 30px;
+    height: 30px;
+    opacity: 0.8;
+    z-index: 100;
+    filter: grayscale(100%);
+  }
 }
 
 .user-status-logout {
