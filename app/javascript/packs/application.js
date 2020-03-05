@@ -14,7 +14,10 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import { initMapbox } from '../plugins/init_mapbox';
 import { initHeroAnimation } from '../plugins/hero_animation';
 import { initJoinButton } from '../plugins/join_button';
-import { initShowAnimation } from '../plugins/show_animation';
+// import { initShowAnimation } from '../plugins/show_animation';
+
+import { initFadeOnScroll } from '../plugins/hero_fade';
+
 
 
 window.showNotification = (text, url) => {
@@ -24,8 +27,34 @@ window.showNotification = (text, url) => {
   toastr.options.onclick = () => window.location = url;
 }
 
+const link = document.getElementById("alert-list");
+if (link) {
+  console.log("We have link");
+  $('.dropdown').on('show.bs.dropdown', () => {
+    Rails.ajax({
+      url: `/users/${link.dataset.userid}/read_alerts`,
+      type: 'PATCH',
+      data: "",
+      success: function(data) {  },
+      error: function(data) {}
+    })
+  });
+
+  $('.dropdown').on('hide.bs.dropdown', () => {
+    const badge = document.getElementById('unread-count');
+
+    if (badge) {
+      badge.innerHTML = '';
+    }
+  });
+}
+
 initMapbox();
 initHeroAnimation();
 initJoinButton();
+
 // initShowAnimation();
+
+initFadeOnScroll();
+
 

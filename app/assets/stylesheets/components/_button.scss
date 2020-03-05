@@ -1,7 +1,7 @@
 .add-button-wrapper {
   position: fixed;
-  bottom: 40px;
-  right: 40px;
+  bottom: 35px;
+  right: 35px;
   z-index: 3;
   .add-button {
   width: 70px;
@@ -21,19 +21,19 @@
       background: #fff;
     }
     &::before {
-      width: 2px;
+      width: 1px;
       height: 28px;
     }
     &::after {
       width: 28px;
-      height: 2px;
+      height: 1px;
     }
   }
   .add-event {
   width: 600px;
   height: 100%;
   position: absolute;
-  background: white;
+  background: $black;
   padding: 0 15px;
   opacity: 0;
   top: 0;
@@ -44,8 +44,6 @@
     width: 100%;
     z-index: 5;
     position: absolute;
-    cursor: pointer;
-    border-radius: 50%;
     opacity: 0;
       &:checked {
       ~ .add-button {
@@ -71,7 +69,7 @@
       transform: rotate(0) scale(1);
     }
     20% {
-      transform: rotate(60deg) scale(.93);
+      transform: rotate(180deg) scale(.93);
     }
     55% {
       transform: rotate(35deg) scale(.97);
@@ -89,7 +87,7 @@
       transform: rotate(45deg) scale(.95);
     }
     20% {
-      transform: rotate(-15deg);
+      transform: rotate(-180deg);
     }
     55% {
       transform: rotate(10deg);

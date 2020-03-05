@@ -1,6 +1,7 @@
-<h3 class="tile__tag mb-20"><%= title %></h3>
+
 
 <% events.each do |event| %>
+  <% next if event.id == 12 %>
   <div class="tile">
     <div class="tile__media">
       <div class="tile_img_contain">
@@ -23,12 +24,17 @@
           </div>
         </div>
 
-        <div class="flex align-items-center mt-20">
+        <div class="flex justify-between mt-20">
+          <div class="flex align-items-center">
           <i class="fas fa-user small text-gray pr-7"></i>
           <%  u = User.find(event.creator_id) %>
           <p class="small text-gray"><%= u.username.capitalize %> </p>
           <i class="fas fa-map-marker small text-gray pr-7 ml-12"></i>
           <p class="small text-gray"><%= event.address.split(',')[1].split.last %> </p>
+          </div>
+          <div>
+            <p class="small text-red flex-grow">Wanted</p>
+          </div>
         </div>
       </div>
 

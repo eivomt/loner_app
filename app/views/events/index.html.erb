@@ -1,82 +1,84 @@
-<div class="hero-container">
+<div id="hero-logo">
+  <div class="hero-container flex align-items-center justify-content-center">
     <div id="two">
       <svg
         id="hero-svg"
         width="70%"
         height="100%"
-        viewBox="0 0 368 334"
+        viewBox="0 0 200 182"
         fill="none"
         xmlns="http://www.w3.org/2000/svg">
 
-
-
         <path
-          d="M68.1771 104.604H73.9579V167H68.1771V104.604Z"
-          fill="white"/>
-        <path
-          d="M146.813 0V4.18809C129.51 6.28214 108.013 13.0878 94.3799 32.4577C83.3689 47.116 73.9309 87.9499 73.9309 106.273H68.1632C68.1632 87.9499 59.2496 46.069 48.7629 31.4107C36.7033 14.1348 20.449 6.80564 0 4.18809V0H146.813ZM325.086 205.216C325.086 258.091 308.832 297.354 272.129 317.248C251.68 328.241 222.317 334 187.711 334C152.581 334 124.791 321.436 119.024 317.771V314.107C146.289 317.771 177.749 312.013 196.1 301.019C221.793 285.314 230.706 262.279 230.706 219.875V64.9154C230.706 18.8464 217.074 8.89969 189.284 4.18809V0H367.033V4.18809C336.622 8.89969 325.086 21.464 325.086 64.9154V205.216Z"
-          fill="white"/>
-
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M80 2.28213V0H0V2.28213C11.1429 3.70846 20 7.7022 26.5714 17.116C32.2857 25.1034 37.1428 47.9248 37.1428 57.9091H37.1731L38 91H40L40.3004 57H40.2989C40.588 46.6324 45.6045 25.4398 51.4286 17.6865C58.8571 7.13167 70.5714 3.4232 80 2.28213ZM148.286 172.871C168.286 162.031 177.143 140.636 177.143 111.824V35.373C177.143 11.6959 183.429 4.84953 200 2.28213V0H103.143V2.28213C118.286 4.84953 125.714 10.2696 125.714 35.373V119.812C125.714 142.919 120.857 155.47 106.857 164.028C96.8571 170.019 79.7143 173.157 64.8571 171.16V173.157C68 175.154 83.1428 182 102.286 182C121.143 182 137.143 178.862 148.286 172.871Z"
+        fill="white"/>
       </svg>
-    <div id="one">
-      <div class="square">
-        <svg
-        width="100%"
-        height="100%"
-        viewBox="0 0 64 64"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg">
-          <path
-          class="hero-plus"
-          d="M63.499 28.111V34.4907H35.1889V63.0003H28.8091V34.4907H0.499016V28.111H28.8091V0.000213623H35.1889V28.111H63.499Z"
-          fill="transparent"/>
-        </svg>
+
+      <div id="one">
+        <div class="square">
+          <svg
+            width="100%"
+            height="100%"
+            viewBox="0 0 33 33"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+            class="hero-plus"
+            d="M18 0H16V15.5H0V17.5H16V33H18V17.5H33V15.5H18V0Z"
+            fill="transparent"/>
+          </svg>
+        </div>
       </div>
     </div>
 
   </div>
 </div>
 
-<div class="scroll-indicator-container">
 
-  <div class="small-arrow">
-    <svg
-    width="100"
-    height="130"
-    viewBox="0 0 200 200"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg">
-      <path
-      class="small_arrow"
-      d="M135.149 55.5746L79.5742 111.149L23.9996 55.5746"
-      stroke="white"
-      stroke-width="2"/>
-    </svg>
+
+  <div class="catchphrase">
+    <h3 class="text-center">Always a good time to make friends</h3>
   </div>
-</div>
 
 
-<div class="contain" style="margin-top: 100px;">
-  <div class="row">
-    <div class="row__inner" id="top_header">
-    <%= render 'carrousel', events: Event.where(time: (DateTime.now-9.hour..DateTime.now+4.hour)), title: 'Happening now' %>
+  <div class="scroll-indicator-container">
+
+    <div class="small-arrow">
+      <svg
+      width="53"
+      height="85"
+      viewBox="0 0 200 200"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+        <path
+        class="small_arrow"
+        d="M135.149 55.5746L79.5742 111.149L23.9996 55.5746"
+        stroke="white"
+        stroke-width="2"/>
+      </svg>
     </div>
   </div>
 </div>
+</div>
 
-<!-- HAPPY HELPING PUT YOUR CODE  -->
+<% @events_now = Event.where(time: (DateTime.now-1.day..DateTime.now+2.day)) %>
 
-<div class="contain">
-  <div class="row">
-    <div class="row__inner">
-    <%= render 'carousel-volunteer', events: Event.where(categories: 'volunteering'), title: 'Happy helping' %>
+<% if @events_now != [] %>
+  <div class="contain" style="margin-top: 100px;">
+    <h3 class="tile__tag mb-20 text-white ml-30">Happening now</h3>
+    <div class="row">
+      <div class="row__inner" id="top_header">
+      <%= render 'carrousel_now', events: @events_now %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
 
 
 <!-- FRIENDS I HAVE MET -->
-<% if user_signed_in? && @array_of_friends != []%>
+<%# if user_signed_in? && @array_of_friends != []%>
   <div class="contain">
     <div class="row-small">
       <div class="row__inner">
@@ -84,11 +86,29 @@
       </div>
     </div>
   </div>
+<%# end %>
+
+
+<!-- HAPPY HELPING PUT YOUR CODE  -->
+<% @volunteer_events = Event.where(categories: 'volunteering') %>
+
+<% if @volunteer_events != [] %>
+  <div class="contain">
+    <h3 class="tile__tag mb-20 text-white ml-30">Happy helping</h3>
+    <div class="row">
+      <div class="row__inner">
+      <%= render 'carousel-volunteer', events: @volunteer_events %>
+      </div>
+    </div>
+  </div>
 <% end %>
 
 
+
+
+
 <!-- MAP -->
-  <h3 class="pl-40 pr-40">Happening near you</h2>
+  <h3 class="pl-40 pr-40 text-white">Happening near you</h2>
   <div
     id="map"
     data-markers="<%= @markers.to_json %>"
@@ -96,38 +116,50 @@
   >
   </div>
 
-
-
-
-<div class="contain" style="margin-top: 80px;">
-  <div class="row">
-    <div class="row__inner">
-    <%= render 'carrousel', events: Event.where(categories: 'feeling adventurous'), title: 'Feeling adventurous' %>
+<% @events = Event.where(categories: 'game on') %>
+<% if @events != [] %>
+  <div class="contain" style="margin-top: 80px;">
+    <h3 class="tile__tag mb-20 text-white ml-30">Game on</h3>
+    <div class="row-medium">
+      <div class="row__inner">
+        <%= render 'carrousel-medium', events: @events %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
 
-<div class="contain">
-  <div class="row-medium">
-    <div class="row__inner">
-      <%= render 'carrousel-medium', events: Event.where(categories: 'game on'), title: 'Game on' %>
+<% @events = Event.where(categories: 'feeling adventurous') %>
+<% if @adveturous != []  %>
+  <div class="contain">
+    <h3 class="tile__tag mb-20 text-white ml-30">Feeling adventurous</h3>
+    <div class="row">
+      <div class="row__inner">
+      <%= render 'carrousel', events: @events %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
 
-<div class="contain">
-  <div class="row-medium">
-    <div class="row__inner">
-      <%= render 'carrousel-medium', events: Event.where(categories: 'let\'s move around'), title: 'Let\'s move around' %>
+<% @events = Event.where(categories: 'let\'s move around') %>
+<% if @events != [] %>
+  <div class="contain">
+    <h3 class="tile__tag mb-20 text-white ml-30">Let's move around</h3>
+    <div class="row-medium">
+      <div class="row__inner">
+        <%= render 'carrousel-medium', events: @events %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
 
-<div class="contain">
-  <div class="row">
-    <div class="row__inner">
-      <%= render 'carrousel', events: Event.where(categories: 'mingle'), title: 'Let\'s mingle!' %>
+<% @events = Event.where(categories: 'mingle') %>
+<% if @events != [] %>
+  <div class="contain">
+    <h3 class="tile__tag mb-20 text-white ml-30">Let's mingle!</h3>
+    <div class="row">
+      <div class="row__inner">
+        <%= render 'carrousel', events: @events %>
+      </div>
     </div>
   </div>
-</div>
-
+<% end %>

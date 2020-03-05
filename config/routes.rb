@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     member do
       post :follow
       post :unfollow
+      patch :read_alerts
     end
   end
 end

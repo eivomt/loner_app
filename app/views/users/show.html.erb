@@ -3,73 +3,74 @@
   </div>
   <div class="flex justify-center mt-300">
     <div class="event-info b-black">
-
       <div class="profil-info">
         <h3 class="pt-20"><%= @user.username.capitalize %> </h3>
-        <h3 class="text-green">Tøyen, Oslo</h3>
+        <h3 class="text-green">Oslo, Norway</h3>
       </div>
     </div>
+  </div>
 </div>
 
 <div class="flex justify-center mb-40 event-container">
   <div class="event-info b-black">
+    <% if current_user == @user %>
+      <div class="flex mb-20">
+        <p class="button-gray-border x-small"><%= link_to "UPDATE" %> </p>
+        <p class="button-gray-border x-small"><%= link_to "DELETE", user_path, method: :delete %></p>
+      </div>
+    <% else %>
+      <div class="mb-20">
+        <%= render @user %>
+      </div>
+    <% end %>
 
 
-  <% if current_user == @user %>
-    <div class="flex mb-20">
-      <p class="button-gray-border small text-gray"><%= link_to "UPDATE" %> </p>
-      <p class="button-gray-border small"><%= link_to "DELETE", user_path, method: :delete %></p>
+  <div class="flex justify-between event-border">
+    <div>
+      <h3 class="text-red mb-16" style="text-align: left;">Info</h3>
+      <p class="text-white margin-bottom-5" style="text-align: left;">
+      <p class="text-white">
+        <i class="fas fa-envelope x-small text-white pr-7"></i>
+        <%= @user.email %>
+      </p>
+      <i class="fas small text-white pr-7"></i>
+        <%= @user.about %>
+      </p>
     </div>
+  </div>
+
+
+  <% if @events_this_week != [] %>
+    <div class="flex event-border">
+        <div>
+          <h3 class="text-red">My events this week</h3>
+        </div>
+    </div>
+    <%= render 'eventcarrousel', events: @events_this_week %>
   <% end %>
 
-    <div class="flex justify-between event-border">
-    <div>
-      <h3 class="text-red mb-16" style="text-align: left;">Info:</h3>
-        <p class="text-white margin-bottom-5" style="text-align: left;">
-          <i class="fas fa-user small text-white pr-7"></i>
-          <%= @user.username.capitalize %>
-        </p>
-        <p class="text-white">
-          <i class="fas fa-envelope x-small text-white pr-7"></i>
-          <%= @user.email %>
-        </p>
-        <!-- the next 3 lines render a partial with a follow unfollow button.-->
-        <p class="text-white">
-          <%= render @user %>
-        </p>
 
+    <% if @events_this_month != [] %>
+      <div class="flex event-border mt-40 w-100">
+        <div>
+          <h3 class="text-red">My events this month:</h3>
+        </div>
       </div>
+      <%= render 'eventcarrousel', events: @events_this_month %>
+    <% end %>
 
-    </div>
-
-    <div class="flex event-border">
-      <div>
-        <h3 class="text-red">My events this week:</h3>
-      </div>
-    </div>
-      <%= render 'eventcarrousel', events: @events_this_week %>
-
-
-    <div class="flex event-border mt-40 w-100">
-      <div>
-        <h3 class="text-red">My events this month:</h3>
-      </div>
-    </div>
-        <%= render 'eventcarrousel', events: @events_this_month %>
-
-
-
+    <% if @all_my_friends != [] %>
       <div class="event-border mt-40 mb-40">
         <div>
-          <h3 class="text-red mb-40" style="text-align: left;">Friends:</h3>
+          <h3 class="text-red mb-40" style="text-align: left;">Friends</h3>
         </div>
         <div class="flex flex-wrap">
           <%= render 'smallcarousel', users: @all_my_friends %>
         </div>
       </div>
-
+    <% end %>
+   </div>
   </div>
-</div>
 
 
 

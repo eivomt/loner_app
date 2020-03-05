@@ -1,4 +1,4 @@
-<h3 class="tile__tag mb-20"><%= title %></h3>
+
 
 <% events.each do |event| %>
   <div class="tile">
@@ -26,7 +26,7 @@
         <div class="flex align-items-center mt-20">
           <i class="fas fa-user small text-gray pr-7"></i>
           <%  u = User.find(event.creator_id) %>
-          <p class="small text-gray"><%= u.username.capitalize %> </p>
+          <p class="small text-gray"><%= link_to u.username.capitalize, user_path(u) %> </p>
           <i class="fas fa-map-marker small text-gray pr-7 ml-12"></i>
           <p class="small text-gray"><%= event.address.split(',')[1].split.last %> </p>
         </div>

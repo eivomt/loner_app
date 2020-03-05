@@ -1,14 +1,9 @@
-<h3 class="mb-20">Friends I have met</h3>
+<h3 class="mb-20 text-white">Friends I have met</h3>
 
 <% users.each do |user| %>
   <div class="tile__small">
     <div class="tile__media">
       <%= link_to cl_image_tag(user.photo.key, class: "tile__img__small"), user_path(user) %>
-      <!---
-      <div class="white-card-small">
-        <p class="text-gray"><%= user.username.capitalize %> </p>
-      </div>
-      --->
-    </div>
+     </div>
   </div>
 <% end %>
