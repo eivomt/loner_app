@@ -1,0 +1,45 @@
+<% events.each do |event| %>
+  <div class="tile">
+    <div class="tile__media">
+      <div class="tile_img_contain">
+        <div class="absolute">
+        </div>
+        <%= link_to cl_image_tag(event.photo.key, class: "tile__img"), event_path(event) %>
+      </div>
+
+      <div class="white-card">
+        <div class="flex">
+          <div class="grow">
+            <p class="small text-green">
+              <%#= event.time.strftime("%b, %-d, %Y, %H:%M") %>
+              <%= start_time_humanized(event) %>
+            </p>
+            <h3><%= event.name %></h3>
+          </div>
+          <% if event.categories != "volunteering" %>
+            <div class="number-missing flex justify-content-center align-items-center">
+              <h3 class="number"><%= event.people_needed %></h3>
+            </div>
+          <% else %>
+            <div class="flex justify-content-center align-items-center">
+              <%= image_tag "heart-15.svg", class: "heart" %>
+            </div>
+          <% end %>
+        </div>
+
+        <div class="flex justify-between mt-20">
+          <div class="flex align-items-center">
+          <i class="fas fa-user small text-gray pr-7"></i>
+          <%  u = User.find(event.creator_id) %>
+          <p class="small text-gray"><%= u.username.capitalize %> </p>
+          <i class="fas fa-map-marker small text-gray pr-7 ml-12"></i>
+          <p class="small text-gray"><%= event.address.split(',')[1].split.last %> </p>
+          </div>
+          <div>
+            <p class="small text-red flex-grow">Wanted</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
