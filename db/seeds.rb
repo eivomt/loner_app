@@ -819,7 +819,7 @@ puts "one event in the passed for friends ive met"
     creator_id: 9,
     address: "Schweigaardsgate 34, 0191 Oslo",
     description: "We made it! =)",
-    time: "March 6, 2020 08:30"
+    time: "February 6, 2020 08:30"
   })
 
   file = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,h_840,q_auto,w_1952/v1578570211/cpizdoyq3k1z06saej2m.webp")
