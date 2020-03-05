@@ -33,62 +33,64 @@
   </head>
 
   <body class="<%= controller_name %>_<%= action_name %>">
-    <%= render 'shared/button' %>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
+    <div class="body-container">
+      <%= render 'shared/button' %>
+      <%= render 'shared/navbar' %>
+      <%= render 'shared/flashes' %>
 
-    <%= yield %>
+      <%= yield %>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-    <%= javascript_pack_tag 'application' %>
-    <%= javascript_include_tag 'application' %>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+      <%= javascript_pack_tag 'application' %>
+      <%= javascript_include_tag 'application' %>
 
-    <script>
-      <% if signed_in? %>
-        function scrollLastMessageIntoView() {
-          const messages = document.querySelectorAll('.comment');
-          const lastMessage = messages[messages.length - 1]
+      <script>
+        <% if signed_in? %>
+          function scrollLastMessageIntoView() {
+            const messages = document.querySelectorAll('.comment');
+            const lastMessage = messages[messages.length - 1]
 
-          if (lastMessage !== undefined) {
-            lastMessage.scrollIntoView();
-          }
-        }
-
-      function subscribeEvent(id) {
-        App[`event_show_${id}`] = App.cable.subscriptions.create({
-          channel: 'CommentChannel',
-          event_id: id
-        },
-        {
-          received: (data) => {
-            const messagesContainer = document.querySelector('#comments');
-            let messageHTML = data.message_partial;
-
-              if (messagesContainer && parseInt(messagesContainer.dataset.event_id) === id) {
-                if (data.current_user_id == <%= current_user.id %>) {
-                  messageHTML = messageHTML.replace('other-comment', 'self-comment');
-                }
-
-                messagesContainer.insertAdjacentHTML('beforeend', messageHTML);
-
-                if (data.current_user_id == <%= current_user.id %>) {
-                  scrollLastMessageIntoView();
-                }
-              } else {
-                showNotification(data.notification_partial, data.url);
-              }
+            if (lastMessage !== undefined) {
+              lastMessage.scrollIntoView();
             }
+          }
+
+        function subscribeEvent(id) {
+          App[`event_show_${id}`] = App.cable.subscriptions.create({
+            channel: 'CommentChannel',
+            event_id: id
+          },
+          {
+            received: (data) => {
+              const messagesContainer = document.querySelector('#comments');
+              let messageHTML = data.message_partial;
+
+                if (messagesContainer && parseInt(messagesContainer.dataset.event_id) === id) {
+                  if (data.current_user_id == <%= current_user.id %>) {
+                    messageHTML = messageHTML.replace('other-comment', 'self-comment');
+                  }
+
+                  messagesContainer.insertAdjacentHTML('beforeend', messageHTML);
+
+                  if (data.current_user_id == <%= current_user.id %>) {
+                    scrollLastMessageIntoView();
+                  }
+                } else {
+                  showNotification(data.notification_partial, data.url);
+                }
+              }
+            });
+          }
+
+          window.eventIds = <%=j current_user.event_ids %>;
+          document.addEventListener('DOMContentLoaded', () => {
+            window.eventIds.forEach(id => subscribeEvent(id));
           });
-        }
+        <% end %>
+      </script>
 
-        window.eventIds = <%=j current_user.event_ids %>;
-        document.addEventListener('DOMContentLoaded', () => {
-          window.eventIds.forEach(id => subscribeEvent(id));
-        });
-      <% end %>
-    </script>
-
-    <%= yield(:after_js) %>
+      <%= yield(:after_js) %>
+    </div>
   </body>
 </html>

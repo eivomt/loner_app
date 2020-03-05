@@ -1,18 +1,16 @@
 // Import page-specific CSS files here.
 @import "home";
 
-
 body {
   background: $black;
 }
 
-.events_index {
-  body {
-  background: linear-gradient(45deg, $red, #38063A, $red);
+body.events_index {
+  background: linear-gradient(45deg, $red, $black, $red);
   background-size: 400% 400%;
   animation: gradient 10s ease infinite;
-  }
 }
+
 
 .catchphrase {
   position: absolute;
