@@ -14,7 +14,7 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import { initMapbox } from '../plugins/init_mapbox';
 import { initHeroAnimation } from '../plugins/hero_animation';
 import { initJoinButton } from '../plugins/join_button';
-// import { initShowAnimation } from '../plugins/show_animation';
+import { initShowAnimation } from '../plugins/show_animation';
 
 
 window.showNotification = (text, url) => {
