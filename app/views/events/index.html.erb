@@ -60,25 +60,30 @@
 </div>
 </div>
 
+<% @events_now = Event.where(time: (DateTime.now-1.day..DateTime.now+2.day)) %>
 
-
-<div class="contain" style="margin-top: 100px;">
-  <div class="row">
-    <div class="row__inner" id="top_header">
-    <%= render 'carrousel', events: Event.where(time: (DateTime.now-9.hour..DateTime.now+4.hour)), title: 'Happening now' %>
+<% if @events_now != [] %>
+  <div class="contain" style="margin-top: 100px;">
+    <div class="row">
+      <div class="row__inner" id="top_header">
+      <%= render 'carrousel', events: @events_now, title: 'Happening now' %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
 
 <!-- HAPPY HELPING PUT YOUR CODE  -->
+<% @volunteer_events = Event.where(categories: 'volunteering') %>
 
-<div class="contain">
-  <div class="row">
-    <div class="row__inner">
-    <%= render 'carousel-volunteer', events: Event.where(categories: 'volunteering'), title: 'Happy helping' %>
+<% if @volunteer_events != [] %>
+  <div class="contain">
+    <div class="row">
+      <div class="row__inner">
+      <%= render 'carousel-volunteer', events: @volunteer_events, title: 'Happy helping' %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
 
 
 <!-- FRIENDS I HAVE MET -->
@@ -102,35 +107,46 @@
   >
   </div>
 
-<div class="contain" style="margin-top: 80px;">
-  <div class="row">
-    <div class="row__inner">
-    <%= render 'carrousel', events: Event.where(categories: 'feeling adventurous'), title: 'Feeling adventurous' %>
+<% @events = Event.where(categories: 'feeling adventurous') %>
+<% if @adveturous != []  %>
+  <div class="contain" style="margin-top: 80px;">
+    <div class="row">
+      <div class="row__inner">
+      <%= render 'carrousel', events: @events, title: 'Feeling adventurous' %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
 
-<div class="contain">
-  <div class="row-medium">
-    <div class="row__inner">
-      <%= render 'carrousel-medium', events: Event.where(categories: 'game on'), title: 'Game on' %>
+<% @events = Event.where(categories: 'game on') %>
+<% if @events != [] %>
+  <div class="contain">
+    <div class="row-medium">
+      <div class="row__inner">
+        <%= render 'carrousel-medium', events: @events, title: 'Game on' %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
 
-<div class="contain">
-  <div class="row-medium">
-    <div class="row__inner">
-      <%= render 'carrousel-medium', events: Event.where(categories: 'let\'s move around'), title: 'Let\'s move around' %>
+<% @events = Event.where(categories: 'let\'s move around') %>
+<% if @events != [] %>
+  <div class="contain">
+    <div class="row-medium">
+      <div class="row__inner">
+        <%= render 'carrousel-medium', events: @events, title: 'Let\'s move around' %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
 
-<div class="contain">
-  <div class="row">
-    <div class="row__inner">
-      <%= render 'carrousel', events: Event.where(categories: 'mingle'), title: 'Let\'s mingle!' %>
+<% @events = Event.where(categories: 'mingle') %>
+<% if @events != [] %>
+  <div class="contain">
+    <div class="row">
+      <div class="row__inner">
+        <%= render 'carrousel', events: @events, title: 'Let\'s mingle!' %>
+      </div>
     </div>
   </div>
-</div>
-
+<% end %>
