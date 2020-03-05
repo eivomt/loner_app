@@ -29,12 +29,12 @@
     <div>
       <h3 class="text-red mb-16" style="text-align: left;">Info</h3>
       <p class="text-white margin-bottom-5" style="text-align: left;">
-        <i class="fas fa-user small text-white pr-7"></i>
-        <%= @user.username.capitalize %>
-      </p>
       <p class="text-white">
         <i class="fas fa-envelope x-small text-white pr-7"></i>
         <%= @user.email %>
+      </p>
+      <i class="fas small text-white pr-7"></i>
+        <%= @user.about %>
       </p>
     </div>
   </div>
