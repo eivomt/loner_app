@@ -721,7 +721,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
   event = Event.create!({
     name: "Missing one",
     people_going: 5,
-    people_needed: 1,
+    people_needed: 15,
     categories: "let's move around",
     creator_id: 8,
     address: "Marselis' gate 15B, 0551 Oslo",
