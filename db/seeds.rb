@@ -240,7 +240,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     creator_id: 16,
     address: "Kolstadgata 1, 0652 Oslo",
     description: "Serving is caring. Food for people in need.",
-    time: "March 6, 2020 19:00"
+    time: "March 8, 2020 19:00"
   })
 
   file = URI.open("https://images.unsplash.com/photo-1541802645635-11f2286a7482?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&q=80")
@@ -866,6 +866,8 @@ EventUser.create!(user_id: 10, event_id: 40)
 EventUser.create!(user_id: 14, event_id: 40)
 EventUser.create!(user_id: 15, event_id: 40)
 EventUser.create!(user_id: 17, event_id: 40)
+EventUser.create!(user_id: 3, event_id: 40)
+
 
 puts "le wagon event after ptitch"
 

@@ -64,7 +64,7 @@
 </div>
 </div>
 
-<% @events_now = Event.where(time: (DateTime.now-1.day..DateTime.now+2.day)) %>
+<% @events_now = Event.where(time: (DateTime.now-4.hour..DateTime.now+6.hour)) %>
 
 <% if @events_now != [] %>
   <div class="contain" style="margin-top: 100px;">
