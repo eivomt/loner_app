@@ -3,6 +3,7 @@ import Rails from '@rails/ujs';
 Rails.start();
 
 import toastr from 'toastr';
+import Typed from 'typed.js';
 
 require("@rails/activestorage").start()
 require("channels")
@@ -13,6 +14,7 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import { initMapbox } from '../plugins/init_mapbox';
 import { initHeroAnimation } from '../plugins/hero_animation';
 import { initJoinButton } from '../plugins/join_button';
+// import { initShowAnimation } from '../plugins/show_animation';
 
 
 window.showNotification = (text, url) => {
@@ -25,4 +27,5 @@ window.showNotification = (text, url) => {
 initMapbox();
 initHeroAnimation();
 initJoinButton();
+// initShowAnimation();
 

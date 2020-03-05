@@ -1,98 +1,11 @@
 import anime from 'animejs';
 import Rails from '@rails/ujs';
 
-const initJoinButton = () => {
-  const button = document.querySelector('#join-button')
+const initShowAnimation = () => {
+  const check = document.querySelector('#going-count')
 
-  if (!button) {
-    return;
-  }
-
-  let joined = button.dataset.joined == 'true';
-  let updating = false;
-
-  const handleClick = () => {
-    if (updating) {
-      return;
-    }
-
-    updating = true;
-
-    const goingDiv = document.getElementById('going-count');
-    const missingDiv = document.getElementById('missing-count');
-    const going = parseInt(document.getElementById('going-count').innerText);
-    const missing = parseInt(document.getElementById('missing-count').innerText);
-
-    if (missing == 0 && !joined) {
-      alert('NO MORE ROOM!');
-      return;
-    }
-
-    const updateState = () => {
-      joined = !joined;
-      updating = false;
-    }
-
-    const updateCounters = (num) => {
-      goingDiv.innerText = going + num;
-      missingDiv.innerText = missing - num;
-    }
-
-    const joinRequest = () => {
-      updateCounters(1);
-
-      Rails.ajax({
-        url: button.dataset.join_url,
-        type: 'POST',
-        data: '',
-        success: function(data) {
-          button.dataset.cancel_url = data;
-          updateState();
-        },
-        error: function(data) {}
-      });
-    }
-
-    const cancelRequest = () => {
-      updateCounters(-1);
-
-      Rails.ajax({
-        url: button.dataset.cancel_url,
-        type: 'DELETE',
-        data: '',
-        success: function(data) {
-          updateState();
-        },
-        error: function(data) {}
-      });
-    }
-
-    const buttonTimeline = anime.timeline({
-      duration : 450,
-      easing : 'easeInOutExpo',
-      complete: () => {}
-    });
-
-    buttonTimeline.add({
-      targets : "#plus-joined",
-      translateX: joined ? "-23.7px" : "0px",
-      rotate: joined ? "-90" : "0",
-    });
-
-    buttonTimeline.add({
-      targets : "#plus-join",
-      translateX: joined ? "-0px" : "24.2px",
-      rotate: joined ? "0" : "90",
-    }, '-=250');
-
-    buttonTimeline.add({
-      targets : "#join-button",
-      backgroundColor: joined ? "#ff3b6b" : "#00bd67",
-      borderColor: joined ? "#ff3b6b" : "#00bd67",
-    }, '-=630');
-
-    if (joined === false) {
-      const avatars = document.querySelectorAll(".feedback-avatar")
+  if (check) {
+    const avatars = document.querySelectorAll(".feedback-avatar")
     const plus = document.querySelector(".show-plus")
     const plusBox = document.querySelector(".plus-box-show")
     const me = document.querySelector(".feedback-avatar-me")
@@ -261,16 +174,10 @@ const initJoinButton = () => {
     loopCount: 2,
     stringsElement: '#typed-strings'
   });
-    }
-    if (joined) {
-      cancelRequest();
-    } else {
-      joinRequest();
-    }
-  };
+  } else {
+    return
+  }
 
-  button.addEventListener('click', handleClick, false);
-  button.addEventListener('touchend', handleClick, false);
 }
 
-export { initJoinButton };
+export { initShowAnimation }
