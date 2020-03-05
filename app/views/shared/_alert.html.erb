@@ -1,0 +1,21 @@
+
+<div class="dropdown">
+  <a href="#" id="alert-list" data-userid="<%= current_user.id %>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+    <% if current_user.comment_alerts.not_read.count > 0 %>
+      <span class="badge badge-light" id="unread-count">
+        <%= current_user.comment_alerts.not_read.count %>
+      </span>
+    <% end %>
+  </a>
+
+  <div class="dropdown-menu" aria-labelledby="alert-list">
+    <% if current_user.comment_alerts.not_read.count > 0 %>
+      <% current_user.comment_alerts.not_read.each do |alert| %>
+        <%= link_to alert.event.name, event_path(alert.event), class: 'dropdown-item' %>
+      <% end %>
+    <% else %>
+      <p class="text-danger">You have no notifications</p>
+    <% end %>
+  </div>
+</div>

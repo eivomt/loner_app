@@ -4,3 +4,28 @@
   right: 16px;
   z-index: 1000;
 }
+
+.badge-light {
+  width: 18px;
+  height: 18px;
+  background: $red;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1000;
+  top: 20px;
+  left: 8px;
+  color: white;
+  font-weight: 500;
+  font-size: .64rem;
+  letter-spacing: .4px;
+  padding-top: 4px;
+}
+
+.dropdown-menu {
+  top: 45px !important;
+  left: -28px !important;
+}
+
+.dropdown-item {
+  font-size: .9rem !important;
+}

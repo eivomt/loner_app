@@ -1,7 +1,40 @@
 // Import page-specific CSS files here.
 @import "home";
 
+
 body {
-  background: #38063A;
-  // background: linear-gradient(0deg, rgba(0,0,0,1) 65%, rgba(67,67,67,1) 100%);
+  background: $black;
+}
+
+.catchphrase {
+  position: absolute;
+  bottom: 25%;
+  left: 0;
+  right: 0;
+}
+
+#hero-logo {
+  height: 100vh;
+
+}
+
+@media all and (min-width: 556px) {
+  .catchphrase {
+  bottom: 20%;
+}
+  .catchphrase h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

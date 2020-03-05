@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:follow, :unfollow]
+  before_action :set_user, only: [:follow, :unfollow, :read_alerts]
 
   def show
     @user = User.find(params[:id])
@@ -22,6 +22,7 @@ class UsersController < ApplicationController
 
             elsif @array_of_friends.include?(user)
             else
+              next if user == @user
               @array_of_friends << user
             end
           end
@@ -113,7 +114,7 @@ class UsersController < ApplicationController
   def follow
     if current_user.follow(@user.id)
       respond_to do |format|
-        format.html { redirect_to user_path(params[:id]) }
+        format.html { redirect_to user_path(@user) }
         format.js
       end
     end
@@ -122,10 +123,14 @@ class UsersController < ApplicationController
   def unfollow
     if current_user.unfollow(@user.id)
       respond_to do |format|
-        format.html { redirect_to user_path(params[:id]) }
+        format.html { redirect_to user_path(@user) }
         format.js { render action: :follow }
       end
     end
+  end
+
+  def read_alerts
+    @user.comment_alerts.update_all(read: true)
   end
 
   private

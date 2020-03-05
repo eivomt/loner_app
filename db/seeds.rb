@@ -14,7 +14,8 @@ user = User.create!({
   username: "saioa",
   email: "saio@gmail.com",
   password: "password",
-  age: 26
+  age: 26,
+  about: "Before you start eating your lunch you should definetively check out this video of rubbery infant poo!"
 })
 
 puts "picture url 1"
@@ -27,7 +28,8 @@ user = User.create!({
     username: "Torfinn",
     email: "torfinn@gmail.com",
     password: "password",
-    age: 43
+    age: 43,
+    about: "I am passionate about dancing. Can´t wait to show you my moves!"
   })
 
 file = URI.open("https://images.askmen.com/1080x540/2016/01/25-021526-facebook_profile_picture_affects_chances_of_getting_hired.jpg")
@@ -38,16 +40,20 @@ user = User.create!({
     username: "Eivind",
     email: "eivind@gmail.com",
     password: "password",
-    age: 30
+    age: 30,
+    about: "I love to go country skiing with my family. Nature is the place to be!"
   })
 file = URI.open("https://i.kinja-img.com/gawker-media/image/upload/s--C-HE98Fg--/c_scale,fl_progressive,q_80,w_800/eibgv7kctah62iddzywm.jpg")
 user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
+
+
 puts "picture url 4"
 user = User.create!({
     username: "Alex",
     email: "alex@gmail.com",
     password: "password",
-    age: 25
+    age: 25,
+    about: "When I´m finished coding, I code a bit more. This app helps me to disconect from my computer!"
   })
 file = URI.open("https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&h=350")
 user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
@@ -56,7 +62,8 @@ user = User.create!({
     username: "Simen",
     email: "simen@gmail.com",
     password: "password",
-    age: 27
+    age: 27,
+    about: "I enjoy getting out of the city with my vintage bike. The fact that it´s not best for mountain biking is a minor issue."
   })
 file = URI.open("https://www.specialimages.co.uk/blog/wp-content/uploads/2012/07/corporate-people-photography-1.jpg")
 user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
@@ -66,106 +73,136 @@ user = User.create!({
     username: "Julian",
     email: "julian@gmail.com",
     password: "password",
-    age: 27
+    age: 27,
+    about: "Yoga is life! Just remember to keep breathing!"
   })
 file = URI.open("http://2hngz4f6s7y2dzzb25efew8p.wpengine.netdna-cdn.com/wp-content/uploads/2015/10/Michael-Fotis_Smart-Money-People.jpg")
 user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
 
+puts "picture url 7"
 user = User.create!({
     username: "Dennis",
     email: "dennis@gmail.com",
     password: "password",
-    age: 40
+    age: 40,
+    about: "Nicolas Cage is my childhood hero. I aspire to be like him when I grow up."
   })
 file = URI.open("https://www.thefamouspeople.com/profiles/images/nicolas-cage-2.jpg")
 user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
 
+puts "picture url 8"
 user = User.create!({
     username: "Nikolai",
     email: "nikolai@gmail.com",
     password: "password",
-    age: 20
+    age: 20,
+    about: "My superpower is to sell you things you dont need. Selling something you need has no merith!"
   })
 file = URI.open("https://www.wikihow.com/images/thumb/9/95/Profile-People-Step-13.jpg/aid2555150-v4-728px-Profile-People-Step-13.jpg")
 user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
 
+puts "picture url 9"
 user = User.create!({
     username: "Joana",
     email: "joana@gmail.com",
     password: "password",
-    age: 23
+    age: 23,
+    about: "Join our community of programmers! It´s challenging and fun!"
   })
 file = URI.open("https://assets.entrepreneur.com/content/3x2/1300/20150406145944-dos-donts-taking-perfect-linkedin-profile-picture-selfie-mobile-camera-2.jpeg")
   user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
+
+puts "picture url 10"
 
 user = User.create!({
     username: "Agnieszka",
     email: "agnieszka@gmail.com",
     password: "password",
-    age: 28
+    age: 28,
+    about: "Photography is my hobbie. You never know where your best shot is going to be!"
   })
 file = URI.open("https://static.businessinsider.com/image/5171c012eab8eabb72000001/image.jpg")
 user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
 
+puts "picture url 11"
 user = User.create!({
     username: "Laura",
     email: "laura@gmail.com",
     password: "password",
-    age: 20
+    age: 20,
+    about: "I love travelling and having a cup of tea while watching netflix."
   })
 file = URI.open("https://www.gold.ac.uk/media/images-by-section/about-us/our-people/profile-hub/iqra-ba-english.jpg")
 user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
+
+puts "picture url 12"
 
 user = User.create!({
     username: "Silje",
     email: "silje@gmail.com",
     password: "password",
-    age: 26
+    age: 26,
+    about: "Summer in Oslo is the best. I love taking frozen shrimps to the fjords, but a good barbecue will do as well!"
   })
 file = URI.open("https://naturalpod.com/wp-content/uploads/2016/02/Salt-Spring-Dina-Ottoni-Battistessa.jpg")
 user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
+
+puts "picture url 13"
 
 user = User.create!({
     username: "Kim",
     email: "kim@gmail.com",
     password: "password",
-    age: 27
+    age: 27,
+    about: "I work as an accountant. Hackathons are my secret hobbie."
   })
 file = URI.open("https://cfl.dropboxstatic.com/static/images/jobs/jobs_2015/profile-home-makers-vflWnMtf7.jpg")
 user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
+
+puts "picture url 14"
 
 user = User.create!({
     username: "Jeremy",
     email: "jeremy@gmail.com",
     password: "password",
-    age: 27
+    age: 27,
+    about: "A coffee and a baguette and Im ready for the day. A crep will do as well!"
   })
 file = URI.open("http://www.leisureopportunities.com/images/995586_746594.jpg")
   user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
+
+puts "picture url 15"
 
 user = User.create!({
     username: "Ricardo",
     email: "ricardo@gmail.com",
     password: "password",
-    age: 27
+    age: 27,
+    about: "Why write 5 lines of code if you can do it in one? Refactorrrr!!!"
   })
 file = URI.open("http://www.allinsonsphotography.co.uk/wp-content/uploads/2013/04/untitled-20.jpg")
 user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
+
+puts "picture url 16"
 
 user = User.create!({
     username: "Amanda",
     email: "amanda@gmail.com",
     password: "password",
-    age: 27
+    age: 27,
+    about: "I work at a norwegian NGO called: de eldeste er de beste. Feel free to send me an email if you´d like to be a part of the team. Appreciate it also if you join us as a once of!"
   })
 file = URI.open("https://www.deputy.com/uploads/2018/08/The-Guide-to-Creating-a-Powerful-LinkedIn-Profile_Content-image2-min-1024x895.png")
 user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
+
+puts "picture url 17"
 
 user = User.create!({
     username: "Max",
     email: "max@gmail.com",
     password: "password",
-    age: 27
+    age: 27,
+    about: "I´ve made it through a 60km country skiing marathon eating only kiwis!"
   })
 file = URI.open("https://jerrykieschnick.files.wordpress.com/2014/05/old-man-1.jpg")
 user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
@@ -360,7 +397,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     creator_id: 6,
     address: "Trollvannsveien 1, 0490 Oslo",
     description: "Alpine skiing!",
-    time: "March 12, 2020 09:30"
+    time: "March 04, 2020 09:30"
 })
 
   file = URI.open("http://blog.davidgiralphoto.com/wp-content/uploads/2013/03/editorial-travel-montreal-winter-mont-royal-park-19.jpg")
@@ -792,7 +829,7 @@ puts "one event in the passed for friends ive met"
 puts "seeds for event im going to join"
 EventUser.create!(user_id: 2, event_id: 12)
 EventUser.create!(user_id: 3, event_id: 12)
-EventUser.create!(user_id: 11, event_id: 12)
+EventUser.create!(user_id: 1, event_id: 12)
 EventUser.create!(user_id: 12, event_id: 12)
 EventUser.create!(user_id: 8, event_id: 12)
 EventUser.create!(user_id: 16, event_id: 12)

@@ -1,7 +1,22 @@
-<% users.each do |user| %>
-  <% if @user.is_following?(user.id) %>
-    <%= link_to cl_image_tag(user.photo.key, class: "avatar margin-bottom-5 people-following"), user_path(user) %>
-  <% else %>
-    <%= link_to cl_image_tag(user.photo.key, class: "avatar margin-bottom-5 people-i-have-met"), user_path(user) %>
+<div class="friends_tile">
+  <% users.each do |user| %>
+    <div class="friends">
+      <%= link_to cl_image_tag(user.photo.key, class: "tile__img__small"), user_path(user) %>
+      <div class="friend-text">
+        <div class="white-card flex justify-between">
+          <% if @user.is_following?(user.id) %>
+            <p class="text-gray small"><%= user.username.capitalize %></p>
+            <i class="fas fa-check small text-green"></i>
+          <% else %>
+            <p class="text-gray small"><%= user.username.capitalize %></p>
+          <% end %>
+        </div>
+      </div>
+    </div>
   <% end %>
-<% end %>
+</div>
+
+
+
+
+
