@@ -124,7 +124,7 @@ const initJoinButton = () => {
     .add({
     duration: 500,
     targets: ".feedback-container",
-    top: "1335px",
+    top: "200vh",
     easing: "easeInOutExpo"
     })
 
@@ -211,13 +211,13 @@ const initJoinButton = () => {
       duration: 500,
       translateX: -131,
       delay: anime.stagger(100)
-    }, '-=400')
+    }, '-=550')
 
     .add({
-      easing: "easeInOutExpo",
+      easing: "easeInExpo",
       targets: '.square',
-      duration: 2000,
-      rotate: "720",
+      duration: 1500,
+      rotate: "720"
     }, '-=300')
 
     .add({
@@ -225,7 +225,7 @@ const initJoinButton = () => {
       easing: "easeInOutExpo",
       duration: 500,
       d: plusPath,
-    }, '-=2500')
+    }, '-=2000')
 
      .add({
       duration: 500,
@@ -233,12 +233,12 @@ const initJoinButton = () => {
       width: '13%',
       left: '11.3%'
 
-    }, '-=2000')
+    }, '-=1500')
 
-     .add({
-      targets: '.square',
-      translateX: 200
-     }, '-=2000')
+     // .add({
+     //  targets: '.square',
+     //  translateX: 200
+     // }, '-=2000')
 
     // .add({
     //   targets: plus,
@@ -253,27 +253,66 @@ const initJoinButton = () => {
     // }, '-=500')
 
     .add({
-    duration: 500,
+    duration: 1600,
     targets: ".feedback-container",
-    top: "-100vh",
+    top: "-200vh",
     easing: "easeInOutExpo"
-    }, '-=1600');
+    }, '-=1600')
+
+    .add({
+      targets: '.square',
+      duration: 1400,
+      rotate: '-270'
+    }, '-=1400')
+
+    .add({
+      targets: avatars,
+      duration: 1,
+      translateY: 0
+    })
+
+    .add({
+      targets: plus,
+      fill: "transparent",
+      duration: 1
+    })
+
+    .add({
+      targets: plusBox,
+      duration: 1,
+      translateY: 0,
+      // top: '11.5%'
+    })
+
+    .add({
+      targets: me,
+      duration: 1,
+      opacity: 0,
+      translateY: 0,
+      translateX: 0
+    })
+
+    .add({
+      targets: '.square',
+      duration: 1,
+      rotate: '-630'
+    });
 
 
 
-  const options = {
-    strings: ['<i>First</i> sentence.', '&amp; a second sentence.'],
-    typeSpeed: 40
-  };
+  // const options = {
+  //   strings: ['<i>First</i> sentence.', '&amp; a second sentence.'],
+  //   typeSpeed: 40
+  // };
 
-  const typed = new Typed('#typed', {
-    startDelay: 3250,
-    typeSpeed: 20,
-    backSpeed: 0,
-    loop: true,
-    loopCount: 2,
-    stringsElement: '#typed-strings'
-  });
+  // const typed = new Typed('#typed', {
+  //   startDelay: 3250,
+  //   typeSpeed: 20,
+  //   backSpeed: 7,
+  //   loop: true,
+  //   loopCount: 2,
+  //   stringsElement: '#typed-strings'
+  // });
     }
     if (joined) {
       cancelRequest();
