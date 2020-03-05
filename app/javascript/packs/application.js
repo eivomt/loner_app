@@ -16,7 +16,8 @@ import { initHeroAnimation } from '../plugins/hero_animation';
 import { initJoinButton } from '../plugins/join_button';
 // import { initShowAnimation } from '../plugins/show_animation';
 
-import { initFadeOnScroll } from '../plugins/hero_fade';
+import { initFadeOnScroll, fadeHero } from '../plugins/hero_fade';
+import { checkPosition } from '../plugins/hero_fade';
 
 
 
@@ -54,7 +55,7 @@ initHeroAnimation();
 initJoinButton();
 
 // initShowAnimation();
-
+fadeHero();
 initFadeOnScroll();
 
 
