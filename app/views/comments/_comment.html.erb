@@ -2,7 +2,15 @@
   <div class="content-container">
     <div class="header-container">
       <div class="username">
-        <p class="text-gray"><%= comment.user.username %> • <span><%= (Time.now - comment.created_at).fdiv(60).floor %> min ago</span></p>
+        <p class="text-gray"><%= comment.user.username %> •
+          <span>
+            <% if (Time.now - comment.created_at).fdiv(60).floor < 60 %>
+              <%= (Time.now - comment.created_at).fdiv(60).floor %> min ago
+            <% else %>
+              <%= (Time.now - comment.created_at).fdiv(60).fdiv(60).floor %>h
+              <%= ((Time.now - comment.created_at).fdiv(60)%60).floor %>min
+            <% end %>
+          </span></p>
       </div>
     </div>
     <div class="content">
