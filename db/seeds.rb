@@ -815,7 +815,7 @@ puts "one event in the passed for friends ive met"
     name: "Le Wagon!",
     people_going: 1,
     people_needed: 15,
-    categories: "lewagon",
+    categories: "mingle",
     creator_id: 9,
     address: "Schweigaardsgate 34, 0191 Oslo",
     description: "We made it! =)",
