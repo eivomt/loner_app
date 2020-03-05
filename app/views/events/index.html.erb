@@ -114,17 +114,6 @@
   </div>
 <% end %>
 
-<!-- FRIENDS I HAVE MET -->
-<%# if user_signed_in? && @array_of_friends != []%>
-  <div class="contain">
-    <div class="row-small">
-      <div class="row__inner">
-        <%= render 'carousel', users: @array_of_friends %>
-      </div>
-    </div>
-  </div>
-<%# end %>
-
 <% @events = Event.where(categories: 'let\'s move around') %>
 <% if @events != [] %>
   <div class="contain">
