@@ -32,19 +32,9 @@
         </div>
       </div>
     </div>
-
   </div>
-
-
-
-
-  <div class="catchphrase">
-    <h3 class="text-center">Always a good time to make friends</h3>
-  </div>
-
 
   <div class="scroll-indicator-container">
-
     <div class="small-arrow">
       <svg
       width="53"
@@ -61,8 +51,6 @@
     </div>
   </div>
 </div>
-</div>
-</div>
 
 <% @events_now = Event.where(time: (DateTime.now-1.day..DateTime.now+2.day)) %>
 
@@ -78,18 +66,6 @@
 <% end %>
 
 
-<!-- FRIENDS I HAVE MET -->
-<%# if user_signed_in? && @array_of_friends != []%>
-  <div class="contain">
-    <div class="row-small">
-      <div class="row__inner">
-        <%= render 'carousel', users: @array_of_friends %>
-      </div>
-    </div>
-  </div>
-<%# end %>
-
-
 <!-- HAPPY HELPING PUT YOUR CODE  -->
 <% @volunteer_events = Event.where(categories: 'volunteering') %>
 
@@ -103,9 +79,6 @@
     </div>
   </div>
 <% end %>
-
-
-
 
 
 <!-- MAP -->

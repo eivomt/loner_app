@@ -28,14 +28,10 @@
   <div class="flex justify-between event-border">
     <div>
       <h3 class="text-red mb-16" style="text-align: left;">Info</h3>
-      <p class="text-white margin-bottom-5" style="text-align: left;">
-      <p class="text-white">
-        <i class="fas fa-envelope x-small text-white pr-7"></i>
-        <%= @user.email %>
-      </p>
-      <i class="fas small text-white pr-7"></i>
-        <%= @user.about %>
-      </p>
+
+      <p class="text-white margin-bottom-5" style="text-align: left;"></p>
+      <p class="text-white"><i class="fas fa-envelope x-small text-white pr-7 mb-20"></i><%= @user.email %></p>
+      <p class="text-white"><%= @user.about %></p>
     </div>
   </div>
 

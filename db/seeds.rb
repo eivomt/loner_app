@@ -190,7 +190,7 @@ user = User.create!({
     email: "amanda@gmail.com",
     password: "password",
     age: 27,
-    about: "I work at a norwegian NGO called: de eldeste er de beste. Feel free to send me an email if you´d like to be a part of the team. Appreciate it also if you join us as a once of!"
+    about: "I work at a norwegian NGO called: de eldeste er de beste. Feel free to send me an email if you'd like to be a part of the team. Appreciate it also if you join us as a once of!"
   })
 file = URI.open("https://www.deputy.com/uploads/2018/08/The-Guide-to-Creating-a-Powerful-LinkedIn-Profile_Content-image2-min-1024x895.png")
 user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
@@ -202,7 +202,7 @@ user = User.create!({
     email: "max@gmail.com",
     password: "password",
     age: 27,
-    about: "I´ve made it through a 60km country skiing marathon eating only kiwis!"
+    about: "I've made it through a 60km country skiing marathon eating only kiwis!"
   })
 file = URI.open("https://jerrykieschnick.files.wordpress.com/2014/05/old-man-1.jpg")
 user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
@@ -228,7 +228,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 10, 2020 20:45"
   })
 
-  file = URI.open("https://images.unsplash.com/photo-1526976668912-1a811878dd37?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&q=80")
+  file = URI.open("https://images.unsplash.com/photo-1526976668912-1a811878dd37?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80")
   event.photo.attach(io: file, filename: 'summercamp.png', content_type: 'image/png')
 
   puts "Soul kitchen"
@@ -243,7 +243,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 6, 2020 19:00"
   })
 
-  file = URI.open("https://images.unsplash.com/photo-1541802645635-11f2286a7482?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&q=80")
+  file = URI.open("https://images.unsplash.com/photo-1541802645635-11f2286a7482?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80")
   event.photo.attach(io: file, filename: 'soulkitchen.png', content_type: 'image/png')
 
   puts "Bingo!"
@@ -304,7 +304,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "December 24, 2021 16:00"
   })
 
-  file = URI.open("https://images.unsplash.com/photo-1543598098-622a5e218f43?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&q=80")
+  file = URI.open("https://images.unsplash.com/photo-1543598098-622a5e218f43?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80")
   event.photo.attach(io: file, filename: 'kayaking.png', content_type: 'image/png')
 
 
@@ -324,7 +324,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 10, 2020 20:45"
   })
 
-  file = URI.open("https://images.unsplash.com/photo-1464207687429-7505649dae38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1952&q=80")
+  file = URI.open("https://images.unsplash.com/photo-1464207687429-7505649dae38?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80")
   event.photo.attach(io: file, filename: 'mountain_sun.png', content_type: 'image/png')
 
   puts "Creating event Hunt for light"
@@ -339,7 +339,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 14, 2020 10:30"
   })
 
-  file = URI.open("https://images.unsplash.com/photo-1577456020912-85d0604ad403?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80")
+  file = URI.open("https://images.unsplash.com/photo-1577456020912-85d0604ad403?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80")
   event.photo.attach(io: file, filename: 'light.png', content_type: 'image/png')
 
   puts "Creating event Kayaking in Oslo"
@@ -369,7 +369,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 10, 2020 18:30"
   })
 
-  file = URI.open("https://images.unsplash.com/photo-1569107368204-b859c1d5f98f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80")
+  file = URI.open("https://images.unsplash.com/photo-1569107368204-b859c1d5f98f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80")
   event.photo.attach(io: file, filename: 'dip.png', content_type: 'image/png')
 
   puts "Creating event Bike challange"
@@ -384,7 +384,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 18, 2020 14:30"
   })
 
-  file = URI.open("https://images.unsplash.com/photo-1557687454-732732c1bf31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80")
+  file = URI.open("https://images.unsplash.com/photo-1557687454-732732c1bf31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80")
   event.photo.attach(io: file, filename: 'bike.png', content_type: 'image/png')
 
   puts "Creating event Going down"
@@ -415,7 +415,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 10, 2020 03:30"
   })
 
-  file = URI.open("https://images.unsplash.com/photo-1515444744559-7be63e1600de?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80")
+  file = URI.open("https://images.unsplash.com/photo-1515444744559-7be63e1600de?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80")
   event.photo.attach(io: file, filename: 'stars.png', content_type: 'image/png')
 
   puts "Creating event Trip with Chip"
@@ -430,7 +430,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 20, 2020 10:30"
   })
 
-  file = URI.open("https://images.unsplash.com/photo-1501535033-a594139be346?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80")
+  file = URI.open("https://images.unsplash.com/photo-1501535033-a594139be346?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80")
   event.photo.attach(io: file, filename: 'chip.png', content_type: 'image/png')
 
   puts "Creating event Sunday skiing"
@@ -441,11 +441,11 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     categories: "feeling adventurous",
     creator_id: 8,
     address: "Inga Bjørnsons vei 1A, 0969 Oslo",
-    description: "Let´s go cross country skiing!",
+    description: "Let's go cross country skiing!",
     time: "March 20, 2020 14:30"
   })
 
-  file = URI.open("https://images.unsplash.com/photo-1518775053278-5a569f0be353?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80")
+  file = URI.open("https://images.unsplash.com/photo-1518775053278-5a569f0be353?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80")
   event.photo.attach(io: file, filename: 'ski.png', content_type: 'image/png')
 
   puts "Creating event Trip trapp"
@@ -460,7 +460,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 20, 2020 14:30"
   })
 
-  file = URI.open("https://images.unsplash.com/photo-1502126324834-38f8e02d7160?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80")
+  file = URI.open("https://images.unsplash.com/photo-1502126324834-38f8e02d7160?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80")
   event.photo.attach(io: file, filename: 'trpo.png', content_type: 'image/png')
 
 
@@ -479,7 +479,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 6, 2020 17:00"
   })
 
-  file = URI.open("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjF9&auto=format&fit=crop&w=1867&q=80")
+  file = URI.open("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjF9&auto=format&fit=crop&w=800&q=80")
   event.photo.attach(io: file, filename: 'music.png', content_type: 'image/png')
 
   puts "Creating event Beer tasting"
@@ -490,11 +490,11 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     categories: "mingle",
     creator_id: 10,
     address: "Schweigaards gate 34C, 0191 Oslo",
-    description: "Let´s enjoy a few Schous Bryggeri deliciousness together and talk about all the world problems we won´t get to fix by drinking! We´re always opened to meet new people, hope you can join!",
+    description: "Let's enjoy a few Schous Bryggeri deliciousness together and talk about all the world problems we won't get to fix by drinking! We're always opened to meet new people, hope you can join!",
     time: "March 6, 2020 15:00"
   })
 
-  file = URI.open("https://images.unsplash.com/photo-1575444758702-4a6b9222336e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80")
+  file = URI.open("https://images.unsplash.com/photo-1575444758702-4a6b9222336e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80")
   event.photo.attach(io: file, filename: 'beer.png', content_type: 'image/png')
 
   puts "Creating event Fun for dogs"
@@ -509,7 +509,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 6, 2020 19:00"
   })
 
-  file = URI.open("https://images.unsplash.com/photo-1539692443065-f8a9c4af6b5b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80")
+  file = URI.open("https://images.unsplash.com/photo-1539692443065-f8a9c4af6b5b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80")
   event.photo.attach(io: file, filename: 'dogs.png', content_type: 'image/png')
 
   puts "Creating event Hipster gardening"
@@ -524,7 +524,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 7, 2020 19:00"
   })
 
-  file = URI.open("https://images.unsplash.com/photo-1445052520430-32c8ebc92fe3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80")
+  file = URI.open("https://images.unsplash.com/photo-1445052520430-32c8ebc92fe3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80")
   event.photo.attach(io: file, filename: 'garden.png', content_type: 'image/png')
 
   puts "Creating event Fun on the run"
@@ -535,11 +535,11 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     categories: "sports",
     creator_id: 3,
     address: "Kirkeveien 50, 0368 Oslo",
-    description: "Let´s run 5km!",
+    description: "Let's run 5km!",
     time: "March 9, 2020 18:00"
   })
 
-  file = URI.open("https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80")
+  file = URI.open("https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80")
   event.photo.attach(io: file, filename: 'jogg.png', content_type: 'image/png')
 
   puts "Creating event The book worms"
@@ -554,7 +554,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 10, 2020 17:30"
   })
 
-  file = URI.open("https://images.unsplash.com/photo-1573390609456-919e3ed0da7e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80")
+  file = URI.open("https://images.unsplash.com/photo-1573390609456-919e3ed0da7e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80")
   event.photo.attach(io: file, filename: 'books.png', content_type: 'image/png')
 
   puts "Creating event Ball watching"
@@ -569,7 +569,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 8, 2020 17:30"
   })
 
-  file = URI.open("https://images.unsplash.com/photo-1577705665410-a0b630d39aea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80")
+  file = URI.open("https://images.unsplash.com/photo-1577705665410-a0b630d39aea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80")
   event.photo.attach(io: file, filename: 'watch.png', content_type: 'image/png')
 
   puts "Creating event What's cooking"
@@ -584,7 +584,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 12, 2020 21:10"
   })
 
-  file = URI.open("https://images.unsplash.com/photo-1528605248644-14dd04022da1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80")
+  file = URI.open("https://images.unsplash.com/photo-1528605248644-14dd04022da1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80")
   event.photo.attach(io: file, filename: 'cooking.png', content_type: 'image/png')
 
   puts "Creating event Code challange"
@@ -599,7 +599,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 12, 2020 18:10"
   })
 
-  file = URI.open("https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80")
+  file = URI.open("https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80")
   event.photo.attach(io: file, filename: 'code.png', content_type: 'image/png')
 
   puts "Creating event Coffee cupping"
@@ -614,7 +614,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 21, 2020 18:47"
   })
 
-  file = URI.open("https://images.unsplash.com/photo-1485182708500-e8f1f318ba72?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1985&q=80")
+  file = URI.open("https://images.unsplash.com/photo-1485182708500-e8f1f318ba72?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80")
   event.photo.attach(io: file, filename: 'coffee.png', content_type: 'image/png')
 
 
@@ -644,11 +644,11 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     categories: "game on",
     creator_id: 8,
     address: "Kirkegata 23, 0153 Oslo",
-    description: "It´s game night!",
+    description: "It's game night!",
     time: "March 26, 2020 14:14"
   })
 
-  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582885374/card_new_ygnph4.png")
+  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1583427093/0_card_ezook3.png")
   event.photo.attach(io: file, filename: 'card.png', content_type: 'image/png')
 
   puts "Creating event Dart and fart"
@@ -663,7 +663,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 18, 2020 18:32"
   })
 
-  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582885801/dart_last_qaogen.png")
+  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1583427093/0_dart_fibahe.png")
   event.photo.attach(io: file, filename: 'dart.png', content_type: 'image/png')
 
   puts "Creating event Let's get rich"
@@ -678,7 +678,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 7, 2020 16:00"
   })
 
-  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582885801/monopoly_last_svooln.png")
+  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1583427093/0_monopoly_ah17z9.png")
   event.photo.attach(io: file, filename: 'monopoly.png', content_type: 'image/png')
 
   puts "Creating event No risk no reward"
@@ -689,11 +689,11 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     categories: "game on",
     creator_id: 9,
     address: "Lilletorget 1, 0184 Oslo",
-    description: "It´s risk time! It´s war time!",
+    description: "It's risk time! It's war time!",
     time: "March 8, 2020 13:30"
   })
 
-  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582885907/risk_last_vovjbt.png")
+  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1583427093/0_risk_pyrslq.png")
   event.photo.attach(io: file, filename: 'risk.png', content_type: 'image/png')
 
   puts "Creating event Ping pong"
@@ -708,7 +708,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 15, 2020 11:10"
   })
 
-  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582885800/tabletennis_last_kxuskj.png")
+  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1583427093/0_tabletennis_ijmesj.png")
   event.photo.attach(io: file, filename: 'tabletennis.png', content_type: 'image/png')
 
 
@@ -729,7 +729,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 27, 2020 23:47"
   })
 
-  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582886551/basket_last_mwqhbw.png")
+  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1583426926/0_basket_selenw.png")
   event.photo.attach(io: file, filename: 'basket.png', content_type: 'image/png')
 
   puts "Creating event Jelly belly dancing"
@@ -744,7 +744,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 6, 2020 15:00"
   })
 
-  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582886370/bellydance_new_fpfjxl.png")
+  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1583426926/0_bellydance_yubtw2.png")
   event.photo.attach(io: file, filename: 'bellydance.png', content_type: 'image/png')
 
   puts "Creating event King pin"
@@ -774,7 +774,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 10, 2020 20:00"
   })
 
-  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582820759/football_lc5kpu.png")
+  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1583426926/0_football_q0jidy.png")
   event.photo.attach(io: file, filename: 'football.png', content_type: 'image/png')
 
   puts "Creating event Run is fun"
@@ -785,11 +785,11 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     categories: "let's move around",
     creator_id: 6,
     address: "Pilestredet 7, 0180 Oslo",
-    description: "Running is easier when you aren´t alone!",
+    description: "Running is easier when you aren't alone!",
     time: "March 17, 2020 10:00"
   })
 
-  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582820759/jogging_jsoqtq.png")
+  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1583426926/0_jogging_iypxdz.png")
   event.photo.attach(io: file, filename: 'jogging.png', content_type: 'image/png')
 
  puts "Creating event Game set match"
@@ -804,7 +804,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     time: "March 19, 2020 10:00"
   })
 
-  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1582886551/tennis_last_aidzqz.png")
+  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1583426927/0_tennis_hrw2hj.png")
   event.photo.attach(io: file, filename: 'tennis.png', content_type: 'image/png')
 
 puts 'Finished!'
