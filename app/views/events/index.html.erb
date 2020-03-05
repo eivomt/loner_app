@@ -75,6 +75,19 @@
   </div>
 <% end %>
 
+
+<!-- FRIENDS I HAVE MET -->
+<% if user_signed_in? && @array_of_friends != []%>
+  <div class="contain">
+    <div class="row-small">
+      <div class="row__inner">
+        <%= render 'carousel', users: @array_of_friends %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+
 <!-- HAPPY HELPING PUT YOUR CODE  -->
 <% @volunteer_events = Event.where(categories: 'volunteering') %>
 
@@ -90,16 +103,7 @@
 <% end %>
 
 
-<!-- FRIENDS I HAVE MET -->
-<% if user_signed_in? && @array_of_friends != []%>
-  <div class="contain">
-    <div class="row-small">
-      <div class="row__inner">
-        <%= render 'carousel', users: @array_of_friends %>
-      </div>
-    </div>
-  </div>
-<% end %>
+
 
 
 <!-- MAP -->
@@ -111,25 +115,25 @@
   >
   </div>
 
-<% @events = Event.where(categories: 'feeling adventurous') %>
-<% if @adveturous != []  %>
+<% @events = Event.where(categories: 'game on') %>
+<% if @events != [] %>
   <div class="contain" style="margin-top: 80px;">
-    <h3 class="tile__tag mb-20 text-white ml-30">Feeling adventurous</h3>
-    <div class="row">
+    <h3 class="tile__tag mb-20 text-white ml-30">Game on</h3>
+    <div class="row-medium">
       <div class="row__inner">
-      <%= render 'carrousel', events: @events %>
+        <%= render 'carrousel-medium', events: @events %>
       </div>
     </div>
   </div>
 <% end %>
 
-<% @events = Event.where(categories: 'game on') %>
-<% if @events != [] %>
+<% @events = Event.where(categories: 'feeling adventurous') %>
+<% if @adveturous != []  %>
   <div class="contain">
-    <h3 class="tile__tag mb-20 text-white ml-30">Game on</h3>
-    <div class="row-medium">
+    <h3 class="tile__tag mb-20 text-white ml-30">Feeling adventurous</h3>
+    <div class="row">
       <div class="row__inner">
-        <%= render 'carrousel-medium', events: @events %>
+      <%= render 'carrousel', events: @events %>
       </div>
     </div>
   </div>
