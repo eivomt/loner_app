@@ -838,7 +838,7 @@ puts "oevent in the past so that eivind has friends for the presentation"
     time: "March 6, 2020 20:00"
   })
 
-  file = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,h_840,q_auto,w_1952/v1578570211/cpizdoyq3k1z06saej2m.webp")
+  file = URI.open("https://scontent.fosl3-1.fna.fbcdn.net/v/t1.0-9/82214964_501632960478217_6828389721601736704_n.jpg?_nc_cat=110&_nc_sid=110474&_nc_ohc=eguK23ckVyoAX-SU9GZ&_nc_ht=scontent.fosl3-1.fna&oh=242eda5bd02eb8829d5786c24ee9a6c0&oe=5E9911AE")
   event.photo.attach(io: file, filename: 'tennis.png', content_type: 'image/png')
 
 
