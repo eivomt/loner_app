@@ -38,9 +38,11 @@ const initJoinButton = () => {
       if (joined) {
         joinText.classList.add('d-none');
         goingText.classList.remove('d-none');
+        button.classList.remove('red-border')
       } else {
         joinText.classList.remove('d-none');
         goingText.classList.add('d-none');
+        button.classList.add('red-border')
       }
     }
 
@@ -134,22 +136,24 @@ const initJoinButton = () => {
       translateX: 131,
       delay: anime.stagger(100)
     })
-    .add({
-      targets: ".square",
-      duration: 300,
-      rotate: "-90",
-    })
+
     .add({
       targets: plus,
       duration: 300,
       fill: "#68E184"
-    }, '-=300')
+    }, '-=1000')
+
+    .add({
+      targets: ".square",
+      duration: 900,
+      rotate: "-180",
+    }, '-=1100')
 
     .add({
       targets: plus,
       duration: 1000,
       d: circlePath,
-    })
+    }, '-=300')
 
     .add({
       targets: plusBox,
@@ -163,7 +167,7 @@ const initJoinButton = () => {
       duration: 750,
       opacity: 1,
       easing: 'easeOutExpo'
-    }, '-=300')
+    }, '-=600')
 
     // .add({
     //   targets: me,
@@ -195,23 +199,31 @@ const initJoinButton = () => {
       delay: anime.stagger(50)
     }, '-=350')
 
-    .add({
-      targets: me,
-      duration: 1000
-    })
+    // .add({
+    //   targets: me,
+    //   duration: 500
+    // })
 
-    .add({
-      targets: me,
-      duration: 500,
-      translateX: -131
-    })
+    // .add({
+    //   targets: me,
+    //   easing: "easeOutExpo",
+    //   duration: 750,
+    //   opacity: 0,
+    //   // translateX: -131
+    // }, '-=750')
 
-    .add({
-      targets: avatars,
-      duration: 500,
-      translateX: -131,
-      delay: anime.stagger(100)
-    }, '-=550')
+    // .add({
+    //   targets: allAvatars,
+    //   duration: 500,
+    //   translateX: -131,
+    //   delay: anime.stagger(100)
+    // }, '-=550')
+
+    // .add({
+    //   targets: me,
+    //   duration: 500,
+    //   translateX: -131,
+    // }, '-=1550')
 
     .add({
       easing: "easeInExpo",
@@ -225,15 +237,23 @@ const initJoinButton = () => {
       easing: "easeInOutExpo",
       duration: 500,
       d: plusPath,
-    }, '-=2000')
+    }, '-=1650')
+
+    // .add({
+    //   targets: me,
+    //   duration: 300,
+    //   opacity: 0,
+    // }, '-=2000')
 
      .add({
-      duration: 500,
+      duration: 1000,
       targets: plusBox,
       width: '13%',
-      left: '11.3%'
+      left: '11.3%',
+      translateY: 0,
+    }, '-=1800')
 
-    }, '-=1500')
+
 
      // .add({
      //  targets: '.square',
@@ -253,17 +273,17 @@ const initJoinButton = () => {
     // }, '-=500')
 
     .add({
-    duration: 1600,
+    duration: 1000,
     targets: ".feedback-container",
     top: "-200vh",
     easing: "easeInOutExpo"
-    }, '-=1600')
+    }, '-=1300')
 
     .add({
       targets: '.square',
-      duration: 1400,
+      duration: 800,
       rotate: '-270'
-    }, '-=1400')
+    }, '-=1600')
 
     .add({
       targets: avatars,
@@ -298,7 +318,7 @@ const initJoinButton = () => {
       rotate: '-630'
     });
 
-
+    me.style.setProperty("transform", "none");
 
   // const options = {
   //   strings: ['<i>First</i> sentence.', '&amp; a second sentence.'],
@@ -313,6 +333,7 @@ const initJoinButton = () => {
   //   loopCount: 2,
   //   stringsElement: '#typed-strings'
   // });
+
     }
     if (joined) {
       cancelRequest();
