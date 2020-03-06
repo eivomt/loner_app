@@ -1,6 +1,6 @@
 <div class="flex justify-center mb-40 event-container" style="margin-top: 100px;">
   <div class="event-info">
-    <h3 class="mb-20">Log in</h3>
+    <h3 class="mb-20 text-gray">Log in</h3>
 
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">
@@ -15,7 +15,7 @@
       </div>
 
       <div class="form-actions mb-40">
-        <%= f.button :submit, "Log in" %>
+        <%= f.button :submit, "Log in", class:"button create-button" %>
       </div>
     <% end %>
 
