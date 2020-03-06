@@ -43,7 +43,7 @@ user = User.create!({
     age: 30,
     about: "I love to go country skiing with my family. Nature is the place to be!"
   })
-file = URI.open("https://i.kinja-img.com/gawker-media/image/upload/s--C-HE98Fg--/c_scale,fl_progressive,q_80,w_800/eibgv7kctah62iddzywm.jpg")
+file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1583502117/eivind_fzbg42.jpg")
 user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
 
 
@@ -264,13 +264,12 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
   puts "Grocery shopping"
   event = Event.create!({
     name: "Grocery shopping",
-    people_going: 24,
-    people_needed: 6,
+    people_going: 3,
+    people_needed: 2,
     categories: "volunteering",
     creator_id: 16,
     address: "Grønland 30, 0188 Oslo",
-    description: "Help our elders with their shopping and they will share their awesome stories with  you over a cozy cup of tea! Anytime is good!",
-    time: "March 20, 2020 12:00"
+    description: "Hei! Lars is my father in law. He needs some help with grocery shopping as we live in Trondheim. He has great stories to tell over a cup of tea and loves a good chat!"
   })
 
   file = URI.open("https://www.griswoldhomecare.com/wp-content/uploads/2019/02/Senior-Man-Receiving-Groceries.jpg")
