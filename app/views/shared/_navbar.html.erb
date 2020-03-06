@@ -47,8 +47,11 @@
   <span></span>
 </label>
 
-
-  <nav class="menu">
+  <% if params[:controller] == "events" && params[:action] == "index" %>
+  <nav class="menu-index">
+    <% else %>
+      <nav class="menu">
+    <% end %>
     <ul>
       <div>
         <h3 class="ad-tag">Bekjentskap</h3>

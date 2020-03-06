@@ -18,6 +18,7 @@ import { initJoinButton } from '../plugins/join_button';
 
 import { initFadeOnScroll, fadeHero } from '../plugins/hero_fade';
 import { checkPosition } from '../plugins/hero_fade';
+import { initUpdateNavbarOnScroll } from '../plugins/navbar_background';
 
 
 
@@ -57,5 +58,5 @@ initJoinButton();
 // initShowAnimation();
 fadeHero();
 initFadeOnScroll();
-
+initUpdateNavbarOnScroll();
 
