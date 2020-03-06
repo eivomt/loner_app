@@ -265,7 +265,7 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
   event = Event.create!({
     name: "Grocery shopping",
     people_going: 3,
-    people_needed: 2,
+    people_needed: 8,
     categories: "volunteering",
     creator_id: 16,
     address: "Grønland 30, 0188 Oslo",
