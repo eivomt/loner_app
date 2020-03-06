@@ -52,7 +52,7 @@
   </div>
 </div>
 
-<% @events_now = Event.where(time: (DateTime.now-4.hour..DateTime.now+6.hour)) %>
+<% @events_now = Event.where(time: (DateTime.now-9.hour..DateTime.now+10.hour)) %>
 
 <% if @events_now != [] %>
   <div class="contain" style="margin-top: 100px;">
