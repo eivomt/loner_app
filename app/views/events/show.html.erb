@@ -33,7 +33,7 @@
           </span>
         </p>
         <div class="butn">
-          <div class="join-green flex justify-content-center align-items-center" id="join-button" data-cancel_url="<%= event_user_path(@event_user || 0) %>" data-join_url="<%= event_event_users_path(@event) %>" data-joined="<%= @event_user.present? %>">
+          <div class="join-green <%= @event_user.present? ? '' : 'red-border' %> flex justify-content-center align-items-center" id="join-button" data-cancel_url="<%= event_user_path(@event_user || 0) %>" data-join_url="<%= event_event_users_path(@event) %>" data-joined="<%= @event_user.present? %>">
             <svg width="55"
             height="50"
             viewBox="0 0 55 50"
@@ -229,13 +229,17 @@
     circle has background-img = user.avatar
     circle has class = "avatar#{num}" -->
 
+    <div class="me-container">
+      <%= link_to cl_image_tag(current_user.photo.key, class: "feedback-avatar-me"), user_path(current_user) %>
+    </div>
+
     <div class="avatars-box">
       <div class="avatars">
-        <%= link_to cl_image_tag(current_user.photo.key, class: "feedback-avatar-me"), user_path(current_user) %>
         <% @event_attendees.each do |user_id| %>
             <% user =User.find(user_id) %>
-            <%= link_to cl_image_tag(user.photo.key, class: "feedback-avatar"), user_path(user) %>
-
+            <% if user.id != current_user.id %>
+              <%= link_to cl_image_tag(user.photo.key, class: "feedback-avatar"), user_path(user) %>
+            <% end %>
         <% end %>
       </div>
     </div>

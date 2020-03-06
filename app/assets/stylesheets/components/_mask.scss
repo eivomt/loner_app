@@ -1,3 +1,12 @@
+.me-container {
+  width: 79px;
+  height: 79px;
+  position: absolute;
+  top: 30.6vh;
+  left: 8.3vw;
+  z-index: 200;
+}
+
 #hole {
   display: flex;
   justify-content: center;
@@ -71,7 +80,7 @@
 }
 
 .feedback-avatar-me {
-  margin-top: -20px;
+  // margin-top: -20px;
   border-radius: 50%;
   width: 79px;
   height: 79px;
@@ -79,9 +88,9 @@
   display: block;
   object-fit: cover;
   opacity: 0;
-  position: absolute;
-  top: -404.5%;
-  left: 131px;
+  // position: absolute;
+  // top: -404.5%;
+  // left: 131px;
 }
 
 .avatars-box {
