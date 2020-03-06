@@ -49,10 +49,11 @@
 
 .screen {
   position: absolute;
+  left: -1vw;
   top: 334px;
   background-color: rgba(255,255,255,0.95);
   height: 100vh;
-  width: 100vw;
+  width: 101.55vw;
   z-index: 101;
 }
 
@@ -119,6 +120,15 @@
   // left: 7.15%;
 }
 
+.bottom-screen {
+  position: absolute;
+  left: -1.3vw;
+  width: 1.55vh;
+  height: 334px;
+  background-color: rgba(255,255,255,0.95);
+  z-index: 200;
+}
+
 #typed {
   position: absolute;
   top: 65vh;
@@ -149,7 +159,7 @@
 .outer-feedback {
   position: absolute;
   top: -200vh;
-  left: 0;
+  left: .55vh;
   width: 100vw;
   height: 200vh;
 }
