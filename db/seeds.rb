@@ -269,7 +269,8 @@ user.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
     categories: "volunteering",
     creator_id: 16,
     address: "Grønland 30, 0188 Oslo",
-    description: "Hei! Lars is my father in law. He needs some help with grocery shopping as we live in Trondheim. He has great stories to tell over a cup of tea and loves a good chat!"
+    description: "Hei! Lars is my father in law. He needs some help with grocery shopping as we live in Trondheim. He has great stories to tell over a cup of tea and loves a good chat!",
+    time: "March 7, 2020 17:00"
   })
 
   file = URI.open("https://www.griswoldhomecare.com/wp-content/uploads/2019/02/Senior-Man-Receiving-Groceries.jpg")
