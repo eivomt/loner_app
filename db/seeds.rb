@@ -822,7 +822,7 @@ puts "one event in the passed for friends ive met"
     time: "February 6, 2020 08:30"
   })
 
-  file = URI.open("https://photos.google.com/share/AF1QipPH6GZDHdrgxxCpSWbIFsbgS1JFPFmmeDDx3E4GIehdkGQJyc7SFbJ3VPdiJAX3Cw/photo/AF1QipOm87tAS5lMAT_vwvIywJDAPp5AP38ZpVb1w3Dp?key=M2tvV3MzNnY1RmZHWmRraVZvS1U0aktxUTdJX2xn")
+  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1583489300/lewagonold_pfeynu.jpg")
   event.photo.attach(io: file, filename: 'tennis.png', content_type: 'image/png')
 
 puts "oevent in the past so that eivind has friends for the presentation"
@@ -838,7 +838,7 @@ puts "oevent in the past so that eivind has friends for the presentation"
     time: "March 6, 2020 20:00"
   })
 
-  file = URI.open("https://photos.google.com/share/AF1QipPH6GZDHdrgxxCpSWbIFsbgS1JFPFmmeDDx3E4GIehdkGQJyc7SFbJ3VPdiJAX3Cw/photo/AF1QipMqByi0w3RWRxHRJTH4Bp3DutJ0I3f-FwZgrCj-?key=M2tvV3MzNnY1RmZHWmRraVZvS1U0aktxUTdJX2xn")
+  file = URI.open("https://res.cloudinary.com/dzzozchgg/image/upload/v1583489300/lewagonnew_xlpydg.jpg")
   event.photo.attach(io: file, filename: 'tennis.png', content_type: 'image/png')
 
 
