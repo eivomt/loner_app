@@ -28,6 +28,13 @@ $blackColor: #020304;
     background-color: #38063A;
   }
 
+  .menu-index {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: none;
+  }
+
 
   input + label {
     position: fixed;

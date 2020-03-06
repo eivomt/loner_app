@@ -11,6 +11,11 @@ html {
   padding-bottom: 40px;
 }
 
+input[type="checkbox"] {
+  opacity: 0;
+}
+
+
 .ml-30 {
   margin-left: 30px;
 }
